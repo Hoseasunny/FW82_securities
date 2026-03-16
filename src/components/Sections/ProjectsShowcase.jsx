@@ -20,6 +20,7 @@ export const ProjectsShowcase = () => {
                 alt={project.title}
                 loading="lazy"
                 className="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-navy/60 opacity-0 transition duration-500 group-hover:opacity-100" />
               <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">

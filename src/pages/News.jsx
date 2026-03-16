@@ -46,6 +46,7 @@ export const News = () => {
                 srcSet={featured.image.srcSet}
                 alt={featured.title}
                 className="h-full w-full rounded-3xl object-cover"
+                decoding="async"
               />
               <div className="flex flex-col justify-center rounded-3xl border border-slate/10 p-6">
                 <span className="text-xs uppercase tracking-[0.3em] text-gold">Featured</span>
@@ -69,6 +70,7 @@ export const News = () => {
                   srcSet={item.image.srcSet}
                   alt={item.title}
                   className="h-40 w-full rounded-2xl object-cover"
+                  decoding="async"
                 />
                 <div className="mt-4 flex items-center justify-between text-xs">
                   <span className="rounded-full bg-gold/10 px-3 py-1 text-gold">

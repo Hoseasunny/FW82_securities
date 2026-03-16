@@ -4,14 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: "#0a1628",
-        security: "#1e3a5f",
-        gold: "#c9a227",
+        navy: "#0b0b0d",
+        security: "#1a1a1f",
+        gold: "#b70e0e",
         trust: "#059669",
         alert: "#dc2626",
-        ink: "#1e293b",
-        slate: "#64748b",
-        cloud: "#f8fafc"
+        ink: "#111111",
+        slate: "#5c5c66",
+        cloud: "#f5f5f7"
       },
       fontFamily: {
         heading: ["Inter", "Roboto", "ui-sans-serif", "system-ui"],
@@ -22,8 +22,8 @@ export default {
         soft: "0 8px 20px rgba(10, 22, 40, 0.12)"
       },
       backgroundImage: {
-        "hero-gradient": "linear-gradient(120deg, rgba(10,22,40,0.85), rgba(10,22,40,0.6))",
-        "grid-pattern": "radial-gradient(circle at 1px 1px, rgba(201,162,39,0.18) 1px, transparent 0)"
+        "hero-gradient": "linear-gradient(120deg, rgba(11,11,13,0.9), rgba(11,11,13,0.65))",
+        "grid-pattern": "radial-gradient(circle at 1px 1px, rgba(183,14,14,0.18) 1px, transparent 0)"
       }
     }
   },

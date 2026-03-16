@@ -20,6 +20,7 @@ export const Hero = () => {
           srcSet={heroImage.srcSet}
           alt="Professional security guard in Nairobi business district"
           className="h-full w-full object-cover"
+          decoding="async"
         />
         <div className="absolute inset-0 gradient-overlay" />
       </div>

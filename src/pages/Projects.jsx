@@ -72,6 +72,7 @@ export const Projects = () => {
                   alt={project.title}
                   loading="lazy"
                   className="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+                  decoding="async"
                 />
                 <div className="p-5">
                   <p className="text-xs uppercase tracking-[0.3em] text-gold">{project.category}</p>

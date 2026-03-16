@@ -42,6 +42,7 @@ export const Services = () => {
                     alt={service.title}
                     loading="lazy"
                     className="h-full w-full object-cover"
+                    decoding="async"
                   />
                 </div>
                 <div>

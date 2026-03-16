@@ -1,16 +1,16 @@
-@config "../tailwind.config.js";
 @import "tailwindcss";
+@config "../tailwind.config.js";
 
 :root {
   color-scheme: light;
-  --navy: #0a1628;
-  --security: #1e3a5f;
-  --gold: #c9a227;
+  --navy: #0b0b0d;
+  --security: #1a1a1f;
+  --gold: #b70e0e;
   --trust: #059669;
   --alert: #dc2626;
-  --ink: #1e293b;
-  --slate: #64748b;
-  --cloud: #f8fafc;
+  --ink: #111111;
+  --slate: #5c5c66;
+  --cloud: #f5f5f7;
 }
 
 * {
@@ -30,11 +30,11 @@ img {
 }
 
 .gradient-overlay {
-  background: linear-gradient(120deg, rgba(10, 22, 40, 0.88), rgba(10, 22, 40, 0.6));
+  background: linear-gradient(120deg, rgba(11, 11, 13, 0.9), rgba(11, 11, 13, 0.65));
 }
 
 .pattern-dark {
-  background-image: radial-gradient(circle at 1px 1px, rgba(201, 162, 39, 0.18) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgba(183, 14, 14, 0.18) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
@@ -47,7 +47,7 @@ img {
 .focus-ring:focus-visible {
   outline: 2px solid transparent;
   outline-offset: 2px;
-  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.4);
+  box-shadow: 0 0 0 3px rgba(183, 14, 14, 0.35);
 }
 
 .btn-loading {
@@ -65,7 +65,7 @@ img {
 }
 
 .gold-underline {
-  background-image: linear-gradient(90deg, rgba(201, 162, 39, 0.9), rgba(201, 162, 39, 0.9));
+  background-image: linear-gradient(90deg, rgba(183, 14, 14, 0.9), rgba(183, 14, 14, 0.9));
   background-repeat: no-repeat;
   background-size: 0 2px;
   background-position: 0 100%;

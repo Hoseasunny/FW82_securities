@@ -30,6 +30,7 @@ export const About = () => {
           srcSet={aboutHero.srcSet}
           alt="Executive leadership in Nairobi"
           className="h-full w-full object-cover"
+          decoding="async"
         />
         <div className="absolute inset-0 gradient-overlay" />
         <div className="absolute inset-0 flex items-center">
@@ -63,6 +64,7 @@ export const About = () => {
                   srcSet={leader.srcSet}
                   alt="Fred Wandera"
                   className="h-20 w-20 rounded-full object-cover"
+                  decoding="async"
                 />
                 <div>
                   <p className="text-lg font-heading font-semibold text-ink">Fred Wandera</p>
