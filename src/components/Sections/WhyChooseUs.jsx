@@ -4,11 +4,23 @@ import { CountUp } from "../Animation/CountUp";
 import { SectionHeader } from "../UI/SectionHeader";
 import { SlideIn } from "../Animation/SlideIn";
 
-const whyImage = buildImageSet(
-  "Why Choose FW82",
-  "Split composition: left side shows security control room with multiple CCTV screens, right side shows professional security team briefing",
-  "control-room"
-);
+const whyImages = [
+  buildImageSet(
+    "Security Control Room",
+    "Split composition: left side shows security control room with multiple CCTV screens, right side shows professional security team briefing",
+    "control-room"
+  ),
+  buildImageSet(
+    "Security Team Briefing",
+    "Professional security team briefing in a modern operations room",
+    "team-briefing"
+  ),
+  buildImageSet(
+    "Corporate Security",
+    "Security presence at a modern corporate office lobby with access control",
+    "project-office"
+  )
+];
 
 const features = [
   "Highly trained officers (PSRA certified)",
@@ -28,18 +40,25 @@ const stats = [
 export const WhyChooseUs = () => {
   return (
     <section className="bg-white py-20">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2">
+      <div className="mx-auto max-w-6xl px-6">
         <SlideIn direction="left" className="overflow-hidden rounded-3xl">
-          <img
-            src={whyImage.src}
-            srcSet={whyImage.srcSet}
-            alt="Security control room and team briefing"
-            loading="lazy"
-            className="h-full w-full object-cover"
-            decoding="async"
-          />
+          <div className="triple-fade h-80 w-full md:h-[420px]">
+            {whyImages.map((image) => (
+              <img
+                key={image.prompt}
+                src={image.src}
+                srcSet={image.srcSet}
+                alt="Security operations visual"
+                loading="lazy"
+                decoding="async"
+              />
+            ))}
+          </div>
         </SlideIn>
-        <SlideIn direction="right">
+        <SlideIn
+          direction="right"
+          className="-mt-10 ml-0 mr-auto rounded-3xl bg-white p-8 shadow-soft sm:-mt-12 sm:p-10 lg:ml-auto lg:mr-10 lg:max-w-4xl"
+        >
           <SectionHeader title="Why Choose FW82" subtitle="Our Advantage" />
           <ul className="mt-6 space-y-4">
             {features.map((feature) => (

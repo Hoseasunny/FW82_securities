@@ -12,6 +12,7 @@ import { SocialProof } from "./components/UI/SocialProof";
 const Home = lazy(() => import("./pages/Home").then((m) => ({ default: m.Home })));
 const About = lazy(() => import("./pages/About").then((m) => ({ default: m.About })));
 const Services = lazy(() => import("./pages/Services").then((m) => ({ default: m.Services })));
+const ServiceDetail = lazy(() => import("./pages/ServiceDetail").then((m) => ({ default: m.ServiceDetail })));
 const Projects = lazy(() => import("./pages/Projects").then((m) => ({ default: m.Projects })));
 const News = lazy(() => import("./pages/News").then((m) => ({ default: m.News })));
 const Careers = lazy(() => import("./pages/Careers").then((m) => ({ default: m.Careers })));
@@ -39,6 +40,7 @@ const AppRoutes = () => {
           <Route path="/" element={<PageTransition><Home /></PageTransition>} />
           <Route path="/about" element={<PageTransition><About /></PageTransition>} />
           <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
+          <Route path="/services/:slug" element={<PageTransition><ServiceDetail /></PageTransition>} />
           <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
           <Route path="/news" element={<PageTransition><News /></PageTransition>} />
           <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
