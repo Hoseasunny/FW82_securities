@@ -10,17 +10,17 @@ const whyImages = [
   buildImageSet(
     "Security Control Room",
     "Split composition: left side shows security control room with multiple CCTV screens, right side shows professional security team briefing",
-    "control-room"
+    "why-choose-us/why-1"
   ),
   buildImageSet(
     "Security Team Briefing",
     "Professional security team briefing in a modern operations room",
-    "team-briefing"
+    "why-choose-us/why-2"
   ),
   buildImageSet(
     "Corporate Security",
     "Security presence at a modern corporate office lobby with access control",
-    "project-office"
+    "why-choose-us/why-3"
   )
 ];
 

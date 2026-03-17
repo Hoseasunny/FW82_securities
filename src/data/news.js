@@ -10,7 +10,7 @@ export const newsItems = [
     image: buildImageSet(
       "Community Safety",
       "Community safety initiative in Kenya, security team with community leaders",
-      "team-briefing"
+      "news-thumbnails/team-briefing"
     )
   },
   {
@@ -22,7 +22,7 @@ export const newsItems = [
     image: buildImageSet(
       "Diplomatic Visit",
       "Corporate event at a modern Kenyan mall with VIP arrival",
-      "project-mall"
+      "news-thumbnails/news-1"
     )
   },
   {
@@ -34,7 +34,7 @@ export const newsItems = [
     image: buildImageSet(
       "AI CCTV",
       "Modern CCTV cameras with AI analytics visual overlay",
-      "cctv-install"
+      "news-thumbnails/news-2"
     )
   },
   {
@@ -46,7 +46,7 @@ export const newsItems = [
     image: buildImageSet(
       "ISO Certified",
       "Corporate certification ceremony with team",
-      "executive-portrait"
+      "news-thumbnails/news-3"
     )
   }
 ];

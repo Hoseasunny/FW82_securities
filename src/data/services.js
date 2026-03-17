@@ -10,7 +10,7 @@ export const services = [
     image: buildImageSet(
       "Guarding & Patrols",
       "Security guard patrol vehicle in modern Kenyan residential estate at night, vehicle headlights on, professional security branding on car, suburban setting, dusk lighting",
-      "patrol-vehicle"
+      "services/guarding-patrols/cover"
     ),
     gallery: [
       {
@@ -19,7 +19,7 @@ export const services = [
         image: buildImageSet(
           "Uniformed Security Officers",
           "Professional uniformed security officer standing at a gated entrance in Kenya, crisp uniform, confident posture",
-          "hero-guard"
+          "services/guarding-patrols/uniformed-officers"
         )
       },
       {
@@ -28,7 +28,7 @@ export const services = [
         image: buildImageSet(
           "Estate Patrol Units",
           "Branded patrol vehicle driving through a quiet residential estate at night with headlights on",
-          "patrol-vehicle"
+          "services/guarding-patrols/estate-patrol"
         )
       },
       {
@@ -37,7 +37,7 @@ export const services = [
         image: buildImageSet(
           "Industrial Security",
           "Security officer at industrial facility entrance with warehouse background, professional atmosphere",
-          "project-port"
+          "services/guarding-patrols/industrial-security"
         )
       },
       {
@@ -46,7 +46,7 @@ export const services = [
         image: buildImageSet(
           "Residential Guards",
           "Security officer greeting residents at a modern apartment entrance, daytime",
-          "project-park"
+          "services/guarding-patrols/residential-guards"
         )
       }
     ]
@@ -60,7 +60,7 @@ export const services = [
     image: buildImageSet(
       "Technical Security",
       "Security technician installing CCTV camera on building exterior, professional work, safety equipment, modern tools, clear sky",
-      "cctv-install"
+      "services/technical-security/cover"
     ),
     gallery: [
       {
@@ -69,7 +69,7 @@ export const services = [
         image: buildImageSet(
           "CCTV Installation",
           "Technician installing a modern CCTV camera on a building exterior",
-          "cctv-install"
+          "services/technical-security/cctv-installation"
         )
       },
       {
@@ -78,7 +78,7 @@ export const services = [
         image: buildImageSet(
           "Intruder Alarms",
           "Security control room screens showing alarm alerts and camera feeds",
-          "control-room"
+          "services/technical-security/intruder-alarms"
         )
       },
       {
@@ -87,7 +87,7 @@ export const services = [
         image: buildImageSet(
           "Access Control Systems",
           "Corporate entrance with modern access control turnstiles",
-          "project-office"
+          "services/technical-security/access-control"
         )
       },
       {
@@ -96,7 +96,7 @@ export const services = [
         image: buildImageSet(
           "Electric Fencing",
           "Industrial perimeter fencing with security lighting at dusk",
-          "project-port"
+          "services/technical-security/electric-fencing"
         )
       },
       {
@@ -105,7 +105,7 @@ export const services = [
         image: buildImageSet(
           "Biometric Systems",
           "Modern office lobby with biometric access terminal",
-          "project-mall"
+          "services/technical-security/biometric-systems"
         )
       }
     ]
@@ -119,7 +119,7 @@ export const services = [
     image: buildImageSet(
       "Event Security",
       "Large outdoor concert in Kenya with crowd and stage visible, security personnel managing crowd barriers, evening event lighting",
-      "event-crowd"
+      "services/event-security/cover"
     ),
     gallery: [
       {
@@ -128,7 +128,7 @@ export const services = [
         image: buildImageSet(
           "Crowd Management",
           "Security team managing a crowd near event barriers at night",
-          "event-crowd"
+          "services/event-security/crowd-management"
         )
       },
       {
@@ -137,7 +137,7 @@ export const services = [
         image: buildImageSet(
           "VIP Protection",
           "Professional security detail with executive client in a modern venue",
-          "executive-portrait"
+          "services/event-security/vip-protection"
         )
       },
       {
@@ -146,7 +146,7 @@ export const services = [
         image: buildImageSet(
           "Concert Security",
           "Large public rally with stage lighting and organized security presence",
-          "project-rally"
+          "services/event-security/concert-security"
         )
       },
       {
@@ -155,7 +155,7 @@ export const services = [
         image: buildImageSet(
           "Corporate Events",
           "Corporate event setting with professional staff and security presence",
-          "project-office"
+          "services/event-security/corporate-events"
         )
       },
       {
@@ -164,7 +164,7 @@ export const services = [
         image: buildImageSet(
           "Mall Events",
           "Busy retail mall environment with coordinated security staff",
-          "project-mall"
+          "services/event-security/mall-events"
         )
       },
       {
@@ -173,7 +173,7 @@ export const services = [
         image: buildImageSet(
           "Diplomatic Security",
           "Secure facility entrance with checkpoints and professional security",
-          "project-port"
+          "services/event-security/diplomatic-security"
         )
       }
     ]
@@ -187,7 +187,7 @@ export const services = [
     image: buildImageSet(
       "Smart Integration",
       "Hand holding smartphone showing security camera feed app, modern home interior blurred, tech lifestyle photography",
-      "smartphone-app"
+      "services/smart-security-integration/cover"
     ),
     gallery: [
       {
@@ -196,7 +196,7 @@ export const services = [
         image: buildImageSet(
           "Mobile App Monitoring",
           "Smartphone displaying live security camera feeds",
-          "smartphone-app"
+          "services/smart-security-integration/mobile-app"
         )
       },
       {
@@ -205,7 +205,7 @@ export const services = [
         image: buildImageSet(
           "Remote Alerts",
           "Security control room with alert dashboards on screens",
-          "control-room"
+          "services/smart-security-integration/remote-alerts"
         )
       },
       {
@@ -214,7 +214,7 @@ export const services = [
         image: buildImageSet(
           "Smart Home Integration",
           "Modern residential complex with smart security features",
-          "project-park"
+          "services/smart-security-integration/smart-home"
         )
       },
       {
@@ -223,7 +223,7 @@ export const services = [
         image: buildImageSet(
           "Cloud Storage",
           "Abstract secure data center hallway with server racks",
-          "project-diamond"
+          "services/smart-security-integration/cloud-storage"
         )
       },
       {
@@ -232,7 +232,7 @@ export const services = [
         image: buildImageSet(
           "AI Analytics",
           "Security team reviewing analytics dashboards and camera feeds",
-          "team-briefing"
+          "services/smart-security-integration/ai-analytics"
         )
       }
     ]

@@ -8,7 +8,7 @@ export const projects = [
     image: buildImageSet(
       "Airport Mall",
       "Modern shopping mall interior in Kenya, busy with shoppers, security personnel in professional uniforms visible, bright lighting",
-      "project-mall"
+      "projects/project-1"
     ),
     details: {
       challenge: "High visitor volumes demanded seamless crowd control without disrupting the shopping experience.",
@@ -23,7 +23,7 @@ export const projects = [
     image: buildImageSet(
       "Close the Gap",
       "Modern office building exterior in Nairobi, glass facade, security cameras visible, blue sky",
-      "project-office"
+      "projects/project-2"
     ),
     details: {
       challenge: "Needed unified visibility across multiple floors and entry points.",
@@ -38,7 +38,7 @@ export const projects = [
     image: buildImageSet(
       "Kenya Ports",
       "Industrial port facility in Mombasa Kenya, security checkpoint with barrier gate, container shipping area",
-      "project-port"
+      "projects/project-3"
     ),
     details: {
       challenge: "Securing a high-traffic logistics hub with restricted access requirements.",
@@ -53,7 +53,7 @@ export const projects = [
     image: buildImageSet(
       "Business Park",
       "Modern office park entrance in Nairobi, security booth with guard, landscaped gardens",
-      "project-park"
+      "projects/project-4"
     ),
     details: {
       challenge: "Maintaining security continuity across multiple office tenants.",
@@ -68,7 +68,7 @@ export const projects = [
     image: buildImageSet(
       "Diamond Plaza",
       "Shopping mall interior with security cameras visible on ceiling, modern retail environment",
-      "project-diamond"
+      "projects/project-5"
     ),
     details: {
       challenge: "Required discrete monitoring while maintaining luxury retail ambience.",
@@ -83,7 +83,7 @@ export const projects = [
     image: buildImageSet(
       "Safari Rally",
       "Rally cars on dirt track in Kenya, crowd barriers, security personnel in high-visibility vests",
-      "project-rally"
+      "projects/project-6"
     ),
     details: {
       challenge: "Large-scale crowd safety over multiple locations.",

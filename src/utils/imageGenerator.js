@@ -1,12 +1,10 @@
-export const buildImageSet = (label, prompt, fileBase = "") => {
+export const buildImageSet = (label, prompt, fileBase = "", sizes = [400, 800, 1200]) => {
   if (fileBase) {
+    const base = `/images/${fileBase}`;
+    const lastSize = sizes[sizes.length - 1];
     return {
-      src: `/images/${fileBase}-1200.webp`,
-      srcSet: [
-        `/images/${fileBase}-400.webp 400w`,
-        `/images/${fileBase}-800.webp 800w`,
-        `/images/${fileBase}-1200.webp 1200w`
-      ].join(", "),
+      src: `${base}-${lastSize}.webp`,
+      srcSet: sizes.map((size) => `${base}-${size}.webp ${size}w`).join(", "),
       prompt
     };
   }

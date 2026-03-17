@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const heroImage = buildImageSet(
   "FW82 Hero",
   "Professional African security guard in formal navy blue uniform with gold accents, standing in modern Nairobi business district at dusk, city lights bokeh background, cinematic lighting, corporate photography style",
-  "hero-guard"
+  "hero/hero-1"
 );
 
 export const Hero = () => {
