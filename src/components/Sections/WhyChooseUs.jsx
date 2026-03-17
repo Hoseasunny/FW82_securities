@@ -41,8 +41,11 @@ export const WhyChooseUs = () => {
   return (
     <section className="bg-white py-20">
       <div className="mx-auto max-w-6xl px-6">
-        <SlideIn direction="left" className="overflow-hidden rounded-3xl">
-          <div className="triple-fade h-80 w-full md:h-[420px]">
+        <SlideIn
+          direction="left"
+          className="relative w-screen overflow-hidden sm:mx-0 sm:w-full sm:rounded-3xl -mx-6 ml-[calc(50%-50vw)]"
+        >
+          <div className="triple-fade h-screen w-full sm:h-80 md:h-[420px]">
             {whyImages.map((image) => (
               <img
                 key={image.prompt}
@@ -57,7 +60,7 @@ export const WhyChooseUs = () => {
         </SlideIn>
         <SlideIn
           direction="right"
-          className="-mt-10 ml-0 mr-auto rounded-3xl bg-white p-8 shadow-soft sm:-mt-12 sm:p-10 lg:ml-auto lg:mr-10 lg:max-w-4xl"
+          className="-mt-24 ml-0 mr-auto rounded-3xl bg-white p-8 shadow-soft sm:-mt-24 sm:p-10 lg:ml-auto lg:mr-10 lg:max-w-4xl relative z-10"
         >
           <SectionHeader title="Why Choose FW82" subtitle="Our Advantage" />
           <ul className="mt-6 space-y-4">
