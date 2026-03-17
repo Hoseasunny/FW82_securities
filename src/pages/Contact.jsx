@@ -2,10 +2,11 @@ import { useState } from "react";
 import { useFormValidation } from "../hooks/useFormValidation";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { isRequired, isValidEmail } from "../utils/validators";
-import { BRANCH_CONTACTS, SERVICE_INTERESTS } from "../utils/constants";
+import { BRANCH_CONTACTS, COMPANY, SERVICE_INTERESTS, SOCIALS } from "../utils/constants";
 import { Button } from "../components/UI/Button";
 import { SectionHeader } from "../components/UI/SectionHeader";
 import { FormTrustBadges } from "../components/UI/FormTrustBadges";
+import { Facebook, Mail, Phone, MessageCircle } from "lucide-react";
 
 const validators = {
   name: (value) => (isRequired(value) ? "" : "Name is required"),
@@ -88,6 +89,43 @@ export const Contact = () => {
                   <p className="text-xs text-slate">{branch.email}</p>
                 </div>
               ))}
+            </div>
+            <div className="rounded-3xl bg-white p-6 shadow-soft">
+              <SectionHeader title="Connect With Us" subtitle="Social" />
+              <div className="mt-4 grid gap-3">
+                <a
+                  href={SOCIALS.find((item) => item.label === "Facebook")?.href || "https://www.facebook.com"}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 rounded-2xl border border-slate/10 px-4 py-3 text-sm text-slate transition hover:border-gold hover:text-ink"
+                >
+                  <Facebook className="h-5 w-5 text-gold" />
+                  Facebook
+                </a>
+                <a
+                  href={`mailto:${COMPANY.emailSecondary}`}
+                  className="flex items-center gap-3 rounded-2xl border border-slate/10 px-4 py-3 text-sm text-slate transition hover:border-gold hover:text-ink"
+                >
+                  <Mail className="h-5 w-5 text-gold" />
+                  {COMPANY.emailSecondary}
+                </a>
+                <a
+                  href={`tel:${COMPANY.phone}`}
+                  className="flex items-center gap-3 rounded-2xl border border-slate/10 px-4 py-3 text-sm text-slate transition hover:border-gold hover:text-ink"
+                >
+                  <Phone className="h-5 w-5 text-gold" />
+                  {COMPANY.phone}
+                </a>
+                <a
+                  href={`https://wa.me/${COMPANY.phone.replace(/\D/g, "")}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 rounded-2xl border border-slate/10 px-4 py-3 text-sm text-slate transition hover:border-gold hover:text-ink"
+                >
+                  <MessageCircle className="h-5 w-5 text-gold" />
+                  WhatsApp
+                </a>
+              </div>
             </div>
             <div className="overflow-hidden rounded-3xl border border-slate/10">
               <iframe

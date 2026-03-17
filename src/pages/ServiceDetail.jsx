@@ -37,6 +37,17 @@ export const ServiceDetail = () => {
     <main>
       <section className="bg-navy py-16 text-white">
         <div className="mx-auto max-w-6xl px-6">
+          <nav className="text-xs uppercase tracking-[0.3em] text-white/60">
+            <Link to="/" className="hover:text-gold">
+              Home
+            </Link>
+            <span className="mx-2">{">"}</span>
+            <Link to="/services" className="hover:text-gold">
+              Services
+            </Link>
+            <span className="mx-2">{">"}</span>
+            <span className="text-gold">{service.title}</span>
+          </nav>
           <p className="text-xs uppercase tracking-[0.3em] text-gold">Service</p>
           <h1 className="mt-3 text-4xl font-heading font-bold">{service.title}</h1>
           <p className="mt-4 max-w-2xl text-white/70">{service.description}</p>
