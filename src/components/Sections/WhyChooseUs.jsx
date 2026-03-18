@@ -66,7 +66,7 @@ export const WhyChooseUs = () => {
           direction="left"
           className="relative w-screen overflow-hidden sm:mx-0 sm:w-full sm:rounded-3xl -mx-6 ml-[calc(50%-50vw)]"
         >
-          <div className="relative h-screen w-full sm:h-80 md:h-[420px]">
+          <div className="relative h-[450px] w-full sm:h-80 md:h-[420px]">
             {whyImages.map((image, index) => (
               <img
                 key={image.prompt}

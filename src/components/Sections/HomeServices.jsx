@@ -40,7 +40,7 @@ export const HomeServices = () => {
 
         {technical && (
           <FadeIn delay={0.1} className="mt-10">
-            <div className="relative w-screen overflow-hidden bg-navy px-6 py-10 sm:w-full sm:rounded-3xl sm:px-8 -mx-6 ml-[calc(50%-50vw)]">
+            <div className="relative w-screen overflow-hidden bg-navy px-6 py-10 -mx-6 ml-[calc(50%-50vw)] sm:w-full sm:mx-0 sm:ml-0 sm:rounded-3xl sm:px-8">
               <div className="md:hidden">
                 <div className="relative overflow-hidden rounded-3xl">
                   <div className="relative h-[72vh] w-full">
