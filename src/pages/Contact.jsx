@@ -7,6 +7,7 @@ import { Button } from "../components/UI/Button";
 import { SectionHeader } from "../components/UI/SectionHeader";
 import { FormTrustBadges } from "../components/UI/FormTrustBadges";
 import { Facebook, Mail, Phone, MessageCircle } from "lucide-react";
+import { Seo } from "../components/SEO/Seo";
 
 const validators = {
   name: (value) => (isRequired(value) ? "" : "Name is required"),
@@ -58,15 +59,21 @@ export const Contact = () => {
   };
 
   return (
-    <main>
-      <section className="bg-navy py-16 text-white">
-        <div className="mx-auto max-w-6xl px-6">
-          <h1 className="text-4xl font-heading font-bold">Contact FW82</h1>
-          <p className="mt-4 max-w-2xl text-white/70">
-            Reach our team in Nairobi or any branch across Kenya. Emergency line is available 24/7.
-          </p>
-        </div>
-      </section>
+    <>
+      <Seo
+        title="Contact FW82 Security | Get in Touch"
+        description="Reach our team in Nairobi or any branch across Kenya. Emergency line is available 24/7."
+        pathname="/contact"
+      />
+      <main>
+        <section className="bg-navy py-16 text-white">
+          <div className="mx-auto max-w-6xl px-6">
+            <h1 className="text-4xl font-heading font-bold">Contact FW82</h1>
+            <p className="mt-4 max-w-2xl text-white/70">
+              Reach our team in Nairobi or any branch across Kenya. Emergency line is available 24/7.
+            </p>
+          </div>
+        </section>
 
       <section className="bg-white py-12">
         <div className="mx-auto max-w-6xl px-6">
@@ -256,6 +263,7 @@ export const Contact = () => {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 };

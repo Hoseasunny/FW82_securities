@@ -5,6 +5,7 @@ import { isRequired, isValidPhoneKenya } from "../utils/validators";
 import { Button } from "../components/UI/Button";
 import { SectionHeader } from "../components/UI/SectionHeader";
 import { FormTrustBadges } from "../components/UI/FormTrustBadges";
+import { Seo } from "../components/SEO/Seo";
 
 const validators = {
   fullName: (value) => (isRequired(value) ? "" : "Full name is required"),
@@ -65,15 +66,21 @@ export const Careers = () => {
   };
 
   return (
-    <main>
-      <section className="bg-navy py-16 text-white">
-        <div className="mx-auto max-w-6xl px-6">
-          <h1 className="text-4xl font-heading font-bold">Careers at FW82</h1>
-          <p className="mt-4 max-w-2xl text-white/70">
-            Join our team of security professionals serving Nairobi, Mombasa, Kisumu, and Eldoret.
-          </p>
-        </div>
-      </section>
+    <>
+      <Seo
+        title="Careers | FW82 Security"
+        description="Join our team of security professionals serving Nairobi, Mombasa, Kisumu, and Eldoret."
+        pathname="/careers"
+      />
+      <main>
+        <section className="bg-navy py-16 text-white">
+          <div className="mx-auto max-w-6xl px-6">
+            <h1 className="text-4xl font-heading font-bold">Careers at FW82</h1>
+            <p className="mt-4 max-w-2xl text-white/70">
+              Join our team of security professionals serving Nairobi, Mombasa, Kisumu, and Eldoret.
+            </p>
+          </div>
+        </section>
 
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
@@ -257,6 +264,7 @@ export const Careers = () => {
           </div>
         </div>
       )}
-    </main>
+      </main>
+    </>
   );
 };
