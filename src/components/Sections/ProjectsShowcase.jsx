@@ -22,6 +22,7 @@ export const ProjectsShowcase = () => {
                 className="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
                 decoding="async"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               <div className="absolute inset-0 bg-navy/60 opacity-0 transition duration-500 group-hover:opacity-100" />
               <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                 <span className="text-xs uppercase tracking-[0.3em] text-gold">{project.category}</span>

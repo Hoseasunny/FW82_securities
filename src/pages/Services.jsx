@@ -56,17 +56,18 @@ export const Services = () => {
               {services.map((service) => {
                 const Icon = iconMap[service.icon] || Shield;
                 return (
-                  <div key={service.title} className="group relative overflow-hidden rounded-3xl bg-navy">
-                    <img
-                      src={service.image.src}
-                      srcSet={service.image.srcSet}
-                      alt={service.title}
-                      loading="lazy"
-                      className="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
-                      decoding="async"
-                    />
-                    <div className="absolute inset-0 bg-navy/60 opacity-0 transition duration-500 group-hover:opacity-100" />
-                    <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                <div key={service.title} className="group relative overflow-hidden rounded-3xl bg-navy">
+                  <img
+                    src={service.image.src}
+                    srcSet={service.image.srcSet}
+                    alt={service.title}
+                    loading="lazy"
+                    className="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-navy/60 opacity-0 transition duration-500 group-hover:opacity-100" />
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                       <div className="flex items-center gap-3 text-gold">
                         <Icon className="h-5 w-5" />
                         <span className="text-xs uppercase tracking-[0.3em]">Service</span>

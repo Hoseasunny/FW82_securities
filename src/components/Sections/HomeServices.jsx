@@ -40,7 +40,7 @@ export const HomeServices = () => {
 
         {technical && (
           <FadeIn delay={0.1} className="mt-10">
-            <div className="relative overflow-hidden rounded-3xl bg-navy px-6 py-10 sm:px-8">
+            <div className="relative w-screen overflow-hidden bg-navy px-6 py-10 sm:w-full sm:rounded-3xl sm:px-8 -mx-6 ml-[calc(50%-50vw)]">
               <div className="md:hidden">
                 <div className="relative overflow-hidden rounded-3xl">
                   <div className="relative h-[72vh] w-full">
@@ -57,7 +57,7 @@ export const HomeServices = () => {
                         }`}
                       />
                     ))}
-                    <div className="absolute inset-0 bg-navy/55" />
+                    <div className="absolute inset-0 bg-navy/70" />
                     <div className="absolute bottom-6 left-6 right-6 text-white">
                       <p className="text-xs uppercase tracking-[0.3em] text-gold">Technical Security</p>
                       <h3 className="mt-2 text-lg font-heading font-semibold">
@@ -131,7 +131,7 @@ export const HomeServices = () => {
                           />
                         ))}
                       </div>
-                    <div className="absolute inset-0 bg-navy/55" />
+                    <div className="absolute inset-0 bg-navy/70" />
                     <div className="absolute bottom-6 left-6 right-6 text-white">
                       <p className="text-xs uppercase tracking-[0.3em] text-gold">Technical Security</p>
                       <h3 className="mt-2 text-lg font-heading font-semibold">{technical.title}</h3>
@@ -194,6 +194,7 @@ export const HomeServices = () => {
                   className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
                   decoding="async"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 <div className="absolute inset-0 bg-navy/60 opacity-0 transition duration-500 group-hover:opacity-100" />
                 <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                   <span className="text-xs uppercase tracking-[0.3em] text-gold">Service</span>
