@@ -14,8 +14,8 @@ const run = async () => {
   await Promise.all(
     sizes.map((size) =>
       sharp(source)
-        .resize(size, size, { fit: "contain", background: { r: 11, g: 11, b: 13, alpha: 0 } })
-        .webp({ quality: 90 })
+        .resize(size, size, { fit: "cover", position: "centre" })
+        .webp({ quality: 92 })
         .toFile(path.join(outputDir, `favicon-${size}.webp`))
     )
   );
