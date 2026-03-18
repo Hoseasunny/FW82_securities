@@ -12,12 +12,17 @@ const outputDir = path.join(process.cwd(), "public");
 
 const run = async () => {
   await Promise.all(
-    sizes.map((size) =>
-      sharp(source)
+    sizes.map(async (size) => {
+      const circle = Buffer.from(
+        `<svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg"><circle cx="${size / 2}" cy="${size / 2}" r="${size / 2}" fill="white"/></svg>`
+      );
+
+      await sharp(source)
         .resize(size, size, { fit: "cover", position: "centre" })
+        .composite([{ input: circle, blend: "dest-in" }])
         .webp({ quality: 92 })
-        .toFile(path.join(outputDir, `favicon-${size}.webp`))
-    )
+        .toFile(path.join(outputDir, `favicon-${size}.webp`));
+    })
   );
   console.log("Favicons generated.");
 };
