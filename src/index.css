@@ -33,6 +33,10 @@ img {
   background: linear-gradient(120deg, rgba(11, 11, 13, 0.9), rgba(11, 11, 13, 0.65));
 }
 
+.hero-overlay {
+  background: linear-gradient(120deg, rgba(11, 11, 13, 0.75), rgba(11, 11, 13, 0.45));
+}
+
 .pattern-dark {
   background-image: radial-gradient(circle at 1px 1px, rgba(183, 14, 14, 0.18) 1px, transparent 0);
   background-size: 24px 24px;

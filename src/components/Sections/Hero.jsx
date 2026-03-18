@@ -22,7 +22,7 @@ export const Hero = () => {
           className="h-full w-full object-cover"
           decoding="async"
         />
-        <div className="absolute inset-0 gradient-overlay" />
+        <div className="absolute inset-0 hero-overlay" />
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pb-20 pt-32">
