@@ -13,12 +13,31 @@ const iconMap = {
 };
 
 export const Services = () => {
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
   return (
     <>
       <Seo
         title="Security Services | FW82 Security Solution Ltd"
         description="Explore our full range of security services, including guarding, technical security systems, event protection, and smart integration."
         pathname="/services"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: `${siteUrl}/`
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Services",
+              item: `${siteUrl}/services`
+            }
+          ]
+        }}
       />
       <main>
         <section className="bg-navy py-16 text-white">

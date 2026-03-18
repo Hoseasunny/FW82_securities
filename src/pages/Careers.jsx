@@ -26,6 +26,7 @@ export const Careers = () => {
   const [applications, setApplications] = useLocalStorage("fw82-applications", []);
   const [draft, setDraft] = useLocalStorage("fw82-application-draft", null);
   const [success, setSuccess] = useState(false);
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
 
   const { values, errors, handleChange, handleBlur, validateAll, setValues } = useFormValidation(
     draft || {
@@ -71,6 +72,24 @@ export const Careers = () => {
         title="Careers | FW82 Security"
         description="Join our team of security professionals serving Nairobi, Mombasa, Kisumu, and Eldoret."
         pathname="/careers"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: `${siteUrl}/`
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Careers",
+              item: `${siteUrl}/careers`
+            }
+          ]
+        }}
       />
       <main>
         <section className="bg-navy py-16 text-white">

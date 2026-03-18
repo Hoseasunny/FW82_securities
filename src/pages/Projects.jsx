@@ -22,6 +22,8 @@ export const Projects = () => {
     }
   }, [selected]);
 
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+
   return (
     <>
       <Seo
@@ -29,6 +31,24 @@ export const Projects = () => {
         description="Explore real-world security deployments across Kenya, including guarding, event security, and technical systems."
         pathname="/projects"
         image={projects[0]?.image?.src}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: `${siteUrl}/`
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Projects",
+              item: `${siteUrl}/projects`
+            }
+          ]
+        }}
       />
       <main>
         <section className="bg-navy py-16 text-white">

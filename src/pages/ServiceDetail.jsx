@@ -4,6 +4,7 @@ import { services } from "../data/services";
 import { SectionHeader } from "../components/UI/SectionHeader";
 import { Button } from "../components/UI/Button";
 import { Seo } from "../components/SEO/Seo";
+import { COMPANY } from "../utils/constants";
 
 export const ServiceDetail = () => {
   const { slug } = useParams();
@@ -37,6 +38,8 @@ export const ServiceDetail = () => {
     );
   }
 
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+
   return (
     <>
       <Seo
@@ -45,6 +48,50 @@ export const ServiceDetail = () => {
         pathname={`/services/${service.slug}`}
         image={service.image.src}
         type="article"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: service.title,
+            description: service.description,
+            areaServed: COMPANY.branches,
+            provider: {
+              "@type": "LocalBusiness",
+              name: COMPANY.name,
+              telephone: COMPANY.phone,
+              email: COMPANY.emailPrimary,
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: COMPANY.hq,
+                addressCountry: "KE"
+              }
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: `${siteUrl}/`
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Services",
+                item: `${siteUrl}/services`
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: service.title,
+                item: `${siteUrl}/services/${service.slug}`
+              }
+            ]
+          }
+        ]}
       />
       <main>
         <section className="bg-navy py-16 text-white">

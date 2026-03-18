@@ -10,18 +10,6 @@
     <loc>https://factory2ksecurity.co.ke/services</loc>
   </url>
   <url>
-    <loc>https://factory2ksecurity.co.ke/services/guarding-patrols</loc>
-  </url>
-  <url>
-    <loc>https://factory2ksecurity.co.ke/services/technical-security</loc>
-  </url>
-  <url>
-    <loc>https://factory2ksecurity.co.ke/services/event-security</loc>
-  </url>
-  <url>
-    <loc>https://factory2ksecurity.co.ke/services/smart-security-integration</loc>
-  </url>
-  <url>
     <loc>https://factory2ksecurity.co.ke/projects</loc>
   </url>
   <url>
@@ -32,5 +20,17 @@
   </url>
   <url>
     <loc>https://factory2ksecurity.co.ke/contact</loc>
+  </url>
+  <url>
+    <loc>https://factory2ksecurity.co.ke/services/guarding-patrols</loc>
+  </url>
+  <url>
+    <loc>https://factory2ksecurity.co.ke/services/technical-security</loc>
+  </url>
+  <url>
+    <loc>https://factory2ksecurity.co.ke/services/event-security</loc>
+  </url>
+  <url>
+    <loc>https://factory2ksecurity.co.ke/services/smart-security-integration</loc>
   </url>
 </urlset>

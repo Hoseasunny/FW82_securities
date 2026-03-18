@@ -7,6 +7,7 @@ const PIN = "FW82ADMIN";
 export const Admin = () => {
   const [authorized, setAuthorized] = useState(false);
   const [pin, setPin] = useState("");
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
 
   const inquiries = JSON.parse(window.localStorage.getItem("fw82-inquiries") || "[]");
   const applications = JSON.parse(window.localStorage.getItem("fw82-applications") || "[]");
@@ -18,7 +19,30 @@ export const Admin = () => {
 
   return (
     <>
-      <Seo title="Admin | FW82 Security" description="Admin dashboard." pathname="/admin" noindex />
+      <Seo
+        title="Admin | FW82 Security"
+        description="Admin dashboard."
+        pathname="/admin"
+        noindex
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: `${siteUrl}/`
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Admin",
+              item: `${siteUrl}/admin`
+            }
+          ]
+        }}
+      />
       <main className="bg-cloud min-h-screen py-20">
         <div className="mx-auto max-w-4xl px-6">
           <h1 className="text-3xl font-heading font-bold text-ink">Admin Dashboard</h1>

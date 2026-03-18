@@ -14,6 +14,7 @@ export const News = () => {
   }, [query]);
 
   const [featured, ...rest] = filtered;
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
 
   return (
     <>
@@ -22,6 +23,24 @@ export const News = () => {
         description="Updates from FW82 Security and insights from the security landscape across Kenya."
         pathname="/news"
         image={featured?.image?.src}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: `${siteUrl}/`
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "News",
+              item: `${siteUrl}/news`
+            }
+          ]
+        }}
       />
       <main>
         <section className="bg-navy py-16 text-white">

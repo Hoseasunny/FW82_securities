@@ -25,6 +25,12 @@ export const Seo = ({
   const metaDescription = description;
   const ogImage = image.startsWith("http") ? image : withBase(image);
 
+  const jsonLdItems = jsonLd
+    ? Array.isArray(jsonLd)
+      ? jsonLd
+      : [jsonLd]
+    : [];
+
   return (
     <Helmet>
       <title>{metaTitle}</title>
@@ -40,11 +46,11 @@ export const Seo = ({
       <meta name="twitter:title" content={metaTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={ogImage} />
-      {jsonLd && (
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
+      {jsonLdItems.map((item, index) => (
+        <script key={`jsonld-${index}`} type="application/ld+json">
+          {JSON.stringify(item)}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 };

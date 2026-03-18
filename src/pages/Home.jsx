@@ -27,6 +27,17 @@ export const Home = () => {
     areaServed: COMPANY.branches,
     sameAs: SOCIALS.map((item) => item.href)
   };
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: COMPANY.name,
+    url: siteUrl,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/news?query={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  };
 
   return (
     <>
@@ -34,7 +45,7 @@ export const Home = () => {
         title="FW82 Security Solution Ltd | Professional Security Services Kenya"
         description="Leading security company in Kenya offering guarding, CCTV, alarms, and event security. PSRA licensed. Serving Nairobi, Mombasa, Kisumu & Eldoret."
         pathname="/"
-        jsonLd={organizationJsonLd}
+        jsonLd={[organizationJsonLd, websiteJsonLd]}
       />
       <main>
         <Hero />

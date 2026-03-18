@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "vite",
     "dev:win": "set \"ESBUILD_BINARY_PATH=%CD%\\node_modules\\@esbuild\\win32-x64\\esbuild.exe\" && vite --host",
-    "build": "vite build",
+    "build": "npm run sitemap && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sitemap": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
     "dompurify": "^3.3.3",

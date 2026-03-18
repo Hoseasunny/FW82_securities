@@ -23,6 +23,7 @@ const timeline = [
 ];
 
 export const About = () => {
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
   return (
     <>
       <Seo
@@ -30,6 +31,24 @@ export const About = () => {
         description="Learn about FW82 Security Solution Ltd, our leadership, history, and mission to deliver trusted protection across Kenya."
         pathname="/about"
         image={aboutHero.src}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: `${siteUrl}/`
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "About",
+              item: `${siteUrl}/about`
+            }
+          ]
+        }}
       />
       <main>
         <section className="relative h-[60vh] bg-navy text-white">
