@@ -1,16 +1,65 @@
-# React + Vite
+# FW82 Security Solutions Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marketing and lead‑generation website for FW82 Security Solution Ltd. Built with React + Vite and styled with Tailwind CSS. The site includes multi‑page navigation, service detail pages with galleries, projects/case studies, news, careers, contact, and SEO enhancements (Open Graph, JSON‑LD, sitemap, robots).
 
-Currently, two official plugins are available:
+## Features
+- Home page with hero, services overview, and testimonials
+- Services page with dedicated service detail pages
+- Projects/case studies gallery with modal details
+- News/updates listing
+- Careers application form
+- Contact form + branch contacts + social links
+- SEO: per‑page metadata, Open Graph/Twitter, JSON‑LD, sitemap, robots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- React 19 + React Router
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Lucide Icons
+- react-helmet-async for SEO
 
-## React Compiler
+## Local Development
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Build
+```bash
+npm run build
+```
 
-## Expanding the ESLint configuration
+## SEO / Sitemap
+Generate sitemap (also runs automatically during `npm run build`):
+```bash
+npm run sitemap
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Environment
+Set the public site URL for canonical links and sitemap:
+```bash
+VITE_SITE_URL=https://factory2ksecurity.co.ke
+```
+
+## Image Pipeline
+This project uses WebP image sets with `srcSet` for performance.
+
+- Generator: `scripts/generate-image-sets.cjs`
+- Favicon generator: `scripts/convert-favicon.cjs`
+
+Example usage:
+```bash
+node scripts/generate-image-sets.cjs
+node scripts/convert-favicon.cjs "C:\path\to\favicon.png"
+```
+
+## Folder Structure (images)
+```
+public/images/
+  hero/
+  why-choose-us/
+  services/
+  projects/
+  news-thumbnails/
+```
