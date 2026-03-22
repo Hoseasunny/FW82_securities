@@ -2,10 +2,11 @@ import { useState } from "react";
 import { useFormValidation } from "../../hooks/useFormValidation";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { isRequired, isValidEmail } from "../../utils/validators";
-import { SERVICE_INTERESTS } from "../../utils/constants";
+import { SERVICE_INTERESTS, SOCIALS } from "../../utils/constants";
 import { Button } from "../UI/Button";
 import { SectionHeader } from "../UI/SectionHeader";
 import { FormTrustBadges } from "../UI/FormTrustBadges";
+import { Facebook, Linkedin, Twitter } from "lucide-react";
 
 const validators = {
   name: (value) => (isRequired(value) ? "" : "Name is required"),
@@ -14,6 +15,12 @@ const validators = {
 };
 
 export const ContactForm = () => {
+  const socialIcons = {
+    LinkedIn: Linkedin,
+    Facebook,
+    X: Twitter
+  };
+
   const [success, setSuccess] = useState(false);
   const [inquiries, setInquiries] = useLocalStorage("fw82-inquiries", []);
   const { values, errors, handleChange, handleBlur, validateAll, setValues } = useFormValidation(
@@ -49,6 +56,29 @@ export const ContactForm = () => {
           <div className="mt-6 rounded-2xl border border-gold/20 bg-white p-6 text-sm">
             <p className="font-semibold text-ink">24/7 Emergency Line</p>
             <p className="mt-2 text-lg font-heading font-bold text-alert">+254 799 491929</p>
+          </div>
+          <div className="mt-6 rounded-2xl border border-slate/10 bg-white p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Connect With Us</p>
+            <p className="mt-3 text-sm text-slate">
+              Stay updated with our latest deployments, community initiatives, and security insights.
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              {SOCIALS.map((social) => {
+                const Icon = socialIcons[social.label] || Linkedin;
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-center justify-center gap-2 rounded-2xl border border-slate/10 bg-cloud px-4 py-3 text-xs font-semibold uppercase tracking-wide text-ink transition hover:-translate-y-0.5 hover:border-gold hover:bg-white"
+                  >
+                    <Icon className="h-4 w-4 text-gold" />
+                    <span>{social.label}</span>
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </div>
         <form onSubmit={handleSubmit} className="rounded-3xl bg-white p-8 shadow-soft">

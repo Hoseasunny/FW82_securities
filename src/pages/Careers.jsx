@@ -6,6 +6,7 @@ import { Button } from "../components/UI/Button";
 import { SectionHeader } from "../components/UI/SectionHeader";
 import { FormTrustBadges } from "../components/UI/FormTrustBadges";
 import { Seo } from "../components/SEO/Seo";
+import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 
 const validators = {
   fullName: (value) => (isRequired(value) ? "" : "Full name is required"),
@@ -94,6 +95,14 @@ export const Careers = () => {
       <main>
         <section className="bg-navy py-16 text-white">
           <div className="mx-auto max-w-6xl px-6">
+            <Breadcrumbs
+              items={[
+                { label: "Home", to: "/" },
+                { label: "Careers" }
+              ]}
+              textClassName="text-white/60"
+              linkClassName="hover:text-gold"
+            />
             <h1 className="text-4xl font-heading font-bold">Careers at FW82</h1>
             <p className="mt-4 max-w-2xl text-white/70">
               Join our team of security professionals serving Nairobi, Mombasa, Kisumu, and Eldoret.

@@ -1,9 +1,9 @@
 import { Shield, Cpu, Users, Smartphone } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Card } from "../UI/Card";
 import { SectionHeader } from "../UI/SectionHeader";
 import { FadeIn } from "../Animation/FadeIn";
 import { services } from "../../data/services";
+import { InlineLink } from "../UI/InlineLink";
 
 const iconMap = {
   Shield,
@@ -31,12 +31,9 @@ export const QuickServices = () => {
                 <Icon className="h-12 w-12 text-security" />
                 <h3 className="mt-4 text-lg font-heading font-semibold text-ink">{service.title}</h3>
                 <p className="mt-2 text-sm text-slate">{service.description}</p>
-                <Link
-                  to={`/services/${service.slug}`}
-                  className="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.3em] text-gold"
-                >
+                <InlineLink to={`/services/${service.slug}`} className="mt-4">
                   Learn more
-                </Link>
+                </InlineLink>
               </Card>
             );
           })}

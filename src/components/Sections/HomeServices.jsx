@@ -5,6 +5,7 @@ import { services } from "../../data/services";
 import { SectionHeader } from "../UI/SectionHeader";
 import { Button } from "../UI/Button";
 import { FadeIn } from "../Animation/FadeIn";
+import { InlineLink } from "../UI/InlineLink";
 
 export const HomeServices = () => {
   const technical = services.find((service) => service.slug === "technical-security");
@@ -57,9 +58,8 @@ export const HomeServices = () => {
                         }`}
                       />
                     ))}
-                    <div className="absolute inset-0 bg-navy/70" />
+                    <div className="absolute inset-0 bg-navy/45" />
                     <div className="absolute bottom-6 left-6 right-6 text-white">
-                      <p className="text-xs uppercase tracking-[0.3em] text-gold">Technical Security</p>
                       <h3 className="mt-2 text-lg font-heading font-semibold">
                         {technical.gallery[activeSlide]?.title}
                       </h3>
@@ -102,12 +102,9 @@ export const HomeServices = () => {
                     <h3 className="mt-2 text-lg font-heading font-semibold">{technical.title}</h3>
                     <p className="mt-2 text-sm text-white/80">{technical.description}</p>
                   </div>
-                  <Link
-                    to={`/services/${technical.slug}`}
-                    className="inline-flex text-xs font-semibold uppercase tracking-[0.3em] text-gold"
-                  >
+                  <InlineLink to={`/services/${technical.slug}`}>
                     Learn more
-                  </Link>
+                  </InlineLink>
                 </div>
               </div>
 
@@ -116,7 +113,7 @@ export const HomeServices = () => {
                   const panelIndex = (activeSlide + offset) % technical.gallery.length;
                   return (
                     <div key={panelIndex} className="relative overflow-hidden rounded-3xl">
-                      <div className="relative h-80 w-full md:h-[420px]">
+                      <div className="relative h-80 w-full md:h-105">
                         {technical.gallery.map((item, index) => (
                           <img
                             key={`${item.title}-${offset}`}
@@ -131,17 +128,14 @@ export const HomeServices = () => {
                           />
                         ))}
                       </div>
-                    <div className="absolute inset-0 bg-navy/70" />
+                    <div className="absolute inset-0 bg-navy/45" />
                     <div className="absolute bottom-6 left-6 right-6 text-white">
                       <p className="text-xs uppercase tracking-[0.3em] text-gold">Technical Security</p>
                       <h3 className="mt-2 text-lg font-heading font-semibold">{technical.title}</h3>
                       <p className="mt-2 text-sm text-white/80">{technical.description}</p>
-                      <Link
-                        to={`/services/${technical.slug}`}
-                        className="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.3em] text-gold"
-                      >
+                      <InlineLink to={`/services/${technical.slug}`} className="mt-4">
                         Learn more
-                      </Link>
+                      </InlineLink>
                     </div>
                   </div>
                   );
@@ -191,21 +185,18 @@ export const HomeServices = () => {
                   srcSet={service.image.srcSet}
                   alt={service.title}
                   loading="lazy"
-                  className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
+                  className="aspect-4/3 w-full object-cover transition duration-500 group-hover:scale-105"
                   decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                <div className="absolute inset-0 bg-navy/60 opacity-0 transition duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-navy/40 opacity-0 transition duration-500 group-hover:opacity-100" />
                 <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                   <span className="text-xs uppercase tracking-[0.3em] text-gold">Service</span>
                   <h3 className="mt-3 text-xl font-heading font-semibold">{service.title}</h3>
                   <p className="mt-2 text-sm text-white/80">{service.description}</p>
-                  <Link
-                    to={`/services/${service.slug}`}
-                    className="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.3em] text-gold"
-                  >
+                  <InlineLink to={`/services/${service.slug}`} className="mt-4">
                     Learn more
-                  </Link>
+                  </InlineLink>
                 </div>
               </div>
             ))}

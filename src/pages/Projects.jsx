@@ -1,26 +1,20 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
 import { SectionHeader } from "../components/UI/SectionHeader";
-import { Button } from "../components/UI/Button";
 import { Seo } from "../components/SEO/Seo";
+import { InlineLink } from "../components/UI/InlineLink";
+import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 
 const filters = ["All", "Event Security", "Technical Systems", "Guarding"];
 
 export const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
-  const [selected, setSelected] = useState(null);
-  const closeRef = useRef(null);
 
   const filtered = useMemo(() => {
     if (activeFilter === "All") return projects;
     return projects.filter((project) => project.category === activeFilter);
   }, [activeFilter]);
-
-  useEffect(() => {
-    if (selected && closeRef.current) {
-      closeRef.current.focus();
-    }
-  }, [selected]);
 
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
 
@@ -53,9 +47,18 @@ export const Projects = () => {
       <main>
         <section className="bg-navy py-16 text-white">
           <div className="mx-auto max-w-6xl px-6">
+            <Breadcrumbs
+              items={[
+                { label: "Home", to: "/" },
+                { label: "Projects" }
+              ]}
+              textClassName="text-white/60"
+              linkClassName="hover:text-gold"
+            />
             <h1 className="text-4xl font-heading font-bold">Project Portfolio</h1>
             <p className="mt-4 max-w-2xl text-white/70">
-              Explore real-world deployments across Kenya's most trusted sites.
+              Explore detailed case studies of real-world deployments across Kenya, from critical infrastructure
+              to corporate campuses and residential estates.
             </p>
           </div>
         </section>
@@ -81,92 +84,32 @@ export const Projects = () => {
 
             <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {filtered.map((project) => (
-                <div
+                <Link
                   key={project.title}
-                  className="group cursor-pointer overflow-hidden rounded-3xl border border-slate/10 bg-cloud"
-                  onClick={() => setSelected(project)}
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter" || event.key === " ") {
-                      event.preventDefault();
-                      setSelected(project);
-                    }
-                  }}
-                  role="button"
-                  tabIndex={0}
+                  to={`/projects/${project.slug}`}
+                  className="group overflow-hidden rounded-3xl border border-slate/10 bg-cloud transition hover:-translate-y-1 hover:shadow-lift"
                 >
                   <img
                     src={project.image.src}
                     srcSet={project.image.srcSet}
                     alt={project.title}
                     loading="lazy"
-                    className="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+                    className="aspect-4/3 w-full object-cover transition duration-500 group-hover:scale-105"
                     decoding="async"
                   />
                   <div className="p-5">
                     <p className="text-xs uppercase tracking-[0.3em] text-gold">{project.category}</p>
                     <h3 className="mt-2 text-lg font-heading font-semibold text-ink">{project.title}</h3>
                     <p className="mt-2 text-sm text-slate">{project.summary}</p>
+                    <InlineLink as="span" className="mt-4">
+                      View case study
+                    </InlineLink>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
         </section>
-
-        {selected && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-6"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="project-modal-title"
-            tabIndex={-1}
-            onClick={() => setSelected(null)}
-            onKeyDown={(event) => {
-              if (event.key === "Escape") setSelected(null);
-            }}
-          >
-            <div
-              className="max-w-2xl rounded-3xl bg-white p-8 shadow-lift"
-              onClick={(event) => event.stopPropagation()}
-            >
-              <div className="flex items-start justify-between">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-gold">{selected.category}</p>
-                  <h3
-                    id="project-modal-title"
-                    className="mt-2 text-2xl font-heading font-semibold text-ink"
-                  >
-                    {selected.title}
-                  </h3>
-                </div>
-                <button
-                  onClick={() => setSelected(null)}
-                  className="text-sm font-semibold text-slate hover:text-ink focus-ring"
-                  ref={closeRef}
-                >
-                  Close
-                </button>
-              </div>
-              <div className="mt-6 grid gap-6">
-                <div>
-                  <h4 className="text-sm font-semibold text-ink">Challenge</h4>
-                  <p className="mt-2 text-sm text-slate">{selected.details.challenge}</p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-ink">Solution</h4>
-                  <p className="mt-2 text-sm text-slate">{selected.details.solution}</p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-ink">Results</h4>
-                  <p className="mt-2 text-sm text-slate">{selected.details.results}</p>
-                </div>
-              </div>
-              <Button className="mt-6" onClick={() => setSelected(null)}>
-                Close Case Study
-              </Button>
-            </div>
-          </div>
-        )}
       </main>
     </>
   );

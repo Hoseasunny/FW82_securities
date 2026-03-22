@@ -53,7 +53,7 @@ export const Testimonials = () => {
                 style={{ transform: `translateX(-${activeIndex * 100}%)` }}
               >
                 {testimonials.map((item) => (
-                  <Card key={item.name} className="w-full flex-shrink-0 border-t-4 border-gold">
+                  <Card key={item.name} className="w-full shrink-0 border-t-4 border-gold">
                     <div className="flex items-start gap-3">
                       <UserCircle2 className="h-10 w-10 text-slate" />
                       <div>

@@ -1,7 +1,10 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { newsItems } from "../data/news";
 import { SectionHeader } from "../components/UI/SectionHeader";
 import { Seo } from "../components/SEO/Seo";
+import { InlineLink } from "../components/UI/InlineLink";
+import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 
 export const News = () => {
   const [query, setQuery] = useState("");
@@ -45,6 +48,14 @@ export const News = () => {
       <main>
         <section className="bg-navy py-16 text-white">
           <div className="mx-auto max-w-6xl px-6">
+            <Breadcrumbs
+              items={[
+                { label: "Home", to: "/" },
+                { label: "News" }
+              ]}
+              textClassName="text-white/60"
+              linkClassName="hover:text-gold"
+            />
             <h1 className="text-4xl font-heading font-bold">News & Events</h1>
             <p className="mt-4 max-w-2xl text-white/70">
               Updates from FW82 and the security landscape across Kenya.
@@ -67,36 +78,46 @@ export const News = () => {
             </div>
 
             {featured && (
-              <div className="mt-8 grid gap-6 lg:grid-cols-2">
-                <img
-                  src={featured.image.src}
-                  srcSet={featured.image.srcSet}
-                  alt={featured.title}
-                  className="h-full w-full rounded-3xl object-cover"
-                  decoding="async"
-                />
+              <Link to={`/news/${featured.slug}`} className="group mt-8 grid gap-6 lg:grid-cols-2">
+                  <img
+                    src={featured.image.src}
+                    srcSet={featured.image.srcSet}
+                    alt={featured.title}
+                    className="h-full w-full rounded-3xl object-cover transition duration-500 group-hover:scale-105"
+                    decoding="async"
+                  />
                 <div className="flex flex-col justify-center rounded-3xl border border-slate/10 p-6">
                   <span className="text-xs uppercase tracking-[0.3em] text-gold">Featured</span>
-                  <h2 className="mt-3 text-2xl font-heading font-semibold text-ink">{featured.title}</h2>
+                  <h2 className="mt-3 text-2xl font-heading font-semibold text-ink">
+                    {featured.title}
+                  </h2>
                   <p className="mt-3 text-sm text-slate">{featured.excerpt}</p>
-                  <div className="mt-4 flex items-center gap-4 text-xs text-slate">
+                  <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate">
                     <span>{featured.date}</span>
                     <span className="rounded-full bg-cloud px-3 py-1 text-gold">
                       {featured.category}
                     </span>
+                    <span>{featured.readingTime}</span>
                   </div>
+                  <InlineLink as="span" className="mt-6">
+                    Learn More
+                  </InlineLink>
                 </div>
-              </div>
+              </Link>
             )}
 
             <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {rest.map((item) => (
-                <article key={item.title} className="rounded-3xl border border-slate/10 bg-cloud p-5">
+                <Link
+                  key={item.title}
+                  to={`/news/${item.slug}`}
+                  className="group rounded-3xl border border-slate/10 bg-cloud p-5 transition hover:-translate-y-1 hover:shadow-lift"
+                >
                   <img
                     src={item.image.src}
                     srcSet={item.image.srcSet}
                     alt={item.title}
-                    className="h-40 w-full rounded-2xl object-cover"
+                    className="aspect-4/3 w-full rounded-2xl object-cover transition duration-500 group-hover:scale-105"
                     decoding="async"
                   />
                   <div className="mt-4 flex items-center justify-between text-xs">
@@ -107,10 +128,10 @@ export const News = () => {
                   </div>
                   <h3 className="mt-3 text-lg font-heading font-semibold text-ink">{item.title}</h3>
                   <p className="mt-2 text-sm text-slate">{item.excerpt}</p>
-                  <button className="mt-4 text-xs font-semibold uppercase tracking-wide text-gold">
-                    Read More
-                  </button>
-                </article>
+                  <InlineLink as="span" className="mt-4">
+                    Learn More
+                  </InlineLink>
+                </Link>
               ))}
             </div>
           </div>

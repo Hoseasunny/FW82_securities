@@ -7,6 +7,9 @@ import { ProjectsShowcase } from "../components/Sections/ProjectsShowcase";
 import { CTASection } from "../components/Sections/CTASection";
 import { Testimonials } from "../components/Sections/Testimonials";
 import { ContactForm } from "../components/Sections/ContactForm";
+import { HomeAbout } from "../components/Sections/HomeAbout";
+import { FaqSection, faqItems } from "../components/Sections/FaqSection";
+import { HomeNews } from "../components/Sections/HomeNews";
 import { Seo } from "../components/SEO/Seo";
 import { COMPANY, SOCIALS } from "../utils/constants";
 
@@ -51,11 +54,18 @@ export const Home = () => {
         <Hero />
         <QuickServices />
         <ClientLogos />
+        <HomeAbout />
         <WhyChooseUs />
         <HomeServices />
         <ProjectsShowcase />
+        <HomeNews />
         <CTASection />
         <Testimonials />
+        <FaqSection
+          items={faqItems.slice(0, 4)}
+          title="Answers Before You Ask"
+          subtitle="FAQs"
+        />
         <ContactForm />
       </main>
     </>

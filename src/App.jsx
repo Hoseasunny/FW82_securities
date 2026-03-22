@@ -13,8 +13,13 @@ const Home = lazy(() => import("./pages/Home").then((m) => ({ default: m.Home })
 const About = lazy(() => import("./pages/About").then((m) => ({ default: m.About })));
 const Services = lazy(() => import("./pages/Services").then((m) => ({ default: m.Services })));
 const ServiceDetail = lazy(() => import("./pages/ServiceDetail").then((m) => ({ default: m.ServiceDetail })));
+const SpecializedServiceDetail = lazy(() =>
+  import("./pages/SpecializedServiceDetail").then((m) => ({ default: m.SpecializedServiceDetail }))
+);
 const Projects = lazy(() => import("./pages/Projects").then((m) => ({ default: m.Projects })));
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail").then((m) => ({ default: m.ProjectDetail })));
 const News = lazy(() => import("./pages/News").then((m) => ({ default: m.News })));
+const NewsDetail = lazy(() => import("./pages/NewsDetail").then((m) => ({ default: m.NewsDetail })));
 const Careers = lazy(() => import("./pages/Careers").then((m) => ({ default: m.Careers })));
 const Contact = lazy(() => import("./pages/Contact").then((m) => ({ default: m.Contact })));
 const Admin = lazy(() => import("./pages/Admin").then((m) => ({ default: m.Admin })));
@@ -41,8 +46,11 @@ const AppRoutes = () => {
           <Route path="/about" element={<PageTransition><About /></PageTransition>} />
           <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
           <Route path="/services/:slug" element={<PageTransition><ServiceDetail /></PageTransition>} />
+          <Route path="/services/specialized/:slug" element={<PageTransition><SpecializedServiceDetail /></PageTransition>} />
           <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
+          <Route path="/projects/:slug" element={<PageTransition><ProjectDetail /></PageTransition>} />
           <Route path="/news" element={<PageTransition><News /></PageTransition>} />
+          <Route path="/news/:slug" element={<PageTransition><NewsDetail /></PageTransition>} />
           <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
           <Route path="/admin" element={<PageTransition><Admin /></PageTransition>} />

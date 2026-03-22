@@ -8,6 +8,7 @@ import { SectionHeader } from "../components/UI/SectionHeader";
 import { FormTrustBadges } from "../components/UI/FormTrustBadges";
 import { Facebook, Mail, Phone, MessageCircle } from "lucide-react";
 import { Seo } from "../components/SEO/Seo";
+import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 
 const validators = {
   name: (value) => (isRequired(value) ? "" : "Name is required"),
@@ -87,6 +88,14 @@ export const Contact = () => {
       <main>
         <section className="bg-navy py-16 text-white">
           <div className="mx-auto max-w-6xl px-6">
+            <Breadcrumbs
+              items={[
+                { label: "Home", to: "/" },
+                { label: "Contact" }
+              ]}
+              textClassName="text-white/60"
+              linkClassName="hover:text-gold"
+            />
             <h1 className="text-4xl font-heading font-bold">Contact FW82</h1>
             <p className="mt-4 max-w-2xl text-white/70">
               Reach our team in Nairobi or any branch across Kenya. Emergency line is available 24/7.
