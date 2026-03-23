@@ -37,6 +37,11 @@ export const ProjectsShowcase = () => {
           ))}
           </div>
         </FadeIn>
+        <div className="mt-10 flex justify-end">
+          <Button as={Link} to="/projects" className="w-fit">
+            Learn More
+          </Button>
+        </div>
       </div>
     </section>
   );

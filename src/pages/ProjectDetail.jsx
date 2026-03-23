@@ -8,6 +8,8 @@ import { FadeIn } from "../components/Animation/FadeIn";
 import { Seo } from "../components/SEO/Seo";
 import { InlineLink } from "../components/UI/InlineLink";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
+import { ImageReveal } from "../components/Animation/ImageReveal";
+import { ParallaxImage } from "../components/Animation/ParallaxImage";
 
 export const ProjectDetail = () => {
   const { slug } = useParams();
@@ -107,15 +109,17 @@ export const ProjectDetail = () => {
         <section className="bg-white py-20">
           <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[2fr_1fr]">
             <div>
-              <FadeIn>
-                <img
-                  src={project.image.src}
-                  srcSet={project.image.srcSet}
-                  alt={project.title}
-                  className="aspect-video w-full rounded-3xl object-cover shadow-soft"
-                  decoding="async"
-                />
-              </FadeIn>
+              <ImageReveal>
+                <ParallaxImage>
+                  <img
+                    src={project.image.src}
+                    srcSet={project.image.srcSet}
+                    alt={project.title}
+                    className="aspect-video w-full rounded-3xl object-cover shadow-soft"
+                    decoding="async"
+                  />
+                </ParallaxImage>
+              </ImageReveal>
               {project.stats && (
                 <div className="mt-6 grid gap-4 sm:grid-cols-3">
                   {project.stats.map((stat) => (

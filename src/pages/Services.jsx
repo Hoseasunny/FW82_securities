@@ -6,6 +6,7 @@ import { SectionHeader } from "../components/UI/SectionHeader";
 import { Button } from "../components/UI/Button";
 import { Seo } from "../components/SEO/Seo";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
+import { StaggerGroup } from "../components/Animation/StaggerGroup";
 
 const iconMap = {
   Shield,
@@ -62,7 +63,7 @@ export const Services = () => {
         <section className="bg-white py-20">
           <div className="mx-auto grid max-w-6xl gap-10 px-6">
             <SectionHeader title="Core Services" subtitle="What We Deliver" />
-            <div className="grid gap-8 lg:grid-cols-2">
+            <StaggerGroup className="grid gap-8 lg:grid-cols-2">
               {services.map((service) => {
                 const Icon = iconMap[service.icon] || Shield;
                 return (
@@ -91,7 +92,7 @@ export const Services = () => {
                   </div>
                 );
               })}
-            </div>
+            </StaggerGroup>
           </div>
         </section>
 
@@ -101,7 +102,7 @@ export const Services = () => {
               title="Specialized Services"
               subtitle="Integrated Security Solutions for Modern Needs"
             />
-            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <StaggerGroup className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {specializedServices.map((service) => (
                 <div
                   key={service.slug}
@@ -130,7 +131,7 @@ export const Services = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </StaggerGroup>
           </div>
         </section>
       </main>

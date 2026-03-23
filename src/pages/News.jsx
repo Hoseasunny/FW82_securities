@@ -5,6 +5,7 @@ import { SectionHeader } from "../components/UI/SectionHeader";
 import { Seo } from "../components/SEO/Seo";
 import { InlineLink } from "../components/UI/InlineLink";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
+import { StaggerGroup } from "../components/Animation/StaggerGroup";
 
 export const News = () => {
   const [query, setQuery] = useState("");
@@ -106,7 +107,7 @@ export const News = () => {
               </Link>
             )}
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <StaggerGroup className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {rest.map((item) => (
                 <Link
                   key={item.title}
@@ -135,7 +136,7 @@ export const News = () => {
                   </div>
                 </Link>
               ))}
-            </div>
+            </StaggerGroup>
           </div>
         </section>
       </main>

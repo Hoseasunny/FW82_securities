@@ -5,6 +5,7 @@ import { SectionHeader } from "../components/UI/SectionHeader";
 import { Seo } from "../components/SEO/Seo";
 import { InlineLink } from "../components/UI/InlineLink";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
+import { StaggerGroup } from "../components/Animation/StaggerGroup";
 
 const filters = ["All", "Event Security", "Technical Systems", "Guarding"];
 
@@ -82,7 +83,7 @@ export const Projects = () => {
               ))}
             </div>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <StaggerGroup className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {filtered.map((project) => (
                 <Link
                   key={project.title}
@@ -107,7 +108,7 @@ export const Projects = () => {
                   </div>
                 </Link>
               ))}
-            </div>
+            </StaggerGroup>
           </div>
         </section>
       </main>
