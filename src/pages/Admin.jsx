@@ -7,7 +7,7 @@ const PIN = "FW82ADMIN";
 export const Admin = () => {
   const [authorized, setAuthorized] = useState(false);
   const [pin, setPin] = useState("");
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://www.fw82securitysolutions.com";
 
   const inquiries = JSON.parse(window.localStorage.getItem("fw82-inquiries") || "[]");
   const applications = JSON.parse(window.localStorage.getItem("fw82-applications") || "[]");

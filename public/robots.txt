@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://factory2ksecurity.co.ke/sitemap.xml
+Sitemap: https://www.fw82securitysolutions.com/sitemap.xml
