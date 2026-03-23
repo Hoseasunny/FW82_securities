@@ -9,13 +9,13 @@ import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 const aboutHero = buildImageSet(
   "Leadership",
   "African security leadership team in formal attire in modern boardroom, Nairobi skyline visible",
-  "team-briefing"
+  "about/team-briefing"
 );
 
 const leadershipImage = buildImageSet(
   "Leadership Team",
-  "Professional African security leadership team in a modern office, confident and approachable",
-  "executive-portrait"
+  "Diplomatic event at Airport Mall with professional security presence",
+  "news-thumbnails/news-1"
 );
 
 const values = [
@@ -78,7 +78,7 @@ export const About = () => {
             backgroundPosition: "center"
           }}
         >
-          <div className="absolute inset-0 gradient-overlay" />
+          <div className="absolute inset-0 bg-hero-gradient opacity-70" />
           <div className="relative z-10 flex h-full items-center">
             <div className="mx-auto max-w-6xl px-6">
               <Breadcrumbs
@@ -116,21 +116,23 @@ export const About = () => {
               </p>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <Card className="h-full">
+              <div className="group overflow-hidden rounded-3xl border border-slate/10 bg-cloud transition hover:-translate-y-1 hover:shadow-lift">
                 <img
                   src={leadershipImage.src}
                   srcSet={leadershipImage.srcSet}
                   alt="FW82 security leadership team"
-                  className="aspect-4/3 w-full rounded-2xl object-cover"
+                  className="aspect-4/3 w-full object-cover"
                   decoding="async"
                 />
-                <h3 className="mt-6 text-lg font-heading font-semibold text-ink">A Leadership-Driven Culture</h3>
-                <p className="mt-3 text-sm leading-7 text-slate">
-                  Our leadership team brings experience in law enforcement, corporate security, and risk
-                  management. We maintain strict operational standards, continuous training, and ethical
-                  conduct so every officer represents the values and reputation of our brand.
-                </p>
-              </Card>
+                <div className="p-6">
+                  <h3 className="text-lg font-heading font-semibold text-ink">A Leadership-Driven Culture</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate">
+                    Our leadership team brings experience in law enforcement, corporate security, and risk
+                    management. We maintain strict operational standards, continuous training, and ethical
+                    conduct so every officer represents the values and reputation of our brand.
+                  </p>
+                </div>
+              </div>
             </FadeIn>
           </div>
         </section>

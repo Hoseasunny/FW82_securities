@@ -111,26 +111,28 @@ export const News = () => {
                 <Link
                   key={item.title}
                   to={`/news/${item.slug}`}
-                  className="group rounded-3xl border border-slate/10 bg-cloud p-5 transition hover:-translate-y-1 hover:shadow-lift"
+                  className="group overflow-hidden rounded-3xl border border-slate/10 bg-cloud transition hover:-translate-y-1 hover:shadow-lift"
                 >
                   <img
                     src={item.image.src}
                     srcSet={item.image.srcSet}
                     alt={item.title}
-                    className="aspect-4/3 w-full rounded-2xl object-cover transition duration-500 group-hover:scale-105"
+                    className="aspect-4/3 w-full object-cover transition duration-500 group-hover:scale-105"
                     decoding="async"
                   />
-                  <div className="mt-4 flex items-center justify-between text-xs">
-                    <span className="rounded-full bg-gold/10 px-3 py-1 text-gold">
-                      {item.category}
-                    </span>
-                    <span className="text-slate">{item.date}</span>
+                  <div className="p-5">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="rounded-full bg-gold/10 px-3 py-1 text-gold">
+                        {item.category}
+                      </span>
+                      <span className="text-slate">{item.date}</span>
+                    </div>
+                    <h3 className="mt-3 text-lg font-heading font-semibold text-ink">{item.title}</h3>
+                    <p className="mt-2 text-sm text-slate">{item.excerpt}</p>
+                    <InlineLink as="span" className="mt-4">
+                      Learn More
+                    </InlineLink>
                   </div>
-                  <h3 className="mt-3 text-lg font-heading font-semibold text-ink">{item.title}</h3>
-                  <p className="mt-2 text-sm text-slate">{item.excerpt}</p>
-                  <InlineLink as="span" className="mt-4">
-                    Learn More
-                  </InlineLink>
                 </Link>
               ))}
             </div>

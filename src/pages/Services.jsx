@@ -75,8 +75,8 @@ export const Services = () => {
                     className="aspect-4/3 w-full object-cover"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
-                  <div className="absolute inset-0 bg-navy/60" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/15 to-transparent" />
+                  <div className="absolute inset-0 bg-navy/35" />
                   <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                       <div className="flex items-center gap-3 text-gold">
                         <Icon className="h-5 w-5" />
@@ -105,17 +105,17 @@ export const Services = () => {
               {specializedServices.map((service) => (
                 <div
                   key={service.slug}
-                  className="group rounded-3xl border border-slate/10 bg-white p-5 transition hover:-translate-y-1 hover:shadow-lift"
+                  className="group overflow-hidden rounded-3xl border border-slate/10 bg-cloud transition hover:-translate-y-1 hover:shadow-lift"
                 >
                   <img
                     src={service.image.src}
                     srcSet={service.image.srcSet}
                     alt={service.title}
                     loading="lazy"
-                    className="aspect-4/3 w-full object-cover transition duration-500 group-hover:scale-105"
+                    className="aspect-4/3 w-full object-cover"
                     decoding="async"
                   />
-                  <div className="mt-4">
+                  <div className="p-6">
                     <p className="text-xs uppercase tracking-[0.3em] text-gold">{service.tagline}</p>
                     <h3 className="mt-2 text-lg font-heading font-semibold text-ink">{service.title}</h3>
                     <p className="mt-2 text-sm text-slate">{service.description}</p>
