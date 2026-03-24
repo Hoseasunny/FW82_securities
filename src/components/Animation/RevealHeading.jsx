@@ -13,10 +13,9 @@ export const RevealHeading = ({ text, className = "" }) => {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: index * 0.05 }}
-          className="inline-block"
+          className={`inline-block ${index < words.length - 1 ? "mr-[0.25em]" : ""}`}
         >
           {word}
-          {index < words.length - 1 ? " " : ""}
         </motion.span>
       ))}
     </span>
