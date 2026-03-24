@@ -7,7 +7,7 @@ export const ParallaxImage = ({ children, className = "", offset = 60 }) => {
   const y = useTransform(scrollYProgress, [0, 1], [-offset, offset]);
 
   return (
-    <motion.div ref={ref} style={{ y }} className={className}>
+    <motion.div ref={ref} style={{ y, position: "relative" }} className={className}>
       {children}
     </motion.div>
   );

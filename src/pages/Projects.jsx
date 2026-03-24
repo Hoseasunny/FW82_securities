@@ -88,7 +88,7 @@ export const Projects = () => {
                 <Link
                   key={project.title}
                   to={`/projects/${project.slug}`}
-                  className="group overflow-hidden rounded-3xl border border-slate/10 bg-cloud transition hover:-translate-y-1 hover:shadow-lift"
+                  className="group overflow-hidden rounded-3xl border border-slate/30 bg-white/90 shadow-[0_18px_45px_-35px_rgba(15,23,42,0.55)] ring-1 ring-white/60 backdrop-blur transition hover:-translate-y-1 hover:border-gold/70 hover:shadow-[0_32px_70px_-40px_rgba(15,23,42,0.75)] hover:ring-gold/25"
                 >
                   <img
                     src={project.image.src}

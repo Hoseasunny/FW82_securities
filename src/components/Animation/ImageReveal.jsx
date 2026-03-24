@@ -10,7 +10,7 @@ export const ImageReveal = ({ children, className = "" }) => {
       initial={{ clipPath: "inset(0 0 100% 0)" }}
       animate={inView ? { clipPath: "inset(0 0 0% 0)" } : {}}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className={className}
+      className={`relative ${className}`.trim()}
     >
       {children}
     </motion.div>
