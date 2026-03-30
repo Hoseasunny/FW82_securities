@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useFormValidation } from "../hooks/useFormValidation";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { isRequired, isValidPhoneKenya } from "../utils/validators";
+import { sendCareersForm } from "../utils/emailjs";
 import { Button } from "../components/UI/Button";
 import { SectionHeader } from "../components/UI/SectionHeader";
 import { FormTrustBadges } from "../components/UI/FormTrustBadges";
@@ -24,9 +25,12 @@ const positions = [
 ];
 
 export const Careers = () => {
+  const formRef = useRef(null);
   const [applications, setApplications] = useLocalStorage("fw82-applications", []);
   const [draft, setDraft] = useLocalStorage("fw82-application-draft", null);
   const [success, setSuccess] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
 
   const { values, errors, handleChange, handleBlur, validateAll, setValues } = useFormValidation(
@@ -47,24 +51,34 @@ export const Careers = () => {
     setDraft(values);
   }, [values, setDraft]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const errs = validateAll();
     if (Object.keys(errs).length > 0) return;
+    setSubmitting(true);
+    setError("");
     const payload = { ...values, submittedAt: new Date().toISOString() };
-    setApplications([payload, ...applications]);
-    setSuccess(true);
-    setDraft(null);
-    setValues({
-      fullName: "",
-      phone: "",
-      idNumber: "",
-      position: "",
-      experience: "",
-      branch: "Nairobi",
-      coverLetter: "",
-      consent: false
-    });
+    try {
+      await sendCareersForm(formRef.current);
+      setApplications([payload, ...applications]);
+      setSuccess(true);
+      setDraft(null);
+      setValues({
+        fullName: "",
+        phone: "",
+        idNumber: "",
+        position: "",
+        experience: "",
+        branch: "Nairobi",
+        coverLetter: "",
+        consent: false
+      });
+    } catch (err) {
+      setError("We could not send your application right now. Please try again shortly.");
+      console.error("EmailJS careers error:", err);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -134,7 +148,8 @@ export const Careers = () => {
 
           <div className="mt-12 rounded-3xl bg-cloud p-8">
             <SectionHeader title="Application Form" subtitle="Apply" />
-            <form onSubmit={handleSubmit} className="mt-6 grid gap-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="mt-6 grid gap-6">
+              <input type="hidden" name="submitted_at" value={new Date().toISOString()} readOnly />
               <label className="text-sm">
                 <span className="mb-2 block font-semibold text-ink">Full Name</span>
                 <input
@@ -244,6 +259,7 @@ export const Careers = () => {
                   <span className="mb-2 block font-semibold text-ink">Upload CV</span>
                   <input
                     type="file"
+                    name="cv"
                     onChange={(event) => console.log("Uploaded CV", event.target.files?.[0])}
                     className="w-full rounded-xl border border-slate/20 bg-white px-4 py-3 text-sm focus-ring"
                   />
@@ -270,9 +286,10 @@ export const Careers = () => {
                 <span>I confirm the information provided is accurate</span>
               </label>
               {errors.consent && <span className="text-xs text-alert">{errors.consent}</span>}
-              <Button type="submit" className="w-full">
-                Submit Application
+              <Button type="submit" className="w-full" disabled={submitting}>
+                {submitting ? "Sending..." : "Submit Application"}
               </Button>
+              {error && <span className="text-xs font-semibold text-alert">{error}</span>}
               <FormTrustBadges />
             </form>
           </div>

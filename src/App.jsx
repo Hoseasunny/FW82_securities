@@ -8,7 +8,6 @@ import { BackToTop } from "./components/UI/BackToTop";
 import { CookieConsent } from "./components/UI/CookieConsent";
 import { ChatWidget } from "./components/UI/ChatWidget";
 import { Preloader } from "./components/UI/Preloader";
-import { SocialProof } from "./components/UI/SocialProof";
 const Home = lazy(() => import("./pages/Home").then((m) => ({ default: m.Home })));
 const About = lazy(() => import("./pages/About").then((m) => ({ default: m.About })));
 const Services = lazy(() => import("./pages/Services").then((m) => ({ default: m.Services })));
@@ -71,7 +70,6 @@ export const App = () => {
       <BackToTop />
       <CookieConsent />
       <ChatWidget />
-      <SocialProof />
     </BrowserRouter>
   );
 };

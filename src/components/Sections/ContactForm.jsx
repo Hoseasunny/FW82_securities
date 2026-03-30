@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useFormValidation } from "../../hooks/useFormValidation";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { isRequired, isValidEmail } from "../../utils/validators";
+import { sendInquiryForm } from "../../utils/emailjs";
 import { SERVICE_INTERESTS, SOCIALS } from "../../utils/constants";
 import { Button } from "../UI/Button";
 import { SectionHeader } from "../UI/SectionHeader";
@@ -21,7 +22,10 @@ export const ContactForm = () => {
     X: Twitter
   };
 
+  const formRef = useRef(null);
   const [success, setSuccess] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [inquiries, setInquiries] = useLocalStorage("fw82-inquiries", []);
   const { values, errors, handleChange, handleBlur, validateAll, setValues } = useFormValidation(
     {
@@ -34,15 +38,25 @@ export const ContactForm = () => {
     validators
   );
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const errs = validateAll();
     if (Object.keys(errs).length > 0) return;
+    setSubmitting(true);
+    setError("");
     const payload = { ...values, submittedAt: new Date().toISOString() };
-    setInquiries([payload, ...inquiries]);
-    setSuccess(true);
-    setValues({ name: "", email: "", phone: "", service: "Guarding", message: "" });
-    setTimeout(() => setSuccess(false), 3000);
+    try {
+      await sendInquiryForm(formRef.current);
+      setInquiries([payload, ...inquiries]);
+      setSuccess(true);
+      setValues({ name: "", email: "", phone: "", service: "Guarding", message: "" });
+      setTimeout(() => setSuccess(false), 3000);
+    } catch (err) {
+      setError("We could not send your inquiry right now. Please try again shortly.");
+      console.error("EmailJS inquiry error:", err);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -81,7 +95,9 @@ export const ContactForm = () => {
             </div>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="rounded-3xl bg-white p-8 shadow-soft">
+        <form ref={formRef} onSubmit={handleSubmit} className="rounded-3xl bg-white p-8 shadow-soft">
+          <input type="hidden" name="submitted_at" value={new Date().toISOString()} readOnly />
+          <input type="hidden" name="services" value={values.service} readOnly />
           <div className="grid gap-4">
             <label className="text-sm">
               <span className="mb-2 block font-semibold text-ink">Name</span>
@@ -155,14 +171,15 @@ export const ContactForm = () => {
               />
             </label>
           </div>
-          <Button type="submit" className="mt-6 w-full">
-            Send Inquiry
+          <Button type="submit" className="mt-6 w-full" disabled={submitting}>
+            {submitting ? "Sending..." : "Send Inquiry"}
           </Button>
           {success && (
             <p className="mt-4 text-xs font-semibold text-trust">
               Thank you for your inquiry. Our security consultant will contact you within 24 hours.
             </p>
           )}
+          {error && <p className="mt-4 text-xs font-semibold text-alert">{error}</p>}
           <FormTrustBadges />
         </form>
       </div>

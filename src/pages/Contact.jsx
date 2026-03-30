@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useFormValidation } from "../hooks/useFormValidation";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { isRequired, isValidEmail } from "../utils/validators";
+import { sendInquiryForm } from "../utils/emailjs";
 import { BRANCH_CONTACTS, COMPANY, SERVICE_INTERESTS, SOCIALS } from "../utils/constants";
 import { Button } from "../components/UI/Button";
 import { SectionHeader } from "../components/UI/SectionHeader";
@@ -17,7 +18,10 @@ const validators = {
 };
 
 export const Contact = () => {
+  const formRef = useRef(null);
   const [success, setSuccess] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [inquiries, setInquiries] = useLocalStorage("fw82-inquiries", []);
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
   const { values, errors, handleChange, handleBlur, validateAll, setValues } = useFormValidation(
@@ -41,23 +45,33 @@ export const Contact = () => {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const errs = validateAll();
     if (Object.keys(errs).length > 0) return;
+    setSubmitting(true);
+    setError("");
     const payload = { ...values, submittedAt: new Date().toISOString() };
-    setInquiries([payload, ...inquiries]);
-    setSuccess(true);
-    setValues({
-      name: "",
-      email: "",
-      phone: "",
-      services: [],
-      location: "",
-      message: "",
-      preferred: "Phone"
-    });
-    setTimeout(() => setSuccess(false), 4000);
+    try {
+      await sendInquiryForm(formRef.current);
+      setInquiries([payload, ...inquiries]);
+      setSuccess(true);
+      setValues({
+        name: "",
+        email: "",
+        phone: "",
+        services: [],
+        location: "",
+        message: "",
+        preferred: "Phone"
+      });
+      setTimeout(() => setSuccess(false), 4000);
+    } catch (err) {
+      setError("We could not send your inquiry right now. Please try again shortly.");
+      console.error("EmailJS inquiry error:", err);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -174,7 +188,10 @@ export const Contact = () => {
 
           <div className="rounded-3xl bg-white p-8 shadow-soft">
             <SectionHeader title="Send an Inquiry" subtitle="Form" />
-            <form onSubmit={handleSubmit} className="mt-6 grid gap-5">
+            <form ref={formRef} onSubmit={handleSubmit} className="mt-6 grid gap-5">
+              <input type="hidden" name="services" value={values.services.join(", ")} readOnly />
+              <input type="hidden" name="service" value={values.services.join(", ")} readOnly />
+              <input type="hidden" name="submitted_at" value={new Date().toISOString()} readOnly />
               <label className="text-sm">
                 <span className="mb-2 block font-semibold text-ink">Name</span>
                 <input
@@ -278,14 +295,15 @@ export const Contact = () => {
                   ))}
                 </div>
               </div>
-              <Button type="submit" className="w-full">
-                Submit Inquiry
+              <Button type="submit" className="w-full" disabled={submitting}>
+                {submitting ? "Sending..." : "Submit Inquiry"}
               </Button>
               {success && (
                 <p className="text-xs font-semibold text-trust">
                   Thank you for your inquiry. Our security consultant will contact you within 24 hours.
                 </p>
               )}
+              {error && <p className="text-xs font-semibold text-alert">{error}</p>}
               <FormTrustBadges />
             </form>
           </div>
