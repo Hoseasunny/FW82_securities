@@ -41,6 +41,29 @@ export const ServiceDetail = () => {
   }
 
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const isSmartIntegration = service.slug === "smart-security-integration";
+  const installations = [
+    {
+      src: "/images/services/smart-security-integration/installations-2.jpg",
+      alt: "Pole-mounted surveillance cameras",
+      caption: "Commercial pole-mounted camera system for perimeter monitoring"
+    },
+    {
+      src: "/images/services/smart-security-integration/installations-1.jpg",
+      alt: "Residential security setup",
+      caption: "Complete home security installation with smart integration"
+    },
+    {
+      src: "/images/services/smart-security-integration/installations-3.jpg",
+      alt: "Rooftop surveillance installation",
+      caption: "High-elevation rooftop surveillance for maximum coverage"
+    },
+    {
+      src: "/images/services/smart-security-integration/installations-4.jpg",
+      alt: "Wireless antenna installation",
+      caption: "Professional wireless antenna setup for seamless connectivity"
+    }
+  ];
 
   return (
     <>
@@ -179,6 +202,28 @@ export const ServiceDetail = () => {
                 {service.closing && (
                   <div className="mt-10 rounded-3xl bg-cloud p-6 text-sm leading-8 text-slate">
                     {service.closing}
+                  </div>
+                )}
+                {isSmartIntegration && (
+                  <div className="mt-12">
+                    <SectionHeader title="Our Installations in Action" subtitle={service.title} />
+                    <div className="mt-10 grid gap-6 md:grid-cols-2">
+                      {installations.map((item) => (
+                        <div
+                          key={item.src}
+                          className="group rounded-3xl border border-slate/10 bg-cloud transition hover:shadow-lift"
+                        >
+                          <img
+                            src={item.src}
+                            alt={item.alt}
+                            loading="lazy"
+                            decoding="async"
+                            className="aspect-video w-full rounded-2xl object-cover"
+                          />
+                          <p className="mt-4 text-center text-sm text-slate">{item.caption}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
               </>
