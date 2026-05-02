@@ -181,8 +181,8 @@ export const About = () => {
               return (
                 <FadeIn key={item.title} delay={0.05 * index}>
                   <AlternatingCard index={index} icon={Icon}>
-                    <h3 className="text-lg font-heading font-semibold">{item.title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-current/90">{item.description}</p>
+                    <h3 className="text-lg font-heading font-bold">{item.title}</h3>
+                    <p className="mt-4 text-sm font-medium leading-7 text-current/90">{item.description}</p>
                   </AlternatingCard>
                 </FadeIn>
               );
@@ -204,8 +204,8 @@ export const About = () => {
                     }`}
                     style={{ borderRadius: index % 2 === 1 ? "0 30px 0 30px" : "30px 0 30px 0" }}
                   >
-                    <h3 className={`text-lg font-heading font-semibold ${index % 2 === 1 ? "text-white" : "text-ink"}`}>{value.title}</h3>
-                    <p className={`mt-3 text-sm leading-7 ${index % 2 === 1 ? "text-white/90" : "text-slate"}`}>{value.description}</p>
+                    <h3 className={`text-lg font-heading font-bold ${index % 2 === 1 ? "text-white" : "text-ink"}`}>{value.title}</h3>
+                    <p className={`mt-3 text-sm font-medium leading-7 ${index % 2 === 1 ? "text-white/90" : "text-slate"}`}>{value.description}</p>
                   </div>
                 </FadeIn>
               ))}
@@ -220,8 +220,8 @@ export const About = () => {
               return (
                 <FadeIn key={item.title} delay={0.05 * index}>
                   <AlternatingCard index={index} icon={Icon} className="h-full">
-                    <h3 className="text-lg font-heading font-semibold">{item.title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-current/90">{item.description}</p>
+                    <h3 className="text-lg font-heading font-bold">{item.title}</h3>
+                    <p className="mt-4 text-sm font-medium leading-7 text-current/90">{item.description}</p>
                   </AlternatingCard>
                 </FadeIn>
               );

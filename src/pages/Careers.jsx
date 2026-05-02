@@ -163,8 +163,8 @@ export const Careers = () => {
                   icon={Icon}
                   className="p-4"
                 >
-                  <p className="font-semibold">{opening.title}</p>
-                  <p className="mt-1 text-sm text-white/90">{opening.location}</p>
+                  <p className="font-bold">{opening.title}</p>
+                  <p className="mt-1 text-sm font-medium text-white/90">{opening.location}</p>
                 </AlternatingCard>
               );
             })}

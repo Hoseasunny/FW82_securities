@@ -30,11 +30,11 @@ export const QuickServices = () => {
                 icon={Icon}
                 className="group"
               >
-                <p className="text-xs uppercase tracking-[0.24em] text-gold">Service</p>
-                <h3 className="mt-4 text-lg font-heading font-semibold">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold">Service</p>
+                <h3 className="mt-4 text-lg font-heading font-bold">
                   {service.title}
                 </h3>
-                <p className="mt-2 text-sm text-current/90">{service.description}</p>
+                <p className="mt-2 text-sm font-medium text-current/90">{service.description}</p>
                 <InlineLink
                   to={`/services/${service.slug}`}
                   className="mt-4 text-gold hover:text-white"

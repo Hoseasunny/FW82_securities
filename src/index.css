@@ -43,6 +43,10 @@ img {
     radial-gradient(circle at 70% 20%, rgba(183, 14, 14, 0.18), transparent 35%);
 }
 
+.hero-text-shadow {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
 .hero-split-media {
   position: relative;
   isolation: isolate;

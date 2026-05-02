@@ -40,7 +40,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="mt-5 max-w-4xl text-4xl font-heading font-bold leading-tight md:text-6xl"
+            className="hero-text-shadow mt-5 max-w-4xl text-4xl font-heading font-bold leading-tight md:text-6xl"
           >
             Trusted Security. Rapid Response.
           </motion.h1>
