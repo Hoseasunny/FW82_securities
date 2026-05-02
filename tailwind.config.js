@@ -14,8 +14,8 @@ export default {
         cloud: "#f5f5f7"
       },
       fontFamily: {
-        heading: ["Inter", "Roboto", "ui-sans-serif", "system-ui"],
-        body: ["Inter", "Open Sans", "ui-sans-serif", "system-ui"]
+        heading: ["Space Grotesk", "Sora", "ui-sans-serif", "system-ui"],
+        body: ["Manrope", "DM Sans", "ui-sans-serif", "system-ui"]
       },
       boxShadow: {
         lift: "0 14px 30px rgba(10, 22, 40, 0.15)",

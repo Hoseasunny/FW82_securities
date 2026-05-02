@@ -8,9 +8,10 @@ import { CTASection } from "../components/Sections/CTASection";
 import { Testimonials } from "../components/Sections/Testimonials";
 import { ContactForm } from "../components/Sections/ContactForm";
 import { HomeAbout } from "../components/Sections/HomeAbout";
-import { FaqSection, faqItems } from "../components/Sections/FaqSection";
+import { FaqSection } from "../components/Sections/FaqSection";
 import { HomeNews } from "../components/Sections/HomeNews";
 import { Seo } from "../components/SEO/Seo";
+import { faqItems } from "../data/faqItems";
 import { COMPANY, SOCIALS } from "../utils/constants";
 
 export const Home = () => {

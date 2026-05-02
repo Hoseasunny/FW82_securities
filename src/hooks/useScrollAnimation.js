@@ -2,18 +2,15 @@ import { useEffect, useRef, useState } from "react";
 
 export const useScrollAnimation = (options = { threshold: 0.2 }) => {
   const ref = useRef(null);
+  const supportsObserver = typeof window !== "undefined" && typeof IntersectionObserver !== "undefined";
   const [inView, setInView] = useState(() => {
-    if (typeof window === "undefined") return true;
-    if (typeof IntersectionObserver === "undefined") return true;
+    if (!supportsObserver) return true;
     return false;
   });
 
   useEffect(() => {
     if (!ref.current) return;
-    if (typeof IntersectionObserver === "undefined") {
-      setInView(true);
-      return;
-    }
+    if (!supportsObserver) return;
     let timeoutId = null;
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -29,7 +26,7 @@ export const useScrollAnimation = (options = { threshold: 0.2 }) => {
       observer.disconnect();
       if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [options]);
+  }, [options, supportsObserver]);
 
   return { ref, inView };
 };

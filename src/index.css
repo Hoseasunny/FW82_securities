@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
@@ -18,9 +19,12 @@
 }
 
 body {
-  font-family: "Inter", "Open Sans", system-ui, -apple-system, sans-serif;
+  font-family: "Manrope", "DM Sans", system-ui, -apple-system, sans-serif;
   color: var(--ink);
-  background: var(--cloud);
+  background:
+    radial-gradient(circle at 20% -10%, rgba(183, 14, 14, 0.08), transparent 45%),
+    radial-gradient(circle at 100% 0%, rgba(10, 22, 40, 0.08), transparent 35%),
+    var(--cloud);
   min-height: 100vh;
 }
 
@@ -34,7 +38,56 @@ img {
 }
 
 .hero-overlay {
-  background: linear-gradient(120deg, rgba(11, 11, 13, 0.75), rgba(11, 11, 13, 0.45));
+  background:
+    linear-gradient(120deg, rgba(6, 7, 10, 0.93), rgba(6, 7, 10, 0.72)),
+    radial-gradient(circle at 70% 20%, rgba(183, 14, 14, 0.18), transparent 35%);
+}
+
+.hero-split-media {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-split-image {
+  display: block;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  clip-path: polygon(0 10%, 16% 0, 100% 0, 100% 90%, 84% 100%, 0 100%);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.35);
+}
+
+.hero-split-border {
+  position: absolute;
+  inset: 12px -12px -12px 12px;
+  z-index: 1;
+  border: 1px solid rgba(183, 14, 14, 0.65);
+  clip-path: polygon(0 12%, 14% 0, 100% 0, 100% 88%, 86% 100%, 0 100%);
+}
+
+.hero-shape-layer {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-shape-layer-a {
+  top: -24px;
+  right: -18px;
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(145deg, rgba(183, 14, 14, 0.4), rgba(183, 14, 14, 0.1));
+  clip-path: polygon(0 24%, 24% 0, 100% 0, 100% 76%, 76% 100%, 0 100%);
+}
+
+.hero-shape-layer-b {
+  bottom: -22px;
+  left: -24px;
+  width: 140px;
+  height: 140px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  clip-path: polygon(0 22%, 22% 0, 100% 0, 100% 78%, 78% 100%, 0 100%);
 }
 
 .pattern-dark {
@@ -149,5 +202,36 @@ img {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-split-image {
+    clip-path: none;
+    border-radius: 20px;
+  }
+
+  .hero-split-border {
+    inset: 8px -8px -8px 8px;
+    clip-path: none;
+    border-radius: 20px;
+  }
+
+  .hero-shape-layer-a {
+    width: 90px;
+    height: 90px;
+    top: -10px;
+    right: -8px;
+    clip-path: none;
+    border-radius: 18px;
+  }
+
+  .hero-shape-layer-b {
+    width: 74px;
+    height: 74px;
+    left: -8px;
+    bottom: -8px;
+    clip-path: none;
+    border-radius: 16px;
   }
 }

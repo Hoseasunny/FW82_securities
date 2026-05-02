@@ -22,6 +22,7 @@ const NewsDetail = lazy(() => import("./pages/NewsDetail").then((m) => ({ defaul
 const Careers = lazy(() => import("./pages/Careers").then((m) => ({ default: m.Careers })));
 const Contact = lazy(() => import("./pages/Contact").then((m) => ({ default: m.Contact })));
 const Admin = lazy(() => import("./pages/Admin").then((m) => ({ default: m.Admin })));
+const NotFound = lazy(() => import("./pages/NotFound").then((m) => ({ default: m.NotFound })));
 
 const PageTransition = ({ children }) => (
   <motion.div
@@ -53,6 +54,7 @@ const AppRoutes = () => {
           <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
           <Route path="/admin" element={<PageTransition><Admin /></PageTransition>} />
+          <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
         </Routes>
       </Suspense>
     </AnimatePresence>

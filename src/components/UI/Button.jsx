@@ -1,3 +1,5 @@
+import React from "react";
+
 const variants = {
   primary: "bg-gold text-navy hover:brightness-110",
   secondary: "border border-gold text-gold hover:bg-gold hover:text-navy",
@@ -5,7 +7,7 @@ const variants = {
 };
 
 export const Button = ({
-  as: Component = "button",
+  as = "button",
   variant = "primary",
   className,
   loading = false,
@@ -21,12 +23,9 @@ export const Button = ({
     .filter(Boolean)
     .join(" ");
 
-  return (
-    <Component
-      className={classes}
-      {...props}
-    >
-      {children}
-    </Component>
+  return React.createElement(
+    as,
+    { className: classes, ...props },
+    children
   );
 };

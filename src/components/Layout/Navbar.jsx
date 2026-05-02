@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "../../utils/constants";
@@ -6,24 +6,8 @@ import { Button } from "../UI/Button";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [menuHeight, setMenuHeight] = useState(0);
-  const mobileMenuRef = useRef(null);
   const location = useLocation();
   const isCareers = location.pathname === "/careers";
-
-  useEffect(() => {
-    if (!open) {
-      setMenuHeight(0);
-      return;
-    }
-    const measure = () => {
-      if (!mobileMenuRef.current) return;
-      setMenuHeight(mobileMenuRef.current.scrollHeight);
-    };
-    measure();
-    const frame = requestAnimationFrame(measure);
-    return () => cancelAnimationFrame(frame);
-  }, [open]);
 
   return (
     <header className="sticky top-0 z-50 w-full">
@@ -68,12 +52,11 @@ export const Navbar = () => {
       </div>
 
       <div
-        className={`glass lg:hidden transition-[max-height,opacity] duration-700 ease-in-out ${
-          open ? "opacity-100 pointer-events-auto" : "max-h-0 opacity-0 pointer-events-none"
+        className={`glass lg:hidden overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out ${
+          open ? "max-h-[80vh] opacity-100 pointer-events-auto" : "max-h-0 opacity-0 pointer-events-none"
         }`}
-        style={{ maxHeight: open ? `${menuHeight}px` : "0px" }}
       >
-        <div ref={mobileMenuRef} className="mx-auto max-w-6xl overflow-hidden px-6 py-6">
+        <div className="mx-auto max-w-6xl px-6 py-6">
           <div className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <NavLink
