@@ -33,6 +33,38 @@ img {
   height: auto;
 }
 
+a,
+button,
+[role="button"] {
+  transition:
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease,
+    opacity 220ms ease;
+}
+
+a:hover,
+button:hover,
+[role="button"]:hover {
+  transform: translateY(-1px);
+}
+
+a:active,
+button:active,
+[role="button"]:active {
+  transform: translateY(0) scale(0.985);
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(183, 14, 14, 0.35);
+}
+
 .gradient-overlay {
   background: linear-gradient(120deg, rgba(11, 11, 13, 0.9), rgba(11, 11, 13, 0.65));
 }
