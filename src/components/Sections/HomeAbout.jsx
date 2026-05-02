@@ -1,6 +1,7 @@
 import { FadeIn } from "../Animation/FadeIn";
 import { SectionHeader } from "../UI/SectionHeader";
 import { InlineLink } from "../UI/InlineLink";
+import { ShieldCheck } from "lucide-react";
 
 export const HomeAbout = () => {
   return (
@@ -46,11 +47,28 @@ export const HomeAbout = () => {
                 "Experienced leadership team",
                 "Tailored client security plans",
                 "Ethical, transparent reporting"
-              ].map((item) => (
-                <div key={item} className="rounded-2xl bg-cloud px-4 py-3 text-xs font-semibold text-ink">
-                  {item}
+              ].map((item, index) => {
+                const isDark = index % 2 === 1;
+                const iconLeft = index % 2 === 1;
+                return (
+                <div
+                  key={item}
+                  className={`relative border-2 px-4 py-3 text-xs font-semibold ${
+                    isDark ? "border-white/25 bg-[#050505] text-white" : "border-gold/80 bg-gold text-white"
+                  }`}
+                  style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
+                >
+                  <div
+                    className={`absolute -top-2 border-2 p-2 ${iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"} ${
+                      isDark ? "border-white/25 bg-gold text-white" : "border-gold/80 bg-black text-white"
+                    }`}
+                  >
+                    <ShieldCheck className="h-4 w-4" />
+                  </div>
+                  <span className={iconLeft ? "pl-6" : "pr-6"}>{item}</span>
                 </div>
-              ))}
+              );
+              })}
             </div>
           </div>
         </FadeIn>

@@ -77,7 +77,9 @@ export const ContactForm = () => {
               Stay updated with our latest deployments, community initiatives, and security insights.
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
-              {SOCIALS.map((social) => {
+              {SOCIALS.map((social, index) => {
+                const isDark = index % 2 === 1;
+                const iconLeft = index % 2 === 1;
                 const Icon = socialIcons[social.label] || Linkedin;
                 return (
                   <a
@@ -85,10 +87,19 @@ export const ContactForm = () => {
                     href={social.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="group flex items-center justify-center gap-2 rounded-2xl border border-slate/10 bg-cloud px-4 py-3 text-xs font-semibold uppercase tracking-wide text-ink transition hover:-translate-y-0.5 hover:border-gold hover:bg-white"
+                    className={`group relative flex items-center justify-center gap-2 border-2 px-4 py-3 text-xs font-semibold uppercase tracking-wide transition hover:-translate-y-0.5 ${
+                      isDark ? "border-white/25 bg-[#050505] text-white" : "border-gold/80 bg-gold text-white"
+                    }`}
+                    style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
                   >
-                    <Icon className="h-4 w-4 text-gold" />
-                    <span>{social.label}</span>
+                    <div
+                      className={`absolute -top-2 border-2 p-2 ${iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"} ${
+                        isDark ? "border-white/25 bg-gold text-white" : "border-gold/80 bg-black text-white"
+                      }`}
+                    >
+                      <Icon className="h-4 w-4" />
+                    </div>
+                    <span className={iconLeft ? "pl-6" : "pr-6"}>{social.label}</span>
                   </a>
                 );
               })}

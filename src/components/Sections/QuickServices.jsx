@@ -23,6 +23,7 @@ export const QuickServices = () => {
           {services.map((service, index) => {
             const Icon = iconMap[service.icon] || Shield;
             const isDark = index % 2 === 1;
+            const iconLeft = index % 2 === 1;
             return (
               <div
                 key={service.title}
@@ -34,7 +35,9 @@ export const QuickServices = () => {
                 style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
               >
                 <div
-                  className={`absolute -right-2 -top-2 rounded-bl-2xl border-2 p-3 ${
+                  className={`absolute -top-2 border-2 p-3 ${
+                    iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"
+                  } ${
                     isDark
                       ? "border-white/25 bg-gold text-white"
                       : "border-navy/85 bg-navy text-white"
@@ -43,7 +46,7 @@ export const QuickServices = () => {
                   <Icon className="h-6 w-6" />
                 </div>
                 <p className={`text-xs uppercase tracking-[0.24em] ${isDark ? "text-gold" : "text-gold"}`}>Service</p>
-                <h3 className={`mt-4 pr-10 text-lg font-heading font-semibold ${isDark ? "text-white" : "text-ink"}`}>
+                <h3 className={`mt-4 ${iconLeft ? "pl-10" : "pr-10"} text-lg font-heading font-semibold ${isDark ? "text-white" : "text-ink"}`}>
                   {service.title}
                 </h3>
                 <p className={`mt-2 text-sm ${isDark ? "text-white/90" : "text-slate"}`}>{service.description}</p>

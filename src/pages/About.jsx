@@ -146,7 +146,13 @@ export const About = () => {
               </p>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <div className="group overflow-hidden rounded-3xl border border-slate/10 bg-cloud transition hover:-translate-y-1 hover:shadow-lift">
+                <div
+                  className="group relative overflow-hidden border-2 border-navy/90 bg-white transition hover:-translate-y-1 hover:shadow-lift"
+                  style={{ borderRadius: "30px 0 30px 0" }}
+                >
+                <div className="absolute -left-2 -top-2 z-10 rounded-br-2xl border-2 border-navy/85 bg-navy p-3 text-white">
+                  <ShieldCheck className="h-6 w-6" />
+                </div>
                 <img
                   src={leadershipImage.src}
                   srcSet={leadershipImage.srcSet}
@@ -171,6 +177,7 @@ export const About = () => {
           <div className="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-2">
             {missionVision.map((item, index) => {
               const isDark = index % 2 === 1;
+              const iconLeft = index % 2 === 1;
               const Icon = item.Icon;
               return (
                 <FadeIn key={item.title} delay={0.05 * index}>
@@ -181,13 +188,13 @@ export const About = () => {
                     style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
                   >
                     <div
-                      className={`absolute -right-2 -top-2 rounded-bl-2xl border-2 p-3 ${
+                      className={`absolute -top-2 border-2 p-3 ${iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"} ${
                         isDark ? "border-white/25 bg-gold text-white" : "border-navy/85 bg-navy text-white"
                       }`}
                     >
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className={`pr-10 text-lg font-heading font-semibold ${isDark ? "text-white" : "text-ink"}`}>{item.title}</h3>
+                    <h3 className={`${iconLeft ? "pl-10" : "pr-10"} text-lg font-heading font-semibold ${isDark ? "text-white" : "text-ink"}`}>{item.title}</h3>
                     <p className={`mt-4 text-sm leading-7 ${isDark ? "text-white/90" : "text-slate"}`}>{item.description}</p>
                   </div>
                 </FadeIn>
@@ -223,6 +230,7 @@ export const About = () => {
           <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr]">
             {closingCards.map((item, index) => {
               const isDark = index % 2 === 1;
+              const iconLeft = index % 2 === 1;
               const Icon = item.Icon;
               return (
                 <FadeIn key={item.title} delay={0.05 * index}>
@@ -233,13 +241,13 @@ export const About = () => {
                     style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
                   >
                     <div
-                      className={`absolute -right-2 -top-2 rounded-bl-2xl border-2 p-3 ${
+                      className={`absolute -top-2 border-2 p-3 ${iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"} ${
                         isDark ? "border-white/25 bg-gold text-white" : "border-navy/85 bg-navy text-white"
                       }`}
                     >
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className={`pr-10 text-lg font-heading font-semibold ${isDark ? "text-white" : "text-ink"}`}>{item.title}</h3>
+                    <h3 className={`${iconLeft ? "pl-10" : "pr-10"} text-lg font-heading font-semibold ${isDark ? "text-white" : "text-ink"}`}>{item.title}</h3>
                     <p className={`mt-4 text-sm leading-7 ${isDark ? "text-white/90" : "text-slate"}`}>{item.description}</p>
                   </div>
                 </FadeIn>

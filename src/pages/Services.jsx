@@ -1,4 +1,4 @@
-import { Cpu, Shield, Smartphone, Users } from "lucide-react";
+import { Cpu, Shield, ShieldCheck, Smartphone, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { services } from "../data/services";
 import { specializedServices } from "../data/specializedServices";
@@ -67,11 +67,20 @@ export const Services = () => {
               {services.map((service, index) => {
                 const Icon = iconMap[service.icon] || Shield;
                 const isDark = index % 2 === 1;
+                const iconLeft = index % 2 === 1;
                 return (
                 <div
                   key={service.title}
-                  className={`overflow-hidden rounded-3xl border ${isDark ? "border-white/10 bg-navy" : "border-slate/15 bg-white"}`}
+                  className={`relative overflow-hidden border-2 ${isDark ? "border-white/25 bg-[#050505] text-white" : "border-navy/90 bg-white text-ink"}`}
+                  style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
                 >
+                  <div
+                    className={`absolute -top-2 z-10 border-2 p-3 ${iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"} ${
+                      isDark ? "border-white/25 bg-gold text-white" : "border-navy/85 bg-navy text-white"
+                    }`}
+                  >
+                    <Icon className="h-6 w-6" />
+                  </div>
                   <img
                     src={service.image.src}
                     srcSet={service.image.srcSet}
@@ -82,10 +91,9 @@ export const Services = () => {
                   />
                   <div className={`p-6 ${isDark ? "text-white" : "text-ink"}`}>
                       <div className="flex items-center gap-3">
-                        <Icon className="h-5 w-5" />
-                        <span className="text-xs uppercase tracking-[0.3em]">Service</span>
+                        <span className="text-xs uppercase tracking-[0.3em] text-gold">Service</span>
                       </div>
-                      <h3 className="mt-3 text-xl font-heading font-semibold">{service.title}</h3>
+                      <h3 className={`mt-3 ${iconLeft ? "pl-10" : "pr-10"} text-xl font-heading font-semibold`}>{service.title}</h3>
                       <p className={`mt-2 text-sm ${isDark ? "text-white/80" : "text-slate"}`}>
                         {service.shortDescription || service.description}
                       </p>
@@ -112,11 +120,24 @@ export const Services = () => {
               subtitle="Integrated Security Solutions for Modern Needs"
             />
             <StaggerGroup className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {specializedServices.map((service) => (
+              {specializedServices.map((service, index) => {
+                const isDark = index % 2 === 1;
+                const iconLeft = index % 2 === 1;
+                return (
                 <div
                   key={service.slug}
-                  className="group overflow-hidden rounded-3xl border border-slate/10 bg-cloud transition hover:-translate-y-1 hover:shadow-lift"
+                  className={`group relative overflow-hidden border-2 transition hover:-translate-y-1 hover:shadow-lift ${
+                    isDark ? "border-white/25 bg-[#050505] text-white" : "border-navy/90 bg-white text-ink"
+                  }`}
+                  style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
                 >
+                  <div
+                    className={`absolute -top-2 z-10 border-2 p-3 ${iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"} ${
+                      isDark ? "border-white/25 bg-gold text-white" : "border-navy/85 bg-navy text-white"
+                    }`}
+                  >
+                    <ShieldCheck className="h-6 w-6" />
+                  </div>
                   <img
                     src={service.image.src}
                     srcSet={service.image.srcSet}
@@ -125,21 +146,22 @@ export const Services = () => {
                     className="aspect-4/3 w-full object-cover"
                     decoding="async"
                   />
-                  <div className="p-6">
+                  <div className={`p-6 ${isDark ? "text-white" : "text-ink"}`}>
                     <p className="text-xs uppercase tracking-[0.3em] text-gold">{service.tagline}</p>
-                    <h3 className="mt-2 text-lg font-heading font-semibold text-ink">{service.title}</h3>
-                    <p className="mt-2 text-sm text-slate">{service.description}</p>
+                    <h3 className={`mt-2 ${iconLeft ? "pl-10" : "pr-10"} text-lg font-heading font-semibold ${isDark ? "text-white" : "text-ink"}`}>{service.title}</h3>
+                    <p className={`mt-2 text-sm ${isDark ? "text-white/90" : "text-slate"}`}>{service.description}</p>
                     <Button
                       as={Link}
                       to={`/services/specialized/${service.slug}`}
-                      variant="secondary"
+                      variant={isDark ? "secondary" : "dark"}
                       className="mt-4 w-fit text-xs"
                     >
                       Learn More
                     </Button>
                   </div>
                 </div>
-              ))}
+              );
+              })}
             </StaggerGroup>
           </div>
         </section>

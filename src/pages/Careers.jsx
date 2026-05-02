@@ -154,6 +154,7 @@ export const Careers = () => {
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {openings.map((opening, index) => {
               const isBlack = index % 2 === 1;
+              const iconLeft = index % 2 === 1;
               const Icon = opening.Icon;
               return (
                 <div
@@ -164,13 +165,13 @@ export const Careers = () => {
                   style={{ borderRadius: isBlack ? "0 30px 0 30px" : "30px 0 30px 0" }}
                 >
                   <div
-                    className={`absolute -right-2 -top-2 rounded-bl-2xl border-2 p-3 ${
+                    className={`absolute -top-2 border-2 p-3 ${iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"} ${
                       isBlack ? "border-white/20 bg-gold text-white" : "border-gold/80 bg-black text-white"
                     }`}
                   >
                     <Icon className="h-6 w-6" />
                   </div>
-                  <p className="pr-10 font-semibold">{opening.title}</p>
+                  <p className={`${iconLeft ? "pl-10" : "pr-10"} font-semibold`}>{opening.title}</p>
                   <p className="mt-1 text-sm text-white/90">{opening.location}</p>
                 </div>
               );
