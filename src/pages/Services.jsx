@@ -64,10 +64,14 @@ export const Services = () => {
           <div className="mx-auto grid max-w-6xl gap-10 px-6">
             <SectionHeader title="Core Services" subtitle="What We Deliver" />
             <StaggerGroup className="grid gap-8 lg:grid-cols-2">
-              {services.map((service) => {
+              {services.map((service, index) => {
                 const Icon = iconMap[service.icon] || Shield;
+                const isDark = index % 2 === 1;
                 return (
-                <div key={service.title} className="relative overflow-hidden rounded-3xl bg-navy">
+                <div
+                  key={service.title}
+                  className={`overflow-hidden rounded-3xl border ${isDark ? "border-white/10 bg-navy" : "border-slate/15 bg-white"}`}
+                >
                   <img
                     src={service.image.src}
                     srcSet={service.image.srcSet}
@@ -76,16 +80,21 @@ export const Services = () => {
                     className="aspect-4/3 w-full object-cover"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/15 to-transparent" />
-                  <div className="absolute inset-0 bg-navy/35" />
-                  <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                      <div className="flex items-center gap-3 text-gold">
+                  <div className={`p-6 ${isDark ? "text-white" : "text-ink"}`}>
+                      <div className="flex items-center gap-3">
                         <Icon className="h-5 w-5" />
                         <span className="text-xs uppercase tracking-[0.3em]">Service</span>
                       </div>
                       <h3 className="mt-3 text-xl font-heading font-semibold">{service.title}</h3>
-                      <p className="mt-2 text-sm text-white/80">{service.shortDescription || service.description}</p>
-                      <Button as={Link} to={`/services/${service.slug}`} variant="secondary" className="mt-4 w-fit text-xs">
+                      <p className={`mt-2 text-sm ${isDark ? "text-white/80" : "text-slate"}`}>
+                        {service.shortDescription || service.description}
+                      </p>
+                      <Button
+                        as={Link}
+                        to={`/services/${service.slug}`}
+                        variant={isDark ? "secondary" : "dark"}
+                        className="mt-4 w-fit text-xs"
+                      >
                         Learn More
                       </Button>
                     </div>

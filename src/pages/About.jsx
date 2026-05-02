@@ -1,10 +1,10 @@
 import { buildImageSet } from "../utils/imageGenerator";
 import { SectionHeader } from "../components/UI/SectionHeader";
-import { Card } from "../components/UI/Card";
 import { Seo } from "../components/SEO/Seo";
 import { FadeIn } from "../components/Animation/FadeIn";
 import { FaqSection } from "../components/Sections/FaqSection";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
+import { Target, Eye, ShieldCheck, Users } from "lucide-react";
 
 const aboutHero = buildImageSet(
   "Leadership",
@@ -43,6 +43,36 @@ const values = [
 
 export const About = () => {
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const missionVision = [
+    {
+      title: "Mission",
+      description:
+        "To deliver comprehensive security solutions that inspire confidence, protect assets, and ensure peace of mind for our clients.",
+      Icon: Target
+    },
+    {
+      title: "Vision",
+      description:
+        "To be recognized as Kenya's most trusted and innovative security provider, setting new standards in professionalism and reliability.",
+      Icon: Eye
+    }
+  ];
+
+  const closingCards = [
+    {
+      title: "Leadership & Team",
+      description:
+        "Behind FW82 Security Solutions Ltd is a team of experienced professionals with backgrounds in law enforcement, corporate security, and risk management. Our leadership emphasizes continuous training, ethical conduct, and operational excellence. Every guard is not just a protector but an ambassador of our brand values.",
+      Icon: ShieldCheck
+    },
+    {
+      title: "Community Commitment",
+      description:
+        "We believe security is a shared responsibility. Beyond our contracts, FW82 Security Solutions Ltd contributes to community safety initiatives, awareness campaigns, and partnerships with local authorities to strengthen public security. We aim to create a safer environment for the communities in which we operate.",
+      Icon: Users
+    }
+  ];
+
   return (
     <>
       <Seo
@@ -139,24 +169,30 @@ export const About = () => {
 
         <section className="bg-cloud py-20">
           <div className="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-2">
-            <FadeIn>
-              <Card className="border-l-4 border-gold">
-                <h3 className="text-lg font-heading font-semibold text-ink">Mission</h3>
-                <p className="mt-4 text-sm leading-7 text-slate">
-                  To deliver comprehensive security solutions that inspire confidence, protect assets,
-                  and ensure peace of mind for our clients.
-                </p>
-              </Card>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <Card className="border-l-4 border-gold">
-                <h3 className="text-lg font-heading font-semibold text-ink">Vision</h3>
-                <p className="mt-4 text-sm leading-7 text-slate">
-                  To be recognized as Kenya's most trusted and innovative security provider, setting new
-                  standards in professionalism and reliability.
-                </p>
-              </Card>
-            </FadeIn>
+            {missionVision.map((item, index) => {
+              const isDark = index % 2 === 1;
+              const Icon = item.Icon;
+              return (
+                <FadeIn key={item.title} delay={0.05 * index}>
+                  <div
+                    className={`group relative p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift ${
+                      isDark ? "border-2 border-white/25 bg-[#050505] text-white" : "border-2 border-navy/90 bg-white text-ink"
+                    }`}
+                    style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
+                  >
+                    <div
+                      className={`absolute -right-2 -top-2 rounded-bl-2xl border-2 p-3 ${
+                        isDark ? "border-white/25 bg-gold text-white" : "border-navy/85 bg-navy text-white"
+                      }`}
+                    >
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className={`pr-10 text-lg font-heading font-semibold ${isDark ? "text-white" : "text-ink"}`}>{item.title}</h3>
+                    <p className={`mt-4 text-sm leading-7 ${isDark ? "text-white/90" : "text-slate"}`}>{item.description}</p>
+                  </div>
+                </FadeIn>
+              );
+            })}
           </div>
         </section>
 
@@ -168,10 +204,15 @@ export const About = () => {
             <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {values.map((value, index) => (
                 <FadeIn key={value.title} delay={0.05 * index}>
-                  <Card className="h-full border border-slate/10">
-                    <h3 className="text-lg font-heading font-semibold text-ink">{value.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-slate">{value.description}</p>
-                  </Card>
+                  <div
+                    className={`group relative h-full p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift ${
+                      index % 2 === 1 ? "border-2 border-white/25 bg-[#050505] text-white" : "border-2 border-navy/90 bg-white text-ink"
+                    }`}
+                    style={{ borderRadius: index % 2 === 1 ? "0 30px 0 30px" : "30px 0 30px 0" }}
+                  >
+                    <h3 className={`text-lg font-heading font-semibold ${index % 2 === 1 ? "text-white" : "text-ink"}`}>{value.title}</h3>
+                    <p className={`mt-3 text-sm leading-7 ${index % 2 === 1 ? "text-white/90" : "text-slate"}`}>{value.description}</p>
+                  </div>
                 </FadeIn>
               ))}
             </div>
@@ -180,28 +221,30 @@ export const About = () => {
 
         <section className="bg-cloud py-20">
           <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr]">
-            <FadeIn>
-              <Card className="h-full border border-white/60 bg-white/90">
-                <h3 className="text-lg font-heading font-semibold text-ink">Leadership & Team</h3>
-                <p className="mt-4 text-sm leading-7 text-slate">
-                  Behind FW82 Security Solutions Ltd is a team of experienced professionals with backgrounds
-                  in law enforcement, corporate security, and risk management. Our leadership emphasizes
-                  continuous training, ethical conduct, and operational excellence. Every guard is not
-                  just a protector but an ambassador of our brand values.
-                </p>
-              </Card>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <Card className="h-full border border-white/60 bg-white/90">
-                <h3 className="text-lg font-heading font-semibold text-ink">Community Commitment</h3>
-                <p className="mt-4 text-sm leading-7 text-slate">
-                  We believe security is a shared responsibility. Beyond our contracts, FW82 Security
-                  Solutions Ltd contributes to community safety initiatives, awareness campaigns, and
-                  partnerships with local authorities to strengthen public security. We aim to create
-                  a safer environment for the communities in which we operate.
-                </p>
-              </Card>
-            </FadeIn>
+            {closingCards.map((item, index) => {
+              const isDark = index % 2 === 1;
+              const Icon = item.Icon;
+              return (
+                <FadeIn key={item.title} delay={0.05 * index}>
+                  <div
+                    className={`group relative h-full p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift ${
+                      isDark ? "border-2 border-white/25 bg-[#050505] text-white" : "border-2 border-navy/90 bg-white text-ink"
+                    }`}
+                    style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
+                  >
+                    <div
+                      className={`absolute -right-2 -top-2 rounded-bl-2xl border-2 p-3 ${
+                        isDark ? "border-white/25 bg-gold text-white" : "border-navy/85 bg-navy text-white"
+                      }`}
+                    >
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className={`pr-10 text-lg font-heading font-semibold ${isDark ? "text-white" : "text-ink"}`}>{item.title}</h3>
+                    <p className={`mt-4 text-sm leading-7 ${isDark ? "text-white/90" : "text-slate"}`}>{item.description}</p>
+                  </div>
+                </FadeIn>
+              );
+            })}
           </div>
         </section>
 

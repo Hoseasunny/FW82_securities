@@ -178,8 +178,13 @@ export const HomeServices = () => {
 
         <FadeIn delay={0.2} className="mt-8">
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {pinnedServices.map((service) => (
-              <div key={service.title} className="group relative overflow-hidden rounded-3xl bg-navy">
+            {pinnedServices.map((service, index) => {
+              const isDark = index % 2 === 1;
+              return (
+              <div
+                key={service.title}
+                className={`group overflow-hidden rounded-3xl border ${isDark ? "border-white/10 bg-navy" : "border-slate/15 bg-white"}`}
+              >
                 <img
                   src={service.image.src}
                   srcSet={service.image.srcSet}
@@ -188,18 +193,20 @@ export const HomeServices = () => {
                   className="aspect-4/3 w-full object-cover transition duration-500 group-hover:scale-105"
                   decoding="async"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
-                <div className="absolute inset-0 bg-navy/40 opacity-0 transition duration-500 group-hover:opacity-100" />
-                <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                <div className={`p-6 ${isDark ? "text-white" : "text-ink"}`}>
                   <span className="text-xs uppercase tracking-[0.3em] text-gold">Service</span>
                   <h3 className="mt-3 text-xl font-heading font-semibold">{service.title}</h3>
-                  <p className="mt-2 text-sm text-white/80">{service.description}</p>
-                  <InlineLink to={`/services/${service.slug}`} className="mt-4">
+                  <p className={`mt-2 text-sm ${isDark ? "text-white/80" : "text-slate"}`}>{service.description}</p>
+                  <InlineLink
+                    to={`/services/${service.slug}`}
+                    className={`mt-4 ${isDark ? "text-white hover:text-gold" : "text-ink hover:text-gold"}`}
+                  >
                     Learn more
                   </InlineLink>
                 </div>
               </div>
-            ))}
+            );
+            })}
           </div>
         </FadeIn>
 

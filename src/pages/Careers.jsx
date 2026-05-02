@@ -8,6 +8,7 @@ import { SectionHeader } from "../components/UI/SectionHeader";
 import { FormTrustBadges } from "../components/UI/FormTrustBadges";
 import { Seo } from "../components/SEO/Seo";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
+import { Shield, Monitor, Radio, UserCheck } from "lucide-react";
 
 const validators = {
   fullName: (value) => (isRequired(value) ? "" : "Full name is required"),
@@ -22,6 +23,29 @@ const positions = [
   "CCTV Technician",
   "Control Room Operator",
   "Security Supervisor"
+];
+
+const openings = [
+  {
+    title: "Security Guards (20 positions)",
+    location: "Nairobi, Mombasa, Kisumu",
+    Icon: Shield
+  },
+  {
+    title: "CCTV Technicians (5 positions)",
+    location: "Nairobi",
+    Icon: Monitor
+  },
+  {
+    title: "Control Room Operators (3 positions)",
+    location: "Nairobi HQ",
+    Icon: Radio
+  },
+  {
+    title: "Security Supervisors (4 positions)",
+    location: "All branches",
+    Icon: UserCheck
+  }
 ];
 
 export const Careers = () => {
@@ -128,22 +152,29 @@ export const Careers = () => {
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeader title="Current Openings" subtitle="We're Hiring" />
           <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <div className="rounded-2xl border border-slate/10 p-4">
-              <p className="font-semibold text-ink">Security Guards (20 positions)</p>
-              <p className="text-sm text-slate">Nairobi, Mombasa, Kisumu</p>
-            </div>
-            <div className="rounded-2xl border border-slate/10 p-4">
-              <p className="font-semibold text-ink">CCTV Technicians (5 positions)</p>
-              <p className="text-sm text-slate">Nairobi</p>
-            </div>
-            <div className="rounded-2xl border border-slate/10 p-4">
-              <p className="font-semibold text-ink">Control Room Operators (3 positions)</p>
-              <p className="text-sm text-slate">Nairobi HQ</p>
-            </div>
-            <div className="rounded-2xl border border-slate/10 p-4">
-              <p className="font-semibold text-ink">Security Supervisors (4 positions)</p>
-              <p className="text-sm text-slate">All branches</p>
-            </div>
+            {openings.map((opening, index) => {
+              const isBlack = index % 2 === 1;
+              const Icon = opening.Icon;
+              return (
+                <div
+                  key={opening.title}
+                  className={`relative p-4 ${
+                    isBlack ? "border-2 border-white/20 bg-[#050505] text-white" : "border-2 border-gold/80 bg-gold text-white"
+                  }`}
+                  style={{ borderRadius: isBlack ? "0 30px 0 30px" : "30px 0 30px 0" }}
+                >
+                  <div
+                    className={`absolute -right-2 -top-2 rounded-bl-2xl border-2 p-3 ${
+                      isBlack ? "border-white/20 bg-gold text-white" : "border-gold/80 bg-black text-white"
+                    }`}
+                  >
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <p className="pr-10 font-semibold">{opening.title}</p>
+                  <p className="mt-1 text-sm text-white/90">{opening.location}</p>
+                </div>
+              );
+            })}
           </div>
 
           <div className="mt-12 rounded-3xl bg-cloud p-8">
