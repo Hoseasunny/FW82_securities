@@ -9,6 +9,7 @@ import { FormTrustBadges } from "../components/UI/FormTrustBadges";
 import { Seo } from "../components/SEO/Seo";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 import { Shield, Monitor, Radio, UserCheck } from "lucide-react";
+import { AlternatingCard } from "../components/UI/AlternatingCard";
 
 const validators = {
   fullName: (value) => (isRequired(value) ? "" : "Full name is required"),
@@ -153,27 +154,18 @@ export const Careers = () => {
           <SectionHeader title="Current Openings" subtitle="We're Hiring" />
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {openings.map((opening, index) => {
-              const isBlack = index % 2 === 1;
-              const iconLeft = index % 2 === 1;
               const Icon = opening.Icon;
               return (
-                <div
+                <AlternatingCard
                   key={opening.title}
-                  className={`relative p-4 ${
-                    isBlack ? "border-2 border-white/20 bg-[#050505] text-white" : "border-2 border-gold/80 bg-gold text-white"
-                  }`}
-                  style={{ borderRadius: isBlack ? "0 30px 0 30px" : "30px 0 30px 0" }}
+                  index={index}
+                  tone="red-black"
+                  icon={Icon}
+                  className="p-4"
                 >
-                  <div
-                    className={`absolute -top-2 border-2 p-3 ${iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"} ${
-                      isBlack ? "border-white/20 bg-gold text-white" : "border-gold/80 bg-black text-white"
-                    }`}
-                  >
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <p className={`${iconLeft ? "pl-10" : "pr-10"} font-semibold`}>{opening.title}</p>
+                  <p className="font-semibold">{opening.title}</p>
                   <p className="mt-1 text-sm text-white/90">{opening.location}</p>
-                </div>
+                </AlternatingCard>
               );
             })}
           </div>

@@ -2,6 +2,7 @@ import { FadeIn } from "../Animation/FadeIn";
 import { SectionHeader } from "../UI/SectionHeader";
 import { InlineLink } from "../UI/InlineLink";
 import { ShieldCheck } from "lucide-react";
+import { AlternatingCard } from "../UI/AlternatingCard";
 
 export const HomeAbout = () => {
   return (
@@ -48,25 +49,17 @@ export const HomeAbout = () => {
                 "Tailored client security plans",
                 "Ethical, transparent reporting"
               ].map((item, index) => {
-                const isDark = index % 2 === 1;
-                const iconLeft = index % 2 === 1;
                 return (
-                <div
+                <AlternatingCard
                   key={item}
-                  className={`relative border-2 px-4 py-3 text-xs font-semibold ${
-                    isDark ? "border-white/25 bg-[#050505] text-white" : "border-gold/80 bg-gold text-white"
-                  }`}
-                  style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
+                  index={index}
+                  tone="red-black"
+                  icon={ShieldCheck}
+                  iconSize="h-4 w-4"
+                  className="px-4 py-3 text-xs font-semibold"
                 >
-                  <div
-                    className={`absolute -top-2 border-2 p-2 ${iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"} ${
-                      isDark ? "border-white/25 bg-gold text-white" : "border-gold/80 bg-black text-white"
-                    }`}
-                  >
-                    <ShieldCheck className="h-4 w-4" />
-                  </div>
-                  <span className={iconLeft ? "pl-6" : "pr-6"}>{item}</span>
-                </div>
+                  <span>{item}</span>
+                </AlternatingCard>
               );
               })}
             </div>

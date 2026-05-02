@@ -7,6 +7,7 @@ import { Button } from "../components/UI/Button";
 import { Seo } from "../components/SEO/Seo";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 import { StaggerGroup } from "../components/Animation/StaggerGroup";
+import { AlternatingCard } from "../components/UI/AlternatingCard";
 
 const iconMap = {
   Shield,
@@ -67,20 +68,13 @@ export const Services = () => {
               {services.map((service, index) => {
                 const Icon = iconMap[service.icon] || Shield;
                 const isDark = index % 2 === 1;
-                const iconLeft = index % 2 === 1;
                 return (
-                <div
+                <AlternatingCard
                   key={service.title}
-                  className={`relative overflow-hidden border-2 ${isDark ? "border-white/25 bg-[#050505] text-white" : "border-navy/90 bg-white text-ink"}`}
-                  style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
+                  index={index}
+                  icon={Icon}
+                  className="overflow-hidden p-0"
                 >
-                  <div
-                    className={`absolute -top-2 z-10 border-2 p-3 ${iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"} ${
-                      isDark ? "border-white/25 bg-gold text-white" : "border-navy/85 bg-navy text-white"
-                    }`}
-                  >
-                    <Icon className="h-6 w-6" />
-                  </div>
                   <img
                     src={service.image.src}
                     srcSet={service.image.srcSet}
@@ -89,12 +83,12 @@ export const Services = () => {
                     className="aspect-4/3 w-full object-cover"
                     decoding="async"
                   />
-                  <div className={`p-6 ${isDark ? "text-white" : "text-ink"}`}>
+                  <div className="p-6">
                       <div className="flex items-center gap-3">
                         <span className="text-xs uppercase tracking-[0.3em] text-gold">Service</span>
                       </div>
-                      <h3 className={`mt-3 ${iconLeft ? "pl-10" : "pr-10"} text-xl font-heading font-semibold`}>{service.title}</h3>
-                      <p className={`mt-2 text-sm ${isDark ? "text-white/80" : "text-slate"}`}>
+                      <h3 className="mt-3 text-xl font-heading font-semibold">{service.title}</h3>
+                      <p className="mt-2 text-sm text-current/90">
                         {service.shortDescription || service.description}
                       </p>
                       <Button
@@ -106,7 +100,7 @@ export const Services = () => {
                         Learn More
                       </Button>
                     </div>
-                  </div>
+                </AlternatingCard>
                 );
               })}
             </StaggerGroup>
@@ -122,22 +116,13 @@ export const Services = () => {
             <StaggerGroup className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {specializedServices.map((service, index) => {
                 const isDark = index % 2 === 1;
-                const iconLeft = index % 2 === 1;
                 return (
-                <div
+                <AlternatingCard
                   key={service.slug}
-                  className={`group relative overflow-hidden border-2 transition hover:-translate-y-1 hover:shadow-lift ${
-                    isDark ? "border-white/25 bg-[#050505] text-white" : "border-navy/90 bg-white text-ink"
-                  }`}
-                  style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
+                  index={index}
+                  icon={ShieldCheck}
+                  className="group overflow-hidden p-0"
                 >
-                  <div
-                    className={`absolute -top-2 z-10 border-2 p-3 ${iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"} ${
-                      isDark ? "border-white/25 bg-gold text-white" : "border-navy/85 bg-navy text-white"
-                    }`}
-                  >
-                    <ShieldCheck className="h-6 w-6" />
-                  </div>
                   <img
                     src={service.image.src}
                     srcSet={service.image.srcSet}
@@ -146,10 +131,10 @@ export const Services = () => {
                     className="aspect-4/3 w-full object-cover"
                     decoding="async"
                   />
-                  <div className={`p-6 ${isDark ? "text-white" : "text-ink"}`}>
+                  <div className="p-6">
                     <p className="text-xs uppercase tracking-[0.3em] text-gold">{service.tagline}</p>
-                    <h3 className={`mt-2 ${iconLeft ? "pl-10" : "pr-10"} text-lg font-heading font-semibold ${isDark ? "text-white" : "text-ink"}`}>{service.title}</h3>
-                    <p className={`mt-2 text-sm ${isDark ? "text-white/90" : "text-slate"}`}>{service.description}</p>
+                    <h3 className="mt-2 text-lg font-heading font-semibold">{service.title}</h3>
+                    <p className="mt-2 text-sm text-current/90">{service.description}</p>
                     <Button
                       as={Link}
                       to={`/services/specialized/${service.slug}`}
@@ -159,7 +144,7 @@ export const Services = () => {
                       Learn More
                     </Button>
                   </div>
-                </div>
+                </AlternatingCard>
               );
               })}
             </StaggerGroup>

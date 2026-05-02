@@ -5,6 +5,7 @@ import { FadeIn } from "../components/Animation/FadeIn";
 import { FaqSection } from "../components/Sections/FaqSection";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 import { Target, Eye, ShieldCheck, Users } from "lucide-react";
+import { AlternatingCard } from "../components/UI/AlternatingCard";
 
 const aboutHero = buildImageSet(
   "Leadership",
@@ -176,27 +177,13 @@ export const About = () => {
         <section className="bg-cloud py-20">
           <div className="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-2">
             {missionVision.map((item, index) => {
-              const isDark = index % 2 === 1;
-              const iconLeft = index % 2 === 1;
               const Icon = item.Icon;
               return (
                 <FadeIn key={item.title} delay={0.05 * index}>
-                  <div
-                    className={`group relative p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift ${
-                      isDark ? "border-2 border-white/25 bg-[#050505] text-white" : "border-2 border-navy/90 bg-white text-ink"
-                    }`}
-                    style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
-                  >
-                    <div
-                      className={`absolute -top-2 border-2 p-3 ${iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"} ${
-                        isDark ? "border-white/25 bg-gold text-white" : "border-navy/85 bg-navy text-white"
-                      }`}
-                    >
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <h3 className={`${iconLeft ? "pl-10" : "pr-10"} text-lg font-heading font-semibold ${isDark ? "text-white" : "text-ink"}`}>{item.title}</h3>
-                    <p className={`mt-4 text-sm leading-7 ${isDark ? "text-white/90" : "text-slate"}`}>{item.description}</p>
-                  </div>
+                  <AlternatingCard index={index} icon={Icon}>
+                    <h3 className="text-lg font-heading font-semibold">{item.title}</h3>
+                    <p className="mt-4 text-sm leading-7 text-current/90">{item.description}</p>
+                  </AlternatingCard>
                 </FadeIn>
               );
             })}
@@ -229,27 +216,13 @@ export const About = () => {
         <section className="bg-cloud py-20">
           <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr]">
             {closingCards.map((item, index) => {
-              const isDark = index % 2 === 1;
-              const iconLeft = index % 2 === 1;
               const Icon = item.Icon;
               return (
                 <FadeIn key={item.title} delay={0.05 * index}>
-                  <div
-                    className={`group relative h-full p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift ${
-                      isDark ? "border-2 border-white/25 bg-[#050505] text-white" : "border-2 border-navy/90 bg-white text-ink"
-                    }`}
-                    style={{ borderRadius: isDark ? "0 30px 0 30px" : "30px 0 30px 0" }}
-                  >
-                    <div
-                      className={`absolute -top-2 border-2 p-3 ${iconLeft ? "-left-2 rounded-br-2xl" : "-right-2 rounded-bl-2xl"} ${
-                        isDark ? "border-white/25 bg-gold text-white" : "border-navy/85 bg-navy text-white"
-                      }`}
-                    >
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <h3 className={`${iconLeft ? "pl-10" : "pr-10"} text-lg font-heading font-semibold ${isDark ? "text-white" : "text-ink"}`}>{item.title}</h3>
-                    <p className={`mt-4 text-sm leading-7 ${isDark ? "text-white/90" : "text-slate"}`}>{item.description}</p>
-                  </div>
+                  <AlternatingCard index={index} icon={Icon} className="h-full">
+                    <h3 className="text-lg font-heading font-semibold">{item.title}</h3>
+                    <p className="mt-4 text-sm leading-7 text-current/90">{item.description}</p>
+                  </AlternatingCard>
                 </FadeIn>
               );
             })}
