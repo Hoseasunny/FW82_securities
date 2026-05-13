@@ -1,5 +1,4 @@
-import { buildImageSet } from "../utils/imageGenerator";
-import { SectionHeader } from "../components/UI/SectionHeader";
+﻿import { SectionHeader } from "../components/UI/SectionHeader";
 import { Seo } from "../components/SEO/Seo";
 import { FadeIn } from "../components/Animation/FadeIn";
 import { FaqSection } from "../components/Sections/FaqSection";
@@ -7,17 +6,9 @@ import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 import { Target, Eye, ShieldCheck, Users } from "lucide-react";
 import { AlternatingCard } from "../components/UI/AlternatingCard";
 
-const aboutHero = buildImageSet(
-  "Leadership",
-  "African security leadership team in formal attire in modern boardroom, Nairobi skyline visible",
-  "about/team-briefing"
-);
-
-const leadershipImage = buildImageSet(
-  "Leadership Team",
-  "Diplomatic event at Airport Mall with professional security presence",
-  "news-thumbnails/news-1"
-);
+const aboutHero = {
+  src: "/images/custom/about-top-20260502-174125.png"
+};
 
 const values = [
   {
@@ -44,6 +35,24 @@ const values = [
 
 export const About = () => {
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const journeyMilestones = [
+    {
+      title: "Frontline Foundation",
+      detail: "Our roots were built in day-to-day guarding operations, discipline, and client trust."
+    },
+    {
+      title: "Service Expansion",
+      detail: "FW82 evolved into a multi-service security partner for corporate, residential, industrial, and event environments."
+    },
+    {
+      title: "Technology Integration",
+      detail: "We strengthened physical protection with CCTV, access control, alarms, and smart monitoring systems."
+    },
+    {
+      title: "Trusted Delivery",
+      detail: "Today, we combine trained people, clear operations, and modern systems to deliver dependable protection."
+    }
+  ];
   const missionVision = [
     {
       title: "Mission",
@@ -102,7 +111,7 @@ export const About = () => {
       />
       <main>
         <section
-          className="relative h-[60vh] bg-navy text-white"
+          className="group relative h-[60vh] overflow-hidden bg-navy text-white"
           style={{
             backgroundImage: `url(${aboutHero.src})`,
             backgroundSize: "cover",
@@ -110,6 +119,8 @@ export const About = () => {
           }}
         >
           <div className="absolute inset-0 bg-hero-gradient opacity-70" />
+          <div className="pointer-events-none absolute -left-12 bottom-10 h-52 w-52 rounded-full border border-white/35 bg-white/10 blur-[1px]" />
+          <div className="pointer-events-none absolute -right-10 top-10 h-40 w-40 rounded-full border border-gold/40 bg-gold/15 blur-[1px]" />
           <div className="relative z-10 flex h-full items-center">
             <div className="mx-auto max-w-6xl px-6">
               <Breadcrumbs
@@ -122,52 +133,73 @@ export const About = () => {
               />
               <h1 className="text-4xl font-heading font-bold md:text-5xl">About FW82</h1>
               <p className="mt-4 max-w-2xl text-white/80">
-                FW82 Security Solutions Ltd is a Kenyan security partner committed to safeguarding lives, property, and
-                reputations through disciplined operations, ethical conduct, and technology-enabled protection.
+                Trusted Kenyan security experts delivering disciplined guarding, rapid response, and technology-enabled
+                protection for homes, businesses, and institutions.
               </p>
+              <div className="mt-5 inline-flex rounded-full bg-white/85 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-ink shadow-soft transition-transform duration-300 group-hover:-translate-y-0.5">
+                Reliable. Vigilant. Professional.
+              </div>
             </div>
           </div>
         </section>
 
         <section className="bg-white py-20">
-          <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[0.9fr_1.1fr]">
             <FadeIn>
-              <SectionHeader title="Our Story" subtitle="Company Story" />
-              <p className="mt-6 text-sm leading-7 text-slate">
-                FW82 Security Solutions Ltd was established to meet the growing demand for reliable,
-                professional, and technology-driven security services in Kenya. From humble beginnings,
-                we have evolved into a trusted partner for businesses, institutions, and communities
-                that require uncompromising protection.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-slate">
-                Our journey has been guided by a simple but powerful mission: to safeguard lives,
-                property, and reputations with integrity, vigilance, and professionalism. We approach
-                security as a long-term partnership, working closely with each client to understand
-                their operational realities, risk exposure, and performance expectations.
-              </p>
+              <SectionHeader title="Our Journey" subtitle="Built from Experience, Grown Through Trust" />
+              <div className="group mt-6 overflow-hidden rounded-3xl border border-white/10 bg-black shadow-soft sm:mx-0 md:mx-0 -mx-6 sm:w-auto md:w-auto w-[calc(100%+3rem)]">
+                <div className="flex flex-col gap-10 p-6">
+                  <div className="hero-split-media relative overflow-hidden p-4">
+                    <div className="hero-shape-layer hero-shape-layer-a" aria-hidden="true" />
+                    <div className="hero-shape-layer hero-shape-layer-b" aria-hidden="true" />
+                    <img
+                      src="/images/custom/director-journey-20260507.png"
+                      alt="FW82 Executive Director and Chief Commercial Officer"
+                      className="hero-split-image h-[50vh] sm:h-[320px] md:h-[320px] w-[98vw] sm:w-full md:w-full max-w-[98vw] sm:max-w-xl md:max-w-xl rounded-[1.5rem] object-cover object-center transition-transform duration-500 scale-[1.1] group-hover:scale-[1.12]"
+                      style={{ objectPosition: "center 35%" }}
+                      decoding="async"
+                    />
+                    <div className="hero-split-border" aria-hidden="true" />
+                  </div>
+                  <div className="flex flex-col justify-center">
+                    <p className="text-sm font-semibold text-white">Executive Director & Chief Commercial Officer</p>
+                    <p className="mt-3 text-sm leading-7 text-slate-300">
+                      "A vision without a visionary is dead." This leadership journey from frontline guarding to executive
+                      management reflects the values that shaped FW82: resilience, discipline, and consistent service delivery.
+                    </p>
+                    <div className="mt-5 inline-flex rounded-full bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white">
+                      18+ Years Security Leadership
+                    </div>
+                  </div>
+                </div>
+              </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-                <div
-                  className="group relative overflow-hidden border-2 border-navy/90 bg-white transition hover:-translate-y-1 hover:shadow-lift"
-                  style={{ borderRadius: "30px 0 30px 0" }}
-                >
-                <div className="absolute -left-2 -top-2 z-10 rounded-br-2xl border-2 border-navy/85 bg-navy p-3 text-white">
-                  <ShieldCheck className="h-6 w-6" />
+              <p className="mt-6 text-sm leading-7 text-slate">
+                FW82 Security Solutions Ltd provides dependable, technology-enabled security tailored to each client.
+                We combine trained personnel, clear operations, and modern systems to protect people, property, and
+                reputation across Kenya.
+              </p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {journeyMilestones.map((item) => (
+                  <div key={item.title} className="rounded-2xl border border-slate/15 bg-cloud p-5 shadow-soft">
+                    <h3 className="text-sm font-heading font-bold text-ink">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                <div className="rounded-2xl border border-slate/15 bg-white p-4 text-center shadow-soft">
+                  <p className="text-2xl font-heading font-bold text-ink">18+</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate">Years Experience</p>
                 </div>
-                <img
-                  src={leadershipImage.src}
-                  srcSet={leadershipImage.srcSet}
-                  alt="FW82 security leadership team"
-                  className="aspect-4/3 w-full object-cover"
-                  decoding="async"
-                />
-                <div className="p-6">
-                  <h3 className="text-lg font-heading font-semibold text-ink">A Leadership-Driven Culture</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate">
-                    Our leadership team brings experience in law enforcement, corporate security, and risk
-                    management. We maintain strict operational standards, continuous training, and ethical
-                    conduct so every officer represents the values and reputation of our brand.
-                  </p>
+                <div className="rounded-2xl border border-slate/15 bg-white p-4 text-center shadow-soft">
+                  <p className="text-2xl font-heading font-bold text-ink">500+</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate">Clients Served</p>
+                </div>
+                <div className="rounded-2xl border border-slate/15 bg-white p-4 text-center shadow-soft">
+                  <p className="text-2xl font-heading font-bold text-ink">99.8%</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate">Retention</p>
                 </div>
               </div>
             </FadeIn>
@@ -234,3 +266,5 @@ export const About = () => {
     </>
   );
 };
+
+
