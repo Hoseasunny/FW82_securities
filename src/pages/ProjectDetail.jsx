@@ -26,7 +26,7 @@ export const ProjectDetail = () => {
   if (!project) {
     return (
       <>
-        <Seo title="Project Not Found | FW82 Security" description="Project not found." pathname="/projects" noindex />
+        <Seo title="Project Not Found | Factory 2K Solution" description="Project not found." pathname="/projects" noindex />
         <main>
           <section className="bg-navy py-16 text-white">
             <div className="mx-auto max-w-6xl px-6">
@@ -49,7 +49,7 @@ export const ProjectDetail = () => {
   return (
     <>
       <Seo
-        title={`${project.title} | FW82 Security`}
+        title={`${project.title} | Factory 2K Solution`}
         description={project.summary}
         pathname={`/projects/${project.slug}`}
         image={project.image.src}

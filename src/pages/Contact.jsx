@@ -77,7 +77,7 @@ export const Contact = () => {
   return (
     <>
       <Seo
-        title="Contact FW82 Security | Get in Touch"
+        title="Contact Factory 2K Solution | Get in Touch"
         description="Reach our team in Nairobi or any branch across Kenya. Emergency line is available 24/7."
         pathname="/contact"
         jsonLd={{
@@ -110,7 +110,7 @@ export const Contact = () => {
               textClassName="text-white/60"
               linkClassName="hover:text-gold"
             />
-            <h1 className="text-4xl font-heading font-bold">Contact FW82</h1>
+            <h1 className="text-4xl font-heading font-bold">Contact Factory 2K</h1>
             <p className="mt-4 max-w-2xl text-white/70">
               Reach our team in Nairobi or any branch across Kenya. Emergency line is available 24/7.
             </p>

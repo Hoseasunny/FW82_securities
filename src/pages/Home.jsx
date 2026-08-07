@@ -46,7 +46,7 @@ export const Home = () => {
   return (
     <>
       <Seo
-        title="FW82 Security Solution Ltd | Professional Security Services Kenya"
+        title="Factory 2K Solution Ltd | Professional Security Services Kenya"
         description="Leading security company in Kenya offering guarding, CCTV, alarms, and event security. PSRA licensed. Serving Nairobi, Mombasa, Kisumu & Eldoret."
         pathname="/"
         jsonLd={[organizationJsonLd, websiteJsonLd]}

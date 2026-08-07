@@ -23,7 +23,7 @@ export const SpecializedServiceDetail = () => {
     return (
       <>
         <Seo
-          title="Service Not Found | FW82 Security"
+          title="Service Not Found | Factory 2K Solution"
           description="Service not found."
           pathname="/services"
           noindex
@@ -50,7 +50,7 @@ export const SpecializedServiceDetail = () => {
   return (
     <>
       <Seo
-        title={`${service.title} | FW82 Security`}
+        title={`${service.title} | Factory 2K Solution`}
         description={service.description}
         pathname={`/services/specialized/${service.slug}`}
         image={service.image.src}
@@ -143,7 +143,7 @@ export const SpecializedServiceDetail = () => {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <Card className="border border-slate/10 bg-cloud">
-                  <p className="text-xs uppercase tracking-[0.3em] text-gold">Why FW82</p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-gold">Why Factory 2K</p>
                   <p className="mt-4 text-sm text-slate">{service.value}</p>
                 </Card>
               </FadeIn>

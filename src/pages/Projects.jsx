@@ -22,7 +22,7 @@ export const Projects = () => {
   return (
     <>
       <Seo
-        title="Projects & Case Studies | FW82 Security"
+        title="Projects & Case Studies | Factory 2K Solution"
         description="Explore real-world security deployments across Kenya, including guarding, event security, and technical systems."
         pathname="/projects"
         image={projects[0]?.image?.src}

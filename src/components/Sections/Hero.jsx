@@ -6,7 +6,7 @@ import { buildImageSet } from "../../utils/imageGenerator";
 import { Link } from "react-router-dom";
 
 const heroImage = buildImageSet(
-  "FW82 Hero",
+  "Factory 2K Hero",
   "Professional African security guard in formal navy blue uniform with gold accents, standing in modern Nairobi business district at dusk, city lights bokeh background, cinematic lighting, corporate photography style",
   "hero/hero-1"
 );
@@ -95,7 +95,7 @@ export const Hero = () => {
           <img
             src="/images/hero/hero-guard-feature.png"
             alt="Security officer welcoming clients"
-            className="hero-split-image h-[460px] w-full object-cover sm:h-[560px] lg:h-[640px]"
+            className="hero-split-image h-115 w-full object-cover sm:h-140 lg:h-160"
             loading="eager"
             decoding="async"
           />

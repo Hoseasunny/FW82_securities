@@ -23,8 +23,8 @@ export const News = () => {
   return (
     <>
       <Seo
-        title="News & Events | FW82 Security"
-        description="Updates from FW82 Security and insights from the security landscape across Kenya."
+        title="News & Events | Factory 2K Solution"
+        description="Updates from Factory 2K Solution and insights from the security landscape across Kenya."
         pathname="/news"
         image={featured?.image?.src}
         jsonLd={{
@@ -59,7 +59,7 @@ export const News = () => {
             />
             <h1 className="text-4xl font-heading font-bold">News & Events</h1>
             <p className="mt-4 max-w-2xl text-white/70">
-              Updates from FW82 and the security landscape across Kenya.
+              Updates from Factory 2K and the security landscape across Kenya.
             </p>
           </div>
         </section>

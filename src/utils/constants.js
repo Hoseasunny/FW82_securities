@@ -1,5 +1,5 @@
 export const COMPANY = {
-  name: "FW82 Security Solution Ltd",
+  name: "Factory 2K Solution Ltd",
   phone: "+254 799 491929",
   emailPrimary: "Mail-info@factory2ksecurity.co.ke",
   emailSecondary: "Mail-info@factory2ksecurity.co.ke",

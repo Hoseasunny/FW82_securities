@@ -23,7 +23,7 @@ export const HomeAbout = () => {
                 Security Built on Trust
               </h2>
               <p className="mt-6 text-sm leading-7 text-slate-100">
-                FW82 Security Solutions Ltd was established to answer a clear need in Kenya&apos;s
+                Factory 2K Solution Ltd was established to answer a clear need in Kenya&apos;s
                 security landscape: dependable protection delivered with professionalism, discipline,
                 and modern technology. From our early operations, we have grown into a trusted
                 partner for businesses, institutions, and residential communities that expect

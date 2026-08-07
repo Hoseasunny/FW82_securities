@@ -109,7 +109,7 @@ export const Careers = () => {
   return (
     <>
       <Seo
-        title="Careers | FW82 Security"
+        title="Careers | Factory 2K Solution"
         description="Join our team of security professionals serving Nairobi, Mombasa, Kisumu, and Eldoret."
         pathname="/careers"
         jsonLd={{
@@ -142,7 +142,7 @@ export const Careers = () => {
               textClassName="text-white/60"
               linkClassName="hover:text-gold"
             />
-            <h1 className="text-4xl font-heading font-bold">Careers at FW82</h1>
+            <h1 className="text-4xl font-heading font-bold">Careers at Factory 2K</h1>
             <p className="mt-4 max-w-2xl text-white/70">
               Join our team of security professionals serving Nairobi, Mombasa, Kisumu, and Eldoret.
             </p>

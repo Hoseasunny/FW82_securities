@@ -22,7 +22,7 @@ export const ServiceDetail = () => {
   if (!service) {
     return (
       <>
-        <Seo title="Service Not Found | FW82 Security" description="Service not found." pathname="/services" noindex />
+        <Seo title="Service Not Found | Factory 2K Solution" description="Service not found." pathname="/services" noindex />
         <main>
           <section className="bg-navy py-16 text-white">
             <div className="mx-auto max-w-6xl px-6">
@@ -68,7 +68,7 @@ export const ServiceDetail = () => {
   return (
     <>
       <Seo
-        title={`${service.title} | FW82 Security`}
+        title={`${service.title} | Factory 2K Solution`}
         description={service.description}
         pathname={`/services/${service.slug}`}
         image={service.image.src}
@@ -150,7 +150,7 @@ export const ServiceDetail = () => {
                   </div>
                   {service.whyChoose && (
                     <Card className="border border-slate/10">
-                      <p className="text-xs uppercase tracking-[0.3em] text-gold">Why Choose FW82</p>
+                      <p className="text-xs uppercase tracking-[0.3em] text-gold">Why Choose Factory 2K</p>
                       <ul className="mt-4 space-y-3 text-sm text-slate">
                         {service.whyChoose.map((item) => (
                           <li key={item} className="flex items-start gap-3">

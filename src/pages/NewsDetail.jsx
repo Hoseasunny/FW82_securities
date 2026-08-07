@@ -26,7 +26,7 @@ export const NewsDetail = () => {
   if (!article) {
     return (
       <>
-        <Seo title="News Not Found | FW82 Security" description="News article not found." pathname="/news" noindex />
+        <Seo title="News Not Found | Factory 2K Solution" description="News article not found." pathname="/news" noindex />
         <main>
           <section className="bg-navy py-16 text-white">
             <div className="mx-auto max-w-6xl px-6">
@@ -49,7 +49,7 @@ export const NewsDetail = () => {
   return (
     <>
       <Seo
-        title={`${article.title} | FW82 Security`}
+        title={`${article.title} | Factory 2K Solution`}
         description={article.excerpt}
         pathname={`/news/${article.slug}`}
         image={article.image.src}
@@ -63,7 +63,7 @@ export const NewsDetail = () => {
             image: article.image.src,
             publisher: {
               "@type": "Organization",
-              name: "FW82 Security Solution Ltd"
+              name: "Factory 2K Solution Ltd"
             }
           },
           {
@@ -159,7 +159,7 @@ export const NewsDetail = () => {
                     walk you through the operational details.
                   </p>
                   <Button as={Link} to="/contact" variant="primary" className="mt-6 w-full text-xs">
-                    Talk to FW82
+                    Talk to Factory 2K
                   </Button>
                 </Card>
               </FadeIn>

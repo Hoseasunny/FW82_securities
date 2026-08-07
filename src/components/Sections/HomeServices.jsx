@@ -43,8 +43,8 @@ export const HomeServices = () => {
           <FadeIn delay={0.1} className="mt-10">
             <div className="relative w-screen overflow-hidden bg-navy px-6 py-10 -mx-6 ml-[calc(50%-50vw)] sm:w-full sm:mx-0 sm:ml-0 sm:rounded-3xl sm:px-8">
               <div className="md:hidden">
-                <div className="relative overflow-hidden rounded-3xl">
-                  <div className="relative h-[72vh] w-full">
+                <div className="relative flex h-[68vh] min-h-115 flex-col overflow-hidden rounded-3xl bg-white">
+                  <div className="relative min-h-0 flex-[9_1_0%] w-full overflow-hidden">
                     {technical.gallery.map((item, index) => (
                       <img
                         key={item.title}
@@ -53,20 +53,11 @@ export const HomeServices = () => {
                         alt={item.title}
                         loading="lazy"
                         decoding="async"
-                        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+                        className={`absolute inset-0 block h-full w-full max-w-none object-cover object-center transition-opacity duration-700 ${
                           index === activeSlide ? "opacity-100" : "opacity-0"
                         }`}
                       />
                     ))}
-                    <div className="absolute inset-0 bg-navy/45" />
-                    <div className="absolute bottom-6 left-6 right-6 text-white">
-                      <h3 className="mt-2 text-lg font-heading font-semibold">
-                        {technical.gallery[activeSlide]?.title}
-                      </h3>
-                      <p className="mt-2 text-sm text-white/80">
-                        {technical.gallery[activeSlide]?.caption}
-                      </p>
-                    </div>
                   </div>
                   <button
                     type="button"
@@ -84,7 +75,7 @@ export const HomeServices = () => {
                   >
                     <ChevronRight className="h-5 w-5" />
                   </button>
-                  <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+                  <div className="absolute bottom-20 left-1/2 flex -translate-x-1/2 gap-2">
                     {technical.gallery.map((item, index) => (
                       <button
                         key={`${item.title}-dot`}
@@ -95,16 +86,11 @@ export const HomeServices = () => {
                       />
                     ))}
                   </div>
-                </div>
-                <div className="mt-6 flex items-center justify-between gap-4 text-white">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-gold">Technical Security</p>
-                    <h3 className="mt-2 text-lg font-heading font-semibold">{technical.title}</h3>
-                    <p className="mt-2 text-sm text-white/80">{technical.description}</p>
+                  <div className="flex min-h-16 flex-1 items-center px-6 text-ink">
+                    <h3 className="text-lg font-heading font-semibold">
+                      {technical.gallery[activeSlide]?.title}
+                    </h3>
                   </div>
-                  <InlineLink to={`/services/${technical.slug}`}>
-                    Learn more
-                  </InlineLink>
                 </div>
               </div>
 
@@ -112,8 +98,8 @@ export const HomeServices = () => {
                 {[0, 1].map((offset) => {
                   const panelIndex = (activeSlide + offset) % technical.gallery.length;
                   return (
-                    <div key={panelIndex} className="relative overflow-hidden rounded-3xl">
-                      <div className="relative h-80 w-full md:h-105">
+                    <div key={panelIndex} className="relative flex h-117.5 flex-col overflow-hidden rounded-3xl bg-white">
+                      <div className="relative min-h-0 flex-[9_1_0%] w-full overflow-hidden">
                         {technical.gallery.map((item, index) => (
                           <img
                             key={`${item.title}-${offset}`}
@@ -122,22 +108,18 @@ export const HomeServices = () => {
                             alt={item.title}
                             loading="lazy"
                             decoding="async"
-                            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+                            className={`absolute inset-0 block h-full w-full max-w-none object-cover object-center transition-opacity duration-700 ${
                               index === panelIndex ? "opacity-100" : "opacity-0"
                             }`}
                           />
                         ))}
                       </div>
-                    <div className="absolute inset-0 bg-navy/45" />
-                    <div className="absolute bottom-6 left-6 right-6 text-white">
-                      <p className="text-xs uppercase tracking-[0.3em] text-gold">Technical Security</p>
-                      <h3 className="mt-2 text-lg font-heading font-semibold">{technical.title}</h3>
-                      <p className="mt-2 text-sm text-white/80">{technical.description}</p>
-                      <InlineLink to={`/services/${technical.slug}`} className="mt-4">
-                        Learn more
-                      </InlineLink>
+                      <div className="flex min-h-16 flex-1 items-center px-6 text-ink">
+                        <h3 className="text-lg font-heading font-semibold">
+                          {technical.gallery[panelIndex]?.title}
+                        </h3>
+                      </div>
                     </div>
-                  </div>
                   );
                 })}
               </div>

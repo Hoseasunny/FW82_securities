@@ -13,11 +13,13 @@ export const Preloader = () => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy">
       <div className="text-center text-white">
-        <div className="mx-auto flex h-16 w-16 animate-pulse items-center justify-center rounded-full border border-gold/40">
-          <span className="text-2xl font-heading font-bold text-white">FW</span>
-          <span className="text-2xl font-heading font-bold text-gold">82</span>
+        <div className="mx-auto flex h-16 w-16 animate-pulse items-center justify-center rounded-full border border-gold/40 px-2 text-center">
+          <span className="text-lg font-heading font-bold text-white">Factory</span>
+          <span className="ml-1 text-lg font-heading font-bold text-gold">2K</span>
         </div>
-        <p className="mt-4 text-sm uppercase tracking-[0.4em] text-white/60"><span className="font-bold text-white">FW</span><span className="text-alert font-bold ">82</span> Security Solution</p>
+        <p className="mt-4 text-sm uppercase tracking-[0.4em] text-white/60">
+          <span className="font-bold text-white">Factory 2K</span> Solution
+        </p>
       </div>
     </div>
   );

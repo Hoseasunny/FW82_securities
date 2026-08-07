@@ -14,7 +14,7 @@ export const Navbar = () => {
       <div className="glass">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Link to="/" className="text-xl font-heading font-bold text-white">
-            FW<span className="text-gold">82</span> Security
+            Factory <span className="text-gold">2K</span> Solution
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">

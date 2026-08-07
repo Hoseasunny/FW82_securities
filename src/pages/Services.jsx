@@ -21,7 +21,7 @@ export const Services = () => {
   return (
     <>
       <Seo
-        title="Security Services | FW82 Security Solution Ltd"
+        title="Security Services | Factory 2K Solution Ltd"
         description="Explore our full range of security services, including guarding, technical security systems, event protection, and smart integration."
         pathname="/services"
         jsonLd={{

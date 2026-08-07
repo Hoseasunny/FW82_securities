@@ -1,6 +1,6 @@
-# FW82 Security Solutions Website
+# Factory 2K Solution Website
 
-Marketing and lead‑generation website for FW82 Security Solution Ltd. Built with React + Vite and styled with Tailwind CSS. The site includes multi‑page navigation, service detail pages with galleries, projects/case studies, news, careers, contact, and SEO enhancements (Open Graph, JSON‑LD, sitemap, robots).
+Marketing and lead‑generation website for Factory 2K Solution Ltd. Built with React + Vite and styled with Tailwind CSS. The site includes multi‑page navigation, service detail pages with galleries, projects/case studies, news, careers, contact, and SEO enhancements (Open Graph, JSON‑LD, sitemap, robots).
 
 ## Features
 - Home page with hero, services overview, and testimonials
