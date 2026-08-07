@@ -33,9 +33,6 @@ export const Hero = () => {
 
       <div className="relative z-10 mx-auto grid min-h-screen max-w-6xl items-center gap-10 px-6 pb-20 pt-32 lg:grid-cols-[0.92fr_1.08fr]">
         <div>
-          <p className="inline-flex w-fit rounded-full border border-gold/50 bg-gold/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-gold">
-            PSRA-Licensed Protection Partner
-          </p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
