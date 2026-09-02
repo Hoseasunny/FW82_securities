@@ -26,7 +26,7 @@ export const ProjectDetail = () => {
   if (!project) {
     return (
       <>
-        <Seo title="Project Not Found | Factory 2K Solution" description="Project not found." pathname="/projects" noindex />
+        <Seo title="Project Not Found | FW82 Security Solutions Ltd" description="Project not found." pathname="/projects" noindex />
         <main>
           <section className="bg-navy py-16 text-white">
             <div className="mx-auto max-w-6xl px-6">
@@ -44,12 +44,12 @@ export const ProjectDetail = () => {
     );
   }
 
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://www.fw82securitysolutions.com";
 
   return (
     <>
       <Seo
-        title={`${project.title} | Factory 2K Solution`}
+        title={`${project.title} | FW82 Security Solutions Ltd`}
         description={project.summary}
         pathname={`/projects/${project.slug}`}
         image={project.image.src}

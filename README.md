@@ -1,6 +1,6 @@
-# Factory 2K Solution Website
+# FW82 Security Solutions Ltd Website
 
-Marketing and lead‑generation website for Factory 2K Solution Ltd. Built with React + Vite and styled with Tailwind CSS. The site includes multi‑page navigation, service detail pages with galleries, projects/case studies, news, careers, contact, and SEO enhancements (Open Graph, JSON‑LD, sitemap, robots).
+Marketing and lead‑generation website for FW82 Security Solutions Ltd. Built with React + Vite and styled with Tailwind CSS. The site includes multi‑page navigation, service detail pages with galleries, projects/case studies, news, careers, contact, and SEO enhancements (Open Graph, JSON‑LD, sitemap, robots).
 
 ## Features
 - Home page with hero, services overview, and testimonials
@@ -39,7 +39,7 @@ npm run sitemap
 ## Environment
 Set the public site URL for canonical links and sitemap:
 ```bash
-VITE_SITE_URL=https://factory2ksecurity.co.ke
+VITE_SITE_URL=https://www.fw82securitysolutions.com
 ```
 
 ## Image Pipeline

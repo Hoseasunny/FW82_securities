@@ -6,7 +6,7 @@ import { buildImageSet } from "../../utils/imageGenerator";
 import { Link } from "react-router-dom";
 
 const heroImage = buildImageSet(
-  "Factory 2K Hero",
+  "FW82 Security Solutions Ltd Hero",
   "Professional African security guard in formal navy blue uniform with gold accents, standing in modern Nairobi business district at dusk, city lights bokeh background, cinematic lighting, corporate photography style",
   "hero/hero-1"
 );

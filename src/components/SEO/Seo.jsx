@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-const DEFAULT_TITLE = "Factory 2K Solution Ltd";
+const DEFAULT_TITLE = "FW82 Security Solutions Ltd";
 const DEFAULT_DESCRIPTION =
   "Leading security company in Kenya offering guarding, CCTV, alarms, and event security. PSRA licensed. Serving Nairobi, Mombasa, Kisumu & Eldoret.";
 const DEFAULT_IMAGE = "/images/hero/hero-1-1200.webp";

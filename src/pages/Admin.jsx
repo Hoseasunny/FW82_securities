@@ -20,7 +20,7 @@ export const Admin = () => {
   return (
     <>
       <Seo
-        title="Admin | Factory 2K Solution"
+        title="Admin | FW82 Security Solutions Ltd"
         description="Admin dashboard."
         pathname="/admin"
         noindex

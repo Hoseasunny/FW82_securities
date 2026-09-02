@@ -15,7 +15,7 @@ import { faqItems } from "../data/faqItems";
 import { COMPANY, SOCIALS } from "../utils/constants";
 
 export const Home = () => {
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://www.fw82securitysolutions.com";
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -46,7 +46,7 @@ export const Home = () => {
   return (
     <>
       <Seo
-        title="Factory 2K Solution Ltd | Professional Security Services Kenya"
+        title="FW82 Security Solutions Ltd | Professional Security Services Kenya"
         description="Leading security company in Kenya offering guarding, CCTV, alarms, and event security. PSRA licensed. Serving Nairobi, Mombasa, Kisumu & Eldoret."
         pathname="/"
         jsonLd={[organizationJsonLd, websiteJsonLd]}

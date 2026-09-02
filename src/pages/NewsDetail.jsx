@@ -26,7 +26,7 @@ export const NewsDetail = () => {
   if (!article) {
     return (
       <>
-        <Seo title="News Not Found | Factory 2K Solution" description="News article not found." pathname="/news" noindex />
+        <Seo title="News Not Found | FW82 Security Solutions Ltd" description="News article not found." pathname="/news" noindex />
         <main>
           <section className="bg-navy py-16 text-white">
             <div className="mx-auto max-w-6xl px-6">
@@ -44,12 +44,12 @@ export const NewsDetail = () => {
     );
   }
 
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://www.fw82securitysolutions.com";
 
   return (
     <>
       <Seo
-        title={`${article.title} | Factory 2K Solution`}
+        title={`${article.title} | FW82 Security Solutions Ltd`}
         description={article.excerpt}
         pathname={`/news/${article.slug}`}
         image={article.image.src}
@@ -63,7 +63,7 @@ export const NewsDetail = () => {
             image: article.image.src,
             publisher: {
               "@type": "Organization",
-              name: "Factory 2K Solution Ltd"
+              name: "FW82 Security Solutions Ltd"
             }
           },
           {
@@ -159,7 +159,7 @@ export const NewsDetail = () => {
                     walk you through the operational details.
                   </p>
                   <Button as={Link} to="/contact" variant="primary" className="mt-6 w-full text-xs">
-                    Talk to Factory 2K
+                    Talk to FW82 Security Solutions Ltd
                   </Button>
                 </Card>
               </FadeIn>

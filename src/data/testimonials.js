@@ -2,7 +2,7 @@ export const testimonials = [
   {
     name: "Janet Mwangi",
     role: "Facilities Manager, Nairobi Business Park",
-    quote: "FW82's control room reporting is clear, timely, and keeps our tenants confident in the building's security."
+    quote: "FW82 Security Solutions Ltd's control room reporting is clear, timely, and keeps our tenants confident in the building's security."
   },
   {
     name: "Kevin Otieno",

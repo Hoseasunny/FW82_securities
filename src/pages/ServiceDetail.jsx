@@ -22,7 +22,7 @@ export const ServiceDetail = () => {
   if (!service) {
     return (
       <>
-        <Seo title="Service Not Found | Factory 2K Solution" description="Service not found." pathname="/services" noindex />
+        <Seo title="Service Not Found | FW82 Security Solutions Ltd" description="Service not found." pathname="/services" noindex />
         <main>
           <section className="bg-navy py-16 text-white">
             <div className="mx-auto max-w-6xl px-6">
@@ -40,7 +40,7 @@ export const ServiceDetail = () => {
     );
   }
 
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://www.fw82securitysolutions.com";
   const isSmartIntegration = service.slug === "smart-security-integration";
   const installations = [
     {
@@ -68,7 +68,7 @@ export const ServiceDetail = () => {
   return (
     <>
       <Seo
-        title={`${service.title} | Factory 2K Solution`}
+        title={`${service.title} | FW82 Security Solutions Ltd`}
         description={service.description}
         pathname={`/services/${service.slug}`}
         image={service.image.src}
@@ -150,7 +150,7 @@ export const ServiceDetail = () => {
                   </div>
                   {service.whyChoose && (
                     <Card className="border border-slate/10">
-                      <p className="text-xs uppercase tracking-[0.3em] text-gold">Why Choose Factory 2K</p>
+                      <p className="text-xs uppercase tracking-[0.3em] text-gold">Why Choose FW82 Security Solutions Ltd</p>
                       <ul className="mt-4 space-y-3 text-sm text-slate">
                         {service.whyChoose.map((item) => (
                           <li key={item} className="flex items-start gap-3">

@@ -1,8 +1,8 @@
 export const COMPANY = {
-  name: "Factory 2K Solution Ltd",
+  name: "FW82 Security Solutions Ltd",
   phone: "+254 799 491929",
-  emailPrimary: "Mail-info@factory2ksecurity.co.ke",
-  emailSecondary: "Mail-info@factory2ksecurity.co.ke",
+  emailPrimary: "Mail-info@fw82securitysolutions.com",
+  emailSecondary: "Mail-info@fw82securitysolutions.com",
   hq: "Nairobi, Kenya",
   branches: ["Nairobi", "Mombasa", "Kisumu", "Eldoret"],
   founded: 2015,
@@ -55,24 +55,24 @@ export const BRANCH_CONTACTS = [
     city: "Nairobi (HQ)",
     address: "Nairobi, Kenya",
     phone: "+254 799 491929",
-    email: "Mail-info@factory2ksecurity.co.ke"
+    email: "Mail-info@fw82securitysolutions.com"
   },
   {
     city: "Mombasa",
     address: "Mombasa, Kenya",
     phone: "+254 799 491929",
-    email: "Mail-info@factory2ksecurity.co.ke"
+    email: "Mail-info@fw82securitysolutions.com"
   },
   {
     city: "Kisumu",
     address: "Kisumu, Kenya",
     phone: "+254 799 491929",
-    email: "Mail-info@factory2ksecurity.co.ke"
+    email: "Mail-info@fw82securitysolutions.com"
   },
   {
     city: "Eldoret",
     address: "Eldoret, Kenya",
     phone: "+254 799 491929",
-    email: "Mail-info@factory2ksecurity.co.ke"
+    email: "Mail-info@fw82securitysolutions.com"
   }
 ];
