@@ -155,7 +155,7 @@ export const About = () => {
                     <img
                       src="/images/custom/director-journey-20260507.png"
                       alt="FW82 Executive Director and Chief Commercial Officer"
-                      className="hero-split-image h-[50vh] sm:h-[320px] md:h-[320px] w-[98vw] sm:w-full md:w-full max-w-[98vw] sm:max-w-xl md:max-w-xl rounded-[1.5rem] object-cover object-center transition-transform duration-500 scale-[1.1] group-hover:scale-[1.12]"
+                      className="hero-split-image h-[50vh] sm:h-320px md:h-320px w-98vw sm:w-full md:w-full max-w-[98vw] sm:max-w-xl md:max-w-xl rounded-1.5rem object-cover object-center transition-transform duration-500 scale-[1.1] group-hover:scale-[1.12]"
                       style={{ objectPosition: "center 35%" }}
                       decoding="async"
                     />
