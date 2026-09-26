@@ -6,6 +6,7 @@ export default {
       colors: {
         navy: "#0A1628",
         security: "#12294D",
+        "navy-50": "#E8EEF6",
         gold: "#D32F2F",
         trust: "#16A34A",
         alert: "#B71C1C",

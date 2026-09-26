@@ -11,6 +11,7 @@ import { HomeAbout } from "../components/Sections/HomeAbout";
 import { FaqSection } from "../components/Sections/FaqSection";
 import { HomeNews } from "../components/Sections/HomeNews";
 import { StatsBand } from "../components/Sections/StatsBand";
+import { LicenceSection } from "../components/Sections/LicenceSection";
 import { Seo } from "../components/SEO/Seo";
 import { faqItems } from "../data/faqItems";
 import { COMPANY, SOCIALS } from "../utils/constants";
@@ -61,6 +62,7 @@ export const Home = () => {
         <WhyChooseUs />
         <HomeServices />
         <ProjectsShowcase />
+        <LicenceSection />
         <Testimonials />
         <HomeNews />
         <FaqSection
