@@ -8,6 +8,7 @@ import { BackToTop } from "./components/UI/BackToTop";
 import { CookieConsent } from "./components/UI/CookieConsent";
 import { ChatWidget } from "./components/UI/ChatWidget";
 import { Preloader } from "./components/UI/Preloader";
+import { MobileActionBar } from "./components/Layout/MobileActionBar";
 const Home = lazy(() => import("./pages/Home").then((m) => ({ default: m.Home })));
 const About = lazy(() => import("./pages/About").then((m) => ({ default: m.About })));
 const Services = lazy(() => import("./pages/Services").then((m) => ({ default: m.Services })));
@@ -26,6 +27,7 @@ const NotFound = lazy(() => import("./pages/NotFound").then((m) => ({ default: m
 
 const PageTransition = ({ children }) => (
   <motion.div
+    id="main-content"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
@@ -64,12 +66,19 @@ const AppRoutes = () => {
 export const App = () => {
   return (
     <BrowserRouter>
+      <a
+        href="#main-content"
+        className="fixed left-4 top-4 z-[100] -translate-y-20 rounded-lg bg-gold px-4 py-3 text-sm font-semibold text-white transition focus:translate-y-0"
+      >
+        Skip to content
+      </a>
       <Preloader />
       <ScrollToTop />
       <Navbar />
       <AppRoutes />
       <Footer />
       <BackToTop />
+      <MobileActionBar />
       <CookieConsent />
       <ChatWidget />
     </BrowserRouter>

@@ -13,7 +13,7 @@ export const ProjectsShowcase = () => {
         </FadeIn>
         <FadeIn delay={0.1} className="mt-10">
           <div className="grid gap-8 lg:grid-cols-2">
-          {projects.slice(0, 2).map((project) => (
+          {projects.slice(0, 3).map((project) => (
             <div key={project.title} className="group relative overflow-hidden rounded-3xl bg-navy">
               <img
                 src={project.image.src}

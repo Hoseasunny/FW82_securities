@@ -6,7 +6,7 @@ import { buildImageSet } from "../../utils/imageGenerator";
 import { Link } from "react-router-dom";
 
 const heroImage = buildImageSet(
-  "FW82 Security Solutions Ltd Hero",
+  "FW82 Security Solutions Hero",
   "Professional African security guard in formal navy blue uniform with gold accents, standing in modern Nairobi business district at dusk, city lights bokeh background, cinematic lighting, corporate photography style",
   "hero/hero-1"
 );
@@ -33,14 +33,16 @@ export const Hero = () => {
 
       <div className="relative z-10 mx-auto grid min-h-screen max-w-6xl items-center gap-10 px-6 pb-20 pt-32 lg:grid-cols-[0.92fr_1.08fr]">
         <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-red-400">Professional security - Kenya</p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="hero-text-shadow mt-5 max-w-4xl text-4xl font-heading font-bold leading-tight md:text-6xl"
           >
-            Trusted Security. Rapid Response.
+            Security without compromise.
           </motion.h1>
+          <div className="mt-5 h-0.5 w-16 bg-red-400" aria-hidden="true" />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

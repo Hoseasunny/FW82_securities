@@ -4,18 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: "#0b0b0d",
-        security: "#1a1a1f",
-        gold: "#b70e0e",
-        trust: "#059669",
-        alert: "#dc2626",
-        ink: "#111111",
-        slate: "#5c5c66",
-        cloud: "#f5f5f7"
+        navy: "#0A1628",
+        security: "#12294D",
+        gold: "#D32F2F",
+        trust: "#16A34A",
+        alert: "#B71C1C",
+        ink: "#0D0D0D",
+        slate: "#6B7280",
+        cloud: "#F7F8FA"
       },
       fontFamily: {
-        heading: ["Space Grotesk", "Sora", "ui-sans-serif", "system-ui"],
-        body: ["Manrope", "DM Sans", "ui-sans-serif", "system-ui"]
+        heading: ["Poppins", "system-ui", "sans-serif"],
+        body: ["Inter", "system-ui", "sans-serif"]
       },
       boxShadow: {
         lift: "0 14px 30px rgba(10, 22, 40, 0.15)",

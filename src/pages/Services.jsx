@@ -8,6 +8,9 @@ import { Seo } from "../components/SEO/Seo";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 import { StaggerGroup } from "../components/Animation/StaggerGroup";
 import { AlternatingCard } from "../components/UI/AlternatingCard";
+import { FaqSection } from "../components/Sections/FaqSection";
+import { CTASection } from "../components/Sections/CTASection";
+import { faqItems } from "../data/faqItems";
 
 const iconMap = {
   Shield,
@@ -54,7 +57,9 @@ export const Services = () => {
               textClassName="text-white/60"
               linkClassName="hover:text-gold"
             />
-            <h1 className="text-4xl font-heading font-bold">Security Services</h1>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-red-400">Security technology and response</p>
+            <h1 className="mt-3 text-4xl font-heading font-bold">Security Services</h1>
+            <div className="mt-5 h-0.5 w-16 bg-red-400" aria-hidden="true" />
             <p className="mt-4 max-w-2xl text-white/70">
               Tailored security solutions designed for residential, commercial, industrial, and event environments.
             </p>
@@ -150,6 +155,29 @@ export const Services = () => {
             </StaggerGroup>
           </div>
         </section>
+
+        <section className="bg-navy py-20 text-white">
+          <div className="mx-auto max-w-6xl px-6">
+            <SectionHeader title="How We Work" subtitle="A Clearer Security Plan" />
+            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                ["01", "Assess", "We understand your site, people, assets, and operating context."],
+                ["02", "Design", "We shape a practical plan around your risk profile and priorities."],
+                ["03", "Deploy", "Our teams and systems are put into operation with clear procedures."],
+                ["04", "Improve", "Reporting and review keep protection aligned as your needs change."]
+              ].map(([number, title, description]) => (
+                <article key={number} className="rounded-2xl border border-white/15 bg-white/5 p-6">
+                  <p className="font-heading text-3xl font-bold text-red-400">{number}</p>
+                  <h3 className="mt-5 text-xl font-heading font-semibold text-white">{title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-white/70">{description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <FaqSection items={faqItems.slice(0, 5)} title="Security Service FAQ" subtitle="Before We Begin" />
+        <CTASection />
       </main>
     </>
   );
