@@ -23,7 +23,7 @@ export const SpecializedServiceDetail = () => {
     return (
       <>
         <Seo
-          title="Service Not Found | Factory 2K Solution"
+          title="Service Not Found | FW82 Security Solutions Ltd"
           description="Service not found."
           pathname="/services"
           noindex
@@ -45,12 +45,12 @@ export const SpecializedServiceDetail = () => {
     );
   }
 
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://www.fw82securitysolutions.com";
 
   return (
     <>
       <Seo
-        title={`${service.title} | Factory 2K Solution`}
+        title={`${service.title} | FW82 Security Solutions Ltd`}
         description={service.description}
         pathname={`/services/specialized/${service.slug}`}
         image={service.image.src}
@@ -143,7 +143,7 @@ export const SpecializedServiceDetail = () => {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <Card className="border border-slate/10 bg-cloud">
-                  <p className="text-xs uppercase tracking-[0.3em] text-gold">Why Factory 2K</p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-gold">Why FW82 Security Solutions Ltd</p>
                   <p className="mt-4 text-sm text-slate">{service.value}</p>
                 </Card>
               </FadeIn>

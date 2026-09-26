@@ -23,7 +23,7 @@ export const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [inquiries, setInquiries] = useLocalStorage("fw82-inquiries", []);
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://www.fw82securitysolutions.com";
   const { values, errors, handleChange, handleBlur, validateAll, setValues } = useFormValidation(
     {
       name: "",
@@ -77,7 +77,7 @@ export const Contact = () => {
   return (
     <>
       <Seo
-        title="Contact Factory 2K Solution | Get in Touch"
+        title="Contact FW82 Security Solutions Ltd | Get in Touch"
         description="Reach our team in Nairobi or any branch across Kenya. Emergency line is available 24/7."
         pathname="/contact"
         jsonLd={{
@@ -110,7 +110,7 @@ export const Contact = () => {
               textClassName="text-white/60"
               linkClassName="hover:text-gold"
             />
-            <h1 className="text-4xl font-heading font-bold">Contact Factory 2K</h1>
+            <h1 className="text-4xl font-heading font-bold">Contact FW82 Security Solutions Ltd</h1>
             <p className="mt-4 max-w-2xl text-white/70">
               Reach our team in Nairobi or any branch across Kenya. Emergency line is available 24/7.
             </p>

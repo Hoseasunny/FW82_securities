@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 const DEFAULT_TITLE = "FW82 Security Solutions Ltd";
 const DEFAULT_DESCRIPTION =
-  "Leading security company in Kenya offering guarding, CCTV, alarms, and event security. PSRA licensed. Serving Nairobi, Mombasa, Kisumu & Eldoret.";
+  "FW82 Security Solutions Ltd provides PSRA-licensed guarding, CCTV, alarms, event security, and rapid response services across Nairobi and Kenya.";
 const DEFAULT_IMAGE = "/images/hero/hero-1-1200.webp";
 const SITE_URL = import.meta.env.VITE_SITE_URL || "https://www.fw82securitysolutions.com";
 

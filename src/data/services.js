@@ -8,7 +8,7 @@ export const services = [
     description: "Uniformed officers & estate patrols",
     shortDescription: "Guards & patrols",
     longIntro:
-      "Guarding and patrols form the backbone of Factory 2K Solution Ltd's service offering. We provide visible, disciplined, and professional protection that deters threats, reassures communities, and safeguards businesses. Our uniformed officers are licensed by the Private Security Regulatory Authority (PSRA) and trained to deliver more than presence - they provide vigilance, responsiveness, and professionalism.",
+      "Guarding and patrols form the backbone of FW82 Security Solutions Ltd's service offering. We provide visible, disciplined, and professional protection that deters threats, reassures communities, and safeguards businesses. Our uniformed officers are licensed by the Private Security Regulatory Authority (PSRA) and trained to deliver more than presence - they provide vigilance, responsiveness, and professionalism.",
     longSections: [
       {
         title: "Uniformed Security Officers",
@@ -44,7 +44,7 @@ export const services = [
       {
         title: "Residential Guards",
         body:
-          "For homes and gated communities, FW82 offers friendly yet vigilant guards who manage gate access, monitor visitors, and patrol neighborhoods.",
+          "For homes and gated communities, FW82 Security Solutions Ltd offers friendly yet vigilant guards who manage gate access, monitor visitors, and patrol neighborhoods.",
         bullets: [
           "Visitor management and gate control",
           "Neighborhood patrols and visibility",
@@ -60,7 +60,7 @@ export const services = [
       "Proven track record across corporate, industrial, and residential settings"
     ],
     closing:
-      "Guarding and patrols are not just about uniforms - they are about discipline, vigilance, and trust. Factory 2K Solution Ltd delivers professional protection that adapts to diverse environments, ensuring that businesses, communities, and homes across Kenya remain safe and secure.",
+      "Guarding and patrols are not just about uniforms - they are about discipline, vigilance, and trust. FW82 Security Solutions Ltd delivers professional protection that adapts to diverse environments, ensuring that businesses, communities, and homes across Kenya remain safe and secure.",
     details: ["Uniformed Security Officers", "Estate Patrol Units", "Industrial Security", "Residential Guards"],
     image: buildImageSet(
       "Guarding & Patrols",
@@ -113,7 +113,7 @@ export const services = [
     description: "24/7 monitoring & smart analytics",
     shortDescription: "Smart monitoring",
     longIntro:
-      "Technical security strengthens physical protection with smart surveillance, automated alerts, and reliable monitoring. Factory 2K Solution Ltd designs and deploys integrated systems that provide real-time visibility, faster response, and dependable reporting across commercial, industrial, and residential environments.",
+      "Technical security strengthens physical protection with smart surveillance, automated alerts, and reliable monitoring. FW82 Security Solutions Ltd designs and deploys integrated systems that provide real-time visibility, faster response, and dependable reporting across commercial, industrial, and residential environments.",
     longSections: [
       {
         title: "CCTV Installation",
@@ -174,7 +174,7 @@ export const services = [
       "Scalable solutions for growing operations"
     ],
     closing:
-      "With FW82 technical security, clients gain visibility, control, and peace of mind. Our integrated systems ensure threats are detected early and addressed quickly, keeping people and assets protected.",
+      "With FW82 Security Solutions Ltd technical security, clients gain visibility, control, and peace of mind. Our integrated systems ensure threats are detected early and addressed quickly, keeping people and assets protected.",
     details: ["CCTV Installation", "Intruder Alarms", "Access Control Systems", "Electric Fencing", "Biometric Systems"],
     image: buildImageSet(
       "Technical Security",
@@ -236,7 +236,7 @@ export const services = [
     description: "Crowd management & VIP protection",
     shortDescription: "Crowd & VIP",
     longIntro:
-      "Events require a security presence that is firm, professional, and discreet. Factory 2K Solution Ltd delivers structured event protection that prioritizes guest safety, smooth access flow, and rapid incident response for corporate, retail, and public gatherings.",
+      "Events require a security presence that is firm, professional, and discreet. FW82 Security Solutions Ltd delivers structured event protection that prioritizes guest safety, smooth access flow, and rapid incident response for corporate, retail, and public gatherings.",
     longSections: [
       {
         title: "Crowd Management",
@@ -307,7 +307,7 @@ export const services = [
       "Professional guest-facing presence"
     ],
     closing:
-      "FW82 event security keeps gatherings safe, organized, and professional. From corporate launches to public events, we deliver the calm control that protects guests and hosts alike.",
+      "FW82 Security Solutions Ltd event security keeps gatherings safe, organized, and professional. From corporate launches to public events, we deliver the calm control that protects guests and hosts alike.",
     details: ["Crowd Management", "VIP Protection", "Concert Security", "Corporate Events", "Mall Events", "Diplomatic Security"],
     image: buildImageSet(
       "Event Security",
@@ -378,7 +378,7 @@ export const services = [
     description: "Advanced detection systems",
     shortDescription: "Smart integration",
     longIntro:
-      "Smart security integration connects devices, alerts, and monitoring into one coordinated system. Factory 2K Solution Ltd delivers technology that keeps clients informed in real time, reduces manual monitoring, and strengthens response across homes and businesses.",
+      "Smart security integration connects devices, alerts, and monitoring into one coordinated system. FW82 Security Solutions Ltd delivers technology that keeps clients informed in real time, reduces manual monitoring, and strengthens response across homes and businesses.",
     longSections: [
       {
         title: "Mobile App Monitoring",
@@ -439,7 +439,7 @@ export const services = [
       "Secure data handling and reporting"
     ],
     closing:
-      "FW82 smart security integration brings visibility, control, and automation into a single unified system. Clients benefit from faster response, better intelligence, and stronger peace of mind.",
+      "FW82 Security Solutions Ltd smart security integration brings visibility, control, and automation into a single unified system. Clients benefit from faster response, better intelligence, and stronger peace of mind.",
     details: ["Mobile App Monitoring", "Remote Alerts", "Smart Home Integration", "Cloud Storage", "AI Analytics"],
     image: buildImageSet(
       "Smart Integration",

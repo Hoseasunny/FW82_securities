@@ -56,7 +56,7 @@ export const Careers = () => {
   const [success, setSuccess] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://www.fw82securitysolutions.com";
 
   const { values, errors, handleChange, handleBlur, validateAll, setValues } = useFormValidation(
     draft || {
@@ -109,7 +109,7 @@ export const Careers = () => {
   return (
     <>
       <Seo
-        title="Careers | Factory 2K Solution"
+        title="Careers | FW82 Security Solutions Ltd"
         description="Join our team of security professionals serving Nairobi, Mombasa, Kisumu, and Eldoret."
         pathname="/careers"
         jsonLd={{
@@ -142,7 +142,7 @@ export const Careers = () => {
               textClassName="text-white/60"
               linkClassName="hover:text-gold"
             />
-            <h1 className="text-4xl font-heading font-bold">Careers at Factory 2K</h1>
+            <h1 className="text-4xl font-heading font-bold">Careers at FW82 Security Solutions Ltd</h1>
             <p className="mt-4 max-w-2xl text-white/70">
               Join our team of security professionals serving Nairobi, Mombasa, Kisumu, and Eldoret.
             </p>

@@ -20,7 +20,7 @@ const iconMap = {
 };
 
 export const Services = () => {
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://www.fw82securitysolutions.com";
   return (
     <>
       <Seo
