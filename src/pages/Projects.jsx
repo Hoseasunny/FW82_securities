@@ -7,7 +7,12 @@ import { InlineLink } from "../components/UI/InlineLink";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 import { StaggerGroup } from "../components/Animation/StaggerGroup";
 
-const filters = ["All", "Event Security", "Technical Systems", "Guarding"];
+const filters = [
+  { label: "All", category: "All" },
+  { label: "Event", category: "Event Security" },
+  { label: "Technical", category: "Technical Systems" },
+  { label: "Guarding", category: "Guarding" }
+];
 
 export const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -70,15 +75,16 @@ export const Projects = () => {
             <div className="mt-6 flex flex-wrap gap-3">
               {filters.map((filter) => (
                 <button
-                  key={filter}
-                  onClick={() => setActiveFilter(filter)}
+                  key={filter.category}
+                  onClick={() => setActiveFilter(filter.category)}
+                  type="button"
                   className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wide transition ${
-                    activeFilter === filter
+                    activeFilter === filter.category
                       ? "bg-gold text-navy"
                       : "border border-slate/20 text-slate hover:border-gold"
                   }`}
                 >
-                  {filter}
+                  {filter.label}
                 </button>
               ))}
             </div>

@@ -13,8 +13,9 @@ export const Navbar = () => {
     <header className="sticky top-0 z-50 w-full">
       <div className="glass">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link to="/" className="text-xl font-heading font-bold text-white">
-            Factory <span className="text-gold">2K</span> Solution
+          <Link to="/" className="text-lg font-heading font-bold tracking-tight text-white sm:text-xl">
+            FW<span className="text-gold">82</span>
+            <span className="ml-2 hidden text-sm font-semibold tracking-normal text-white/75 sm:inline">Security Solutions</span>
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -37,12 +38,12 @@ export const Navbar = () => {
               </span>
             )}
             <Button as={Link} to="/contact" className="text-sm">
-              Get Quote
+              Request a Quote
             </Button>
           </nav>
 
           <button
-            className="text-white lg:hidden"
+            className="flex min-h-11 min-w-11 items-center justify-center rounded-lg text-white lg:hidden"
             onClick={() => setOpen((prev) => !prev)}
             aria-label="Toggle menu"
           >
@@ -73,7 +74,7 @@ export const Navbar = () => {
               </NavLink>
             ))}
             <Button as={Link} to="/contact" className="text-sm">
-              Get Quote
+              Request a Quote
             </Button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 export const COMPANY = {
-  name: "Factory 2K Solution Ltd",
+  name: "FW82 Security Solutions Ltd",
   phone: "+254 799 491929",
   emailPrimary: "Mail-info@factory2ksecurity.co.ke",
   emailSecondary: "Mail-info@factory2ksecurity.co.ke",
@@ -7,7 +7,7 @@ export const COMPANY = {
   branches: ["Nairobi", "Mombasa", "Kisumu", "Eldoret"],
   founded: 2015,
   rebrand: 2020,
-  license: "PSRA Certified",
+  license: "PSRA Licensed",
   tagline: "Where Security Meets Trust"
 };
 
@@ -29,8 +29,8 @@ export const NAV_LINKS = [
 
 export const TRUST_BADGES = [
   "Licensed by PSRA",
-  "ISO Certified",
-  "15+ Years Experience"
+  "Technology-enabled protection",
+  "24/7 response support"
 ];
 
 export const CLIENT_LOGOS = [

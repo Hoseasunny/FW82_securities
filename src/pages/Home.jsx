@@ -10,12 +10,13 @@ import { ContactForm } from "../components/Sections/ContactForm";
 import { HomeAbout } from "../components/Sections/HomeAbout";
 import { FaqSection } from "../components/Sections/FaqSection";
 import { HomeNews } from "../components/Sections/HomeNews";
+import { StatsBand } from "../components/Sections/StatsBand";
 import { Seo } from "../components/SEO/Seo";
 import { faqItems } from "../data/faqItems";
 import { COMPANY, SOCIALS } from "../utils/constants";
 
 export const Home = () => {
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://www.fw82securitysolutions.com";
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -46,7 +47,7 @@ export const Home = () => {
   return (
     <>
       <Seo
-        title="Factory 2K Solution Ltd | Professional Security Services Kenya"
+        title="FW82 Security Solutions Ltd | Professional Security Services Kenya"
         description="Leading security company in Kenya offering guarding, CCTV, alarms, and event security. PSRA licensed. Serving Nairobi, Mombasa, Kisumu & Eldoret."
         pathname="/"
         jsonLd={[organizationJsonLd, websiteJsonLd]}
@@ -55,18 +56,19 @@ export const Home = () => {
         <Hero />
         <QuickServices />
         <ClientLogos />
+        <StatsBand />
         <HomeAbout />
         <WhyChooseUs />
         <HomeServices />
         <ProjectsShowcase />
-        <HomeNews />
-        <CTASection />
         <Testimonials />
+        <HomeNews />
         <FaqSection
           items={faqItems.slice(0, 4)}
           title="Answers Before You Ask"
           subtitle="FAQs"
         />
+        <CTASection />
         <ContactForm />
       </main>
     </>
