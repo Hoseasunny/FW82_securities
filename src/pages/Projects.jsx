@@ -17,12 +17,12 @@ export const Projects = () => {
     return projects.filter((project) => project.category === activeFilter);
   }, [activeFilter]);
 
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://www.fw82securitysolutions.com";
 
   return (
     <>
       <Seo
-        title="Projects & Case Studies | Factory 2K Solution"
+        title="Projects & Case Studies | FW82 Security Solutions Ltd"
         description="Explore real-world security deployments across Kenya, including guarding, event security, and technical systems."
         pathname="/projects"
         image={projects[0]?.image?.src}

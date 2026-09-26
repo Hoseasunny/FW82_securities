@@ -81,7 +81,7 @@ export const Footer = () => {
       </div>
 
       <div className="border-t border-white/10 px-6 py-4 text-center text-xs text-white/60">
-        ? {new Date().getFullYear()} Factory 2K Solution Ltd. Privacy Policy ? Terms
+        ? {new Date().getFullYear()} FW82 Security Solutions Ltd. Privacy Policy ? Terms
       </div>
     </footer>
   );

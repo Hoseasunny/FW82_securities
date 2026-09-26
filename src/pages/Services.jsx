@@ -17,11 +17,11 @@ const iconMap = {
 };
 
 export const Services = () => {
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://factory2ksecurity.co.ke";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://www.fw82securitysolutions.com";
   return (
     <>
       <Seo
-        title="Security Services | Factory 2K Solution Ltd"
+        title="Security Services | FW82 Security Solutions Ltd"
         description="Explore our full range of security services, including guarding, technical security systems, event protection, and smart integration."
         pathname="/services"
         jsonLd={{

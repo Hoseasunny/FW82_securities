@@ -6,8 +6,8 @@ export const NotFound = () => {
   return (
     <>
       <Seo
-        title="Page Not Found | Factory 2K Solution Ltd"
-        description="The page you are looking for does not exist. Return to Factory 2K Solution homepage."
+        title="Page Not Found | FW82 Security Solutions Ltd"
+        description="The page you are looking for does not exist. Return to FW82 Security Solutions Ltd homepage."
         pathname="/404"
       />
       <main className="bg-cloud py-24">

@@ -12,7 +12,7 @@ export const projects = [
       "projects/project-1"
     ),
     content: [
-      "Airport Mall required a security partner capable of managing high foot traffic while maintaining a welcoming environment. Factory 2K Solution Ltd implemented a layered approach: disciplined guards at entrances, discreet patrols inside, and CCTV monitoring across key zones.",
+      "Airport Mall required a security partner capable of managing high foot traffic while maintaining a welcoming environment. FW82 Security Solutions Ltd implemented a layered approach: disciplined guards at entrances, discreet patrols inside, and CCTV monitoring across key zones.",
       "From daily operations to peak shopping seasons, our team coordinated with mall management to align access control with customer flow, ensuring visibility without creating friction for shoppers.",
       "The outcome was a safer shopping experience, reduced shoplifting incidents, and enhanced customer trust in the mall's management."
     ],
@@ -45,7 +45,7 @@ export const projects = [
       "projects/project-2"
     ),
     content: [
-      "Close the Gap Ltd required a unified visibility platform across multiple floors and entry points. FW82 delivered an integrated technical security solution that centralized monitoring and tightened access control.",
+      "Close the Gap Ltd required a unified visibility platform across multiple floors and entry points. FW82 Security Solutions Ltd delivered an integrated technical security solution that centralized monitoring and tightened access control.",
       "The deployment combined AI-enabled CCTV, automated alerts, and streamlined reporting so management teams could respond quickly to irregular activity.",
       "The result was full perimeter visibility, faster response coordination, and stronger compliance with internal security protocols."
     ],
@@ -78,7 +78,7 @@ export const projects = [
       "projects/project-3"
     ),
     content: [
-      "Factory 2K Solution Ltd was engaged to provide comprehensive security services for the Kenya Ports Authority, one of Kenya's most vital economic gateways. The challenge was safeguarding cargo operations, staff, and facilities against theft, unauthorized access, and potential sabotage.",
+      "FW82 Security Solutions Ltd was engaged to provide comprehensive security services for the Kenya Ports Authority, one of Kenya's most vital economic gateways. The challenge was safeguarding cargo operations, staff, and facilities against theft, unauthorized access, and potential sabotage.",
       "Our team deployed highly trained guards at entry points, integrated CCTV surveillance with real-time monitoring, and established rapid response protocols for emergencies.",
       "The outcome included reduced incidents of unauthorized access, improved staff confidence, and strengthened compliance with international maritime security standards."
     ],
@@ -111,7 +111,7 @@ export const projects = [
       "projects/project-4"
     ),
     content: [
-      "Nairobi Business Park required a consistent security posture across multiple tenants and operational schedules. FW82 deployed a dedicated guarding model supported by a control room and rapid response units.",
+      "Nairobi Business Park required a consistent security posture across multiple tenants and operational schedules. FW82 Security Solutions Ltd deployed a dedicated guarding model supported by a control room and rapid response units.",
       "The solution balanced access control with a professional, client-friendly atmosphere that supported visitor flow without compromising security.",
       "This approach created a unified security standard across the complex, improving access discipline and tenant confidence."
     ],
@@ -144,7 +144,7 @@ export const projects = [
       "projects/project-5"
     ),
     content: [
-      "Diamond Plaza II required discreet monitoring while maintaining a luxury retail environment. FW82 blended CCTV coverage with visible guarding to deter threats without disrupting the premium customer experience.",
+      "Diamond Plaza II required discreet monitoring while maintaining a luxury retail environment. FW82 Security Solutions Ltd blended CCTV coverage with visible guarding to deter threats without disrupting the premium customer experience.",
       "The deployment emphasized real-time surveillance, quiet incident response, and coordinated reporting across retail zones.",
       "Loss prevention improved, and the mall benefited from a more confident and secure retail atmosphere."
     ],
@@ -177,7 +177,7 @@ export const projects = [
       "projects/project-6"
     ),
     content: [
-      "Safari Rally Kenya required large-scale crowd management across multiple locations. FW82 coordinated on-ground marshals and emergency response lanes to maintain safe movement throughout the event.",
+      "Safari Rally Kenya required large-scale crowd management across multiple locations. FW82 Security Solutions Ltd coordinated on-ground marshals and emergency response lanes to maintain safe movement throughout the event.",
       "A central command team tracked activity across venues while field teams managed crowd density and event access points.",
       "The result was a safe, well-managed event with zero major incidents recorded."
     ],
@@ -210,8 +210,8 @@ export const projects = [
       "projects/project-7"
     ),
     content: [
-      "A leading corporate client engaged Factory 2K Solution Ltd to secure its Nairobi headquarters. The challenge was balancing strict access control with a professional, client-friendly atmosphere.",
-      "FW82 deployed biometric access systems for staff and visitors, provided VIP escort services for executives, and trained guards to manage both routine operations and high-pressure scenarios.",
+      "A leading corporate client engaged FW82 Security Solutions Ltd to secure its Nairobi headquarters. The challenge was balancing strict access control with a professional, client-friendly atmosphere.",
+      "FW82 Security Solutions Ltd deployed biometric access systems for staff and visitors, provided VIP escort services for executives, and trained guards to manage both routine operations and high-pressure scenarios.",
       "The result was improved executive safety, streamlined visitor management, and a professional environment that reassured both staff and clients."
     ],
     stats: [
@@ -243,7 +243,7 @@ export const projects = [
       "projects/project-8"
     ),
     content: [
-      "Factory 2K Solution Ltd partnered with a gated community in Mombasa to strengthen residential security. Residents expressed concerns about burglary and unauthorized entry.",
+      "FW82 Security Solutions Ltd partnered with a gated community in Mombasa to strengthen residential security. Residents expressed concerns about burglary and unauthorized entry.",
       "Our teams established estate patrols, staffed guard posts at entry gates, and delivered safety awareness workshops for residents.",
       "The outcome was a significant reduction in burglary attempts, improved resident confidence, and a stronger sense of community safety."
     ],
