@@ -76,7 +76,6 @@ export const LicenceSection = () => {
                 </div>
               </div>
               <p className="mt-4 text-sm leading-6 text-slate">Licensed Private Security Service Provider</p>
-              <p className="mt-2 text-sm font-semibold text-ink">Valid until 31 December 2026</p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Button type="button" onClick={() => setIsOpen(true)} className="text-xs">
                   <FileCheck2 className="h-4 w-4" aria-hidden="true" />
