@@ -3,6 +3,7 @@ import { ExternalLink, FileCheck2, ShieldCheck, X } from "lucide-react";
 import { Button } from "../UI/Button";
 
 const licenceUrl = "/documents/fw82-psra-licence-2026.pdf";
+const licenceImage = "/images/certificate/fw82-psra-licence-2026.png";
 
 export const LicenceSection = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,10 +60,10 @@ export const LicenceSection = () => {
 
           <div className="grid gap-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-soft sm:grid-cols-[180px_1fr] sm:p-8">
             <div className="overflow-hidden rounded-lg border border-gray-200 bg-cloud">
-              <iframe
-                title="FW82 PSRA Annual Licence Renewal Certificate 2026 preview"
-                src={`${licenceUrl}#page=1&view=FitH`}
-                className="h-56 w-full sm:h-full"
+              <img
+                src={licenceImage}
+                alt="FW82 PSRA Annual Licence Renewal Certificate 2026 preview"
+                className="h-56 w-full object-cover sm:h-full"
               />
             </div>
             <div className="flex flex-col justify-center">
@@ -117,11 +118,13 @@ export const LicenceSection = () => {
                 <X className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
-            <iframe
-              title="FW82 Security Solutions Limited PSRA Annual Licence Renewal Certificate 2026"
-              src={`${licenceUrl}#page=1&view=FitH`}
-              className="min-h-0 w-full flex-1"
-            />
+            <div className="flex min-h-0 w-full flex-1 items-center justify-center overflow-auto bg-cloud p-3">
+              <img
+                src={licenceImage}
+                alt="FW82 Security Solutions Limited PSRA Annual Licence Renewal Certificate 2026"
+                className="max-h-full w-full max-w-full rounded-lg border border-gray-200 object-contain shadow-soft"
+              />
+            </div>
             <div className="flex justify-end border-t border-gray-200 px-5 py-4">
               <a href={licenceUrl} target="_blank" rel="noreferrer" className="text-sm font-semibold text-alert underline underline-offset-2">
                 Open original document
