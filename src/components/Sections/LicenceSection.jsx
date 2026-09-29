@@ -104,7 +104,7 @@ export const LicenceSection = () => {
             if (event.target === event.currentTarget) setIsOpen(false);
           }}
         >
-          <div className="relative flex max-h-[calc(100vh-2rem)] w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-white shadow-lift" role="dialog" aria-modal="true" aria-labelledby="licence-modal-title">
+          <div className="relative flex h-[min(90vh,60rem)] max-h-[calc(100vh-2rem)] w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-white shadow-lift" role="dialog" aria-modal="true" aria-labelledby="licence-modal-title">
             <div className="flex items-center justify-between gap-4 border-b border-gray-200 px-5 py-4">
               <h2 id="licence-modal-title" className="font-heading text-lg font-semibold text-ink">PSRA Licence - 2026</h2>
               <button
@@ -119,8 +119,8 @@ export const LicenceSection = () => {
             </div>
             <iframe
               title="FW82 Security Solutions Limited PSRA Annual Licence Renewal Certificate 2026"
-              src={licenceUrl}
-              className="min-h-[70vh] w-full flex-1"
+              src={`${licenceUrl}#page=1&view=FitH`}
+              className="min-h-0 w-full flex-1"
             />
             <div className="flex justify-end border-t border-gray-200 px-5 py-4">
               <a href={licenceUrl} target="_blank" rel="noreferrer" className="text-sm font-semibold text-alert underline underline-offset-2">
