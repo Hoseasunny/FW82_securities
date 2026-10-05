@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "../../utils/constants";
@@ -6,16 +6,31 @@ import { Button } from "../UI/Button";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const location = useLocation();
   const isCareers = location.pathname === "/careers";
 
+  useEffect(() => {
+    let previousY = window.scrollY;
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setHidden(currentY > 140 && currentY > previousY);
+      previousY = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full">
-      <div className="glass">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link to="/" className="text-lg font-heading font-bold tracking-tight text-white sm:text-xl">
-            FW<span className="text-gold">82</span>
-            <span className="ml-2 hidden text-sm font-semibold tracking-normal text-white/75 sm:inline">Security Solutions</span>
+    <header className={`fixed inset-x-0 top-3 z-50 px-3 transition-transform duration-300 ${hidden ? "-translate-y-[150%]" : "translate-y-0"}`}>
+      <div className="glass mx-auto max-w-6xl rounded-2xl lg:rounded-full">
+        <div className="flex min-h-16 items-center justify-between gap-4 px-4 py-2 sm:px-6">
+          <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-3 text-lg font-heading font-bold tracking-tight text-ink sm:text-xl" aria-label="FW82 Security Solutions home">
+            <span className="logo-mark inline-flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-sky-700 to-indigo-600 text-sm text-white shadow-soft">
+              FW<span>82</span>
+            </span>
+            <span className="hidden text-sm font-semibold tracking-normal text-ink sm:inline">Security Solutions</span>
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -24,8 +39,8 @@ export const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `gold-underline text-sm font-semibold uppercase tracking-wide transition hover:text-gold ${
-                    isActive ? "text-gold" : "text-white"
+                  `gold-underline text-sm font-semibold uppercase tracking-wide transition hover:text-sky-700 ${
+                    isActive ? "text-sky-700" : "text-ink"
                   }`
                 }
               >
@@ -33,19 +48,21 @@ export const Navbar = () => {
               </NavLink>
             ))}
             {isCareers && (
-              <span className="rounded-full bg-gold/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-gold">
+              <span className="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-sky-700">
                 We're Hiring
               </span>
             )}
-            <Button as={Link} to="/contact" className="text-sm">
+            <Button as={Link} to="/contact" onClick={() => setOpen(false)} className="text-sm">
               Request a Quote
             </Button>
           </nav>
 
           <button
-            className="flex min-h-11 min-w-11 items-center justify-center rounded-lg text-white lg:hidden"
+            className="flex min-h-11 min-w-11 items-center justify-center rounded-xl text-ink focus-visible:ring-2 focus-visible:ring-sky-500 lg:hidden"
             onClick={() => setOpen((prev) => !prev)}
             aria-label="Toggle menu"
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
           >
             {open ? <X /> : <Menu />}
           </button>
@@ -53,7 +70,8 @@ export const Navbar = () => {
       </div>
 
       <div
-        className={`glass lg:hidden overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out ${
+        id="mobile-navigation"
+        className={`glass mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl transition-[max-height,opacity] duration-500 ease-in-out lg:hidden ${
           open ? "max-h-[80vh] opacity-100 pointer-events-auto" : "max-h-0 opacity-0 pointer-events-none"
         }`}
       >
@@ -65,15 +83,15 @@ export const Navbar = () => {
                 to={link.path}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `gold-underline text-sm font-semibold uppercase tracking-wide transition hover:text-gold ${
-                    isActive ? "text-gold" : "text-white"
+                  `gold-underline min-h-11 flex items-center text-sm font-semibold uppercase tracking-wide transition hover:text-sky-700 ${
+                    isActive ? "text-sky-700" : "text-ink"
                   }`
                 }
               >
                 {link.label}
               </NavLink>
             ))}
-            <Button as={Link} to="/contact" className="text-sm">
+            <Button as={Link} to="/contact" onClick={() => setOpen(false)} className="text-sm">
               Request a Quote
             </Button>
           </div>

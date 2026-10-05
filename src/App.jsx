@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { Suspense, lazy } from "react";
 import { Navbar } from "./components/Layout/Navbar";
 import { Footer } from "./components/Layout/Footer";
 import { ScrollToTop } from "./components/Layout/ScrollToTop";
 import { BackToTop } from "./components/UI/BackToTop";
-import { CookieConsent } from "./components/UI/CookieConsent";
+import { CookieBanner } from "./components/UI/CookieConsent";
+import { ParticleBackground } from "./components/UI/ParticleBackground";
 import { ChatWidget } from "./components/UI/ChatWidget";
 import { Preloader } from "./components/UI/Preloader";
 import { MobileActionBar } from "./components/Layout/MobileActionBar";
@@ -65,7 +66,10 @@ const AppRoutes = () => {
 
 export const App = () => {
   return (
+    <MotionConfig reducedMotion="user">
     <BrowserRouter>
+      <ParticleBackground />
+      <div className="app-content">
       <a
         href="#main-content"
         className="fixed left-4 top-4 z-[100] -translate-y-20 rounded-lg bg-gold px-4 py-3 text-sm font-semibold text-white transition focus:translate-y-0"
@@ -79,8 +83,10 @@ export const App = () => {
       <Footer />
       <BackToTop />
       <MobileActionBar />
-      <CookieConsent />
+      <CookieBanner />
       <ChatWidget />
+      </div>
     </BrowserRouter>
+    </MotionConfig>
   );
 };

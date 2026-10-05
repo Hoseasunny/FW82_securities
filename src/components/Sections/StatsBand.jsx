@@ -15,11 +15,11 @@ export const StatsBand = () => {
         {stats.map(({ label, value, Icon: StatusIcon }, index) => (
           <div key={label} className={`flex items-center gap-4 lg:justify-center ${index > 0 ? "lg:border-l lg:border-white/15" : ""}`}>
             {React.createElement(StatusIcon, {
-              className: "h-6 w-6 shrink-0 text-red-400",
+              className: "h-6 w-6 shrink-0 text-sky-700",
               "aria-hidden": "true"
             })}
             <div>
-              <p className="font-heading text-2xl font-bold text-red-400">{value}</p>
+              <p className="font-heading text-2xl font-bold text-sky-700">{value}</p>
               <p className="mt-1 text-xs uppercase tracking-[0.12em] text-white/70">{label}</p>
             </div>
           </div>

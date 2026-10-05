@@ -1,8 +1,8 @@
 import React from "react";
 
 const variants = {
-  primary: "bg-gold text-white hover:bg-alert",
-  secondary: "border-2 border-navy text-navy hover:bg-navy hover:text-white",
+  primary: "glass-button-primary",
+  secondary: "glass-button-ghost",
   dark: "bg-navy text-white hover:bg-security"
 };
 
@@ -15,7 +15,7 @@ export const Button = ({
   ...props
 }) => {
   const classes = [
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-heading font-semibold uppercase tracking-wide transition duration-300 focus-ring hover:scale-[1.02]",
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-heading font-semibold uppercase tracking-wide transition duration-300 focus-ring",
     variants[variant],
     loading ? "btn-loading" : "",
     className || ""

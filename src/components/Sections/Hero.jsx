@@ -2,14 +2,7 @@ import { motion } from "framer-motion";
 import { TrustBadge } from "../UI/TrustBadge";
 import { Button } from "../UI/Button";
 import { TRUST_BADGES } from "../../utils/constants";
-import { buildImageSet } from "../../utils/imageGenerator";
 import { Link } from "react-router-dom";
-
-const heroImage = buildImageSet(
-  "FW82 Security Solutions Hero",
-  "Professional African security guard in formal navy blue uniform with gold accents, standing in modern Nairobi business district at dusk, city lights bokeh background, cinematic lighting, corporate photography style",
-  "hero/hero-1"
-);
 
 export const Hero = () => {
   const highlights = [
@@ -19,35 +12,26 @@ export const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-navy text-white">
-      <div className="absolute inset-0">
-        <img
-          src={heroImage.src}
-          srcSet={heroImage.srcSet}
-          alt="Professional security guard in Nairobi business district"
-          className="h-full w-full object-cover"
-          decoding="async"
-        />
-        <div className="absolute inset-0 hero-overlay" />
-      </div>
-
+    <section className="hero-section relative min-h-screen overflow-hidden bg-transparent text-ink">
+      <div className="hero-aurora" aria-hidden="true" />
+      <span className="sr-only">Professional security guard in Nairobi business district</span>
       <div className="relative z-10 mx-auto grid min-h-screen max-w-6xl items-center gap-10 px-6 pb-20 pt-32 lg:grid-cols-[0.92fr_1.08fr]">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-red-400">Professional security - Kenya</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Professional security - Kenya</p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="hero-text-shadow mt-5 max-w-4xl text-4xl font-heading font-bold leading-tight md:text-6xl"
+            className="mt-5 max-w-4xl text-4xl font-heading font-bold leading-tight md:text-6xl"
           >
             Security without compromise.
           </motion.h1>
-          <div className="mt-5 h-0.5 w-16 bg-red-400" aria-hidden="true" />
+          <div className="mt-5 h-1 w-16 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500" aria-hidden="true" />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="mt-6 max-w-2xl text-lg text-white/80"
+            className="mt-6 max-w-2xl text-lg text-slate"
           >
             Professional protection for businesses, homes, and events across Kenya.
           </motion.p>
@@ -72,9 +56,9 @@ export const Hero = () => {
             className="mt-10 grid gap-3 sm:grid-cols-3"
           >
             {highlights.map((item) => (
-              <div key={item.label} className="rounded-2xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur">
-                <p className="text-2xl font-heading font-bold text-white">{item.value}</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-white/70">{item.label}</p>
+              <div key={item.label} className="glass-card rounded-2xl px-4 py-3">
+                <p className="text-2xl font-heading font-bold text-ink">{item.value}</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate">{item.label}</p>
               </div>
             ))}
           </motion.div>

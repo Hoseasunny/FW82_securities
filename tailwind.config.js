@@ -5,22 +5,25 @@ export default {
     extend: {
       colors: {
         navy: "#0A1628",
-        security: "#12294D",
+        security: "#263c70",
         "navy-50": "#E8EEF6",
-        gold: "#D32F2F",
+        gold: "#0369A1",
         trust: "#16A34A",
         alert: "#B71C1C",
-        ink: "#0D0D0D",
-        slate: "#6B7280",
-        cloud: "#F7F8FA"
+        ink: "#0F1C33",
+        slate: "#55688A",
+        cloud: "#F4F7FE",
+        sky: "#0EA5E9",
+        indigo: "#6366F1",
+        cyan: "#06B6D4"
       },
       fontFamily: {
         heading: ["Poppins", "system-ui", "sans-serif"],
         body: ["Inter", "system-ui", "sans-serif"]
       },
       boxShadow: {
-        lift: "0 14px 30px rgba(10, 22, 40, 0.15)",
-        soft: "0 8px 20px rgba(10, 22, 40, 0.12)"
+        lift: "0 18px 44px rgba(30, 60, 120, 0.14)",
+        soft: "0 8px 26px rgba(30, 60, 120, 0.10)"
       },
       backgroundImage: {
         "hero-gradient": "linear-gradient(120deg, rgba(11,11,13,0.9), rgba(11,11,13,0.65))",

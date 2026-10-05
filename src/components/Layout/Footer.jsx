@@ -13,8 +13,9 @@ export const Footer = () => {
           </p>
           <div className="mt-4 space-y-2 text-sm text-white/70">
             <p>{COMPANY.hq}</p>
-            <p>{COMPANY.phone}</p>
-            <p>{COMPANY.emailSecondary}</p>
+            <a className="block hover:text-white" href={`tel:${COMPANY.phone}`}>{COMPANY.phone}</a>
+            <a className="block hover:text-white" href={`mailto:${COMPANY.emailSecondary}`}>{COMPANY.emailSecondary}</a>
+            <a className="block hover:text-white" href="mailto:info@fw82securitysolutions.com">info@fw82securitysolutions.com</a>
           </div>
           <div className="mt-4 flex gap-3">
             {SOCIALS.map((social) => (
@@ -80,8 +81,8 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-white/10 px-6 py-4 text-center text-xs text-white/60">
-        © {new Date().getFullYear()} FW82 Security Solutions Ltd. Privacy Policy · Terms
+      <div className="border-t border-white/10 px-6 py-4 text-center text-xs text-white/70">
+        © 2026 FW82 Security Solutions Ltd. Privacy Policy · Terms
       </div>
     </footer>
   );

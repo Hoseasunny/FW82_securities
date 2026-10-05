@@ -6,6 +6,7 @@ import { SectionHeader } from "../UI/SectionHeader";
 import { Button } from "../UI/Button";
 import { FadeIn } from "../Animation/FadeIn";
 import { InlineLink } from "../UI/InlineLink";
+import { GlassCard } from "../UI/GlassCard";
 
 export const HomeServices = () => {
   const technical = services.find((service) => service.slug === "technical-security");
@@ -124,11 +125,11 @@ export const HomeServices = () => {
                 })}
               </div>
               <div className="mt-6 hidden items-center justify-between gap-4 md:flex">
-                <div className="flex items-center gap-2 text-white/80">
+                <div className="flex items-center gap-2 text-slate">
                   <button
                     type="button"
                     onClick={handlePrev}
-                    className="rounded-full border border-white/40 p-2 text-white"
+                    className="rounded-full border border-indigo-200 p-2 text-ink"
                     aria-label="Previous slide"
                   >
                     <ChevronLeft className="h-4 w-4" />
@@ -136,7 +137,7 @@ export const HomeServices = () => {
                   <button
                     type="button"
                     onClick={handleNext}
-                    className="rounded-full border border-white/40 p-2 text-white"
+                    className="rounded-full border border-indigo-200 p-2 text-ink"
                     aria-label="Next slide"
                   >
                     <ChevronRight className="h-4 w-4" />
@@ -148,7 +149,7 @@ export const HomeServices = () => {
                       key={`${item.title}-dot-desktop`}
                       type="button"
                       onClick={() => setActiveSlide(index)}
-                      className={`h-2 w-2 rounded-full ${index === activeSlide ? "bg-gold" : "bg-white/40"}`}
+                      className={`h-2 w-2 rounded-full ${index === activeSlide ? "bg-gold" : "bg-sky-200"}`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
                   ))}
@@ -163,7 +164,9 @@ export const HomeServices = () => {
             {pinnedServices.map((service, index) => {
               const isDark = index % 2 === 1;
               return (
-              <div
+              <GlassCard
+                as="article"
+                interactive
                 key={service.title}
                 className={`group overflow-hidden rounded-3xl border ${isDark ? "border-white/10 bg-navy" : "border-slate/15 bg-white"}`}
               >
@@ -175,18 +178,18 @@ export const HomeServices = () => {
                   className="aspect-4/3 w-full object-cover transition duration-500 group-hover:scale-105"
                   decoding="async"
                 />
-                <div className={`p-6 ${isDark ? "text-white" : "text-ink"}`}>
+                <div className="p-6 text-ink">
                   <span className="text-xs uppercase tracking-[0.3em] text-gold">Service</span>
                   <h3 className="mt-3 text-xl font-heading font-semibold">{service.title}</h3>
-                  <p className={`mt-2 text-sm ${isDark ? "text-white/80" : "text-slate"}`}>{service.description}</p>
+                  <p className="mt-2 text-sm text-slate">{service.description}</p>
                   <InlineLink
                     to={`/services/${service.slug}`}
-                    className={`mt-4 ${isDark ? "text-white hover:text-gold" : "text-ink hover:text-gold"}`}
+                    className="mt-4 text-ink hover:text-gold"
                   >
                     Learn more
                   </InlineLink>
                 </div>
-              </div>
+              </GlassCard>
             );
             })}
           </div>
