@@ -1,18 +1,13 @@
-import { motion } from "framer-motion";
-import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import { Reveal } from "./Reveal";
 
 export const FadeIn = ({ children, delay = 0, className = "" }) => {
-  const { ref, inView } = useScrollAnimation();
-
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay }}
+    <Reveal
+      variant="rise"
+      delay={delay}
       className={className}
     >
       {children}
-    </motion.div>
+    </Reveal>
   );
 };

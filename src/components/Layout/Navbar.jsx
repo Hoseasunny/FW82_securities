@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "../../utils/constants";
 import { Button } from "../UI/Button";
+import { useReducedMotionSafe } from "../../hooks/useReducedMotionSafe";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const location = useLocation();
   const isCareers = location.pathname === "/careers";
+  const reducedMotion = useReducedMotionSafe();
 
   useEffect(() => {
     let previousY = window.scrollY;
@@ -23,7 +26,13 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed inset-x-0 top-3 z-50 px-3 transition-transform duration-300 ${hidden ? "-translate-y-[150%]" : "translate-y-0"}`}>
+    <motion.header
+      className="fixed inset-x-0 top-3 z-50 px-3"
+      animate={{ y: hidden ? "-150%" : "0%" }}
+      transition={reducedMotion
+        ? { duration: 0.16 }
+        : { type: "spring", stiffness: 120, damping: 18 }}
+    >
       <div className="glass mx-auto max-w-6xl rounded-2xl lg:rounded-full">
         <div className="flex min-h-16 items-center justify-between gap-4 px-4 py-2 sm:px-6">
           <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-3 text-lg font-heading font-bold tracking-tight text-ink sm:text-xl" aria-label="FW82 Security Solutions home">
@@ -39,8 +48,8 @@ export const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `gold-underline text-sm font-semibold uppercase tracking-wide transition hover:text-sky-700 ${
-                    isActive ? "text-sky-700" : "text-ink"
+                  `gold-underline text-sm font-semibold uppercase tracking-wide transition hover:text-red-700 ${
+                    isActive ? "text-red-700" : "text-ink"
                   }`
                 }
               >
@@ -48,7 +57,7 @@ export const Navbar = () => {
               </NavLink>
             ))}
             {isCareers && (
-              <span className="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-sky-700">
+              <span className="rounded-full bg-red-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-red-800">
                 We're Hiring
               </span>
             )}
@@ -83,8 +92,8 @@ export const Navbar = () => {
                 to={link.path}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `gold-underline min-h-11 flex items-center text-sm font-semibold uppercase tracking-wide transition hover:text-sky-700 ${
-                    isActive ? "text-sky-700" : "text-ink"
+                  `gold-underline min-h-11 flex items-center text-sm font-semibold uppercase tracking-wide transition hover:text-red-700 ${
+                    isActive ? "text-red-700" : "text-ink"
                   }`
                 }
               >
@@ -97,6 +106,6 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };

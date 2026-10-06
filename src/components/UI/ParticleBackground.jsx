@@ -38,7 +38,7 @@ export const ParticleBackground = () => {
 
     const draw = (time = 0) => {
       frame = 0;
-      if (document.hidden || (!reducedMotion && time - lastFrame < 32)) {
+      if (document.hidden || (!reducedMotion && time - lastFrame < 16)) {
         if (!document.hidden && !reducedMotion) frame = window.requestAnimationFrame(draw);
         return;
       }

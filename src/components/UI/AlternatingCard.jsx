@@ -18,7 +18,7 @@ export const AlternatingCard = ({
     >
       {Icon ? (
         <div
-          className={`absolute -top-2 rounded-2xl border border-white/90 bg-gradient-to-br from-sky-700 to-indigo-600 p-3 text-white shadow-soft ${iconLeft ? "-left-2" : "-right-2"}`}
+          className={`security-icon-float absolute -top-2 rounded-2xl border border-white/90 bg-gradient-to-br from-sky-700 to-indigo-600 p-3 text-white shadow-soft ${iconLeft ? "-left-2" : "-right-2"}`}
         >
           <Icon className={iconSize} />
         </div>

@@ -70,7 +70,9 @@ export const ContactForm = () => {
           </p>
           <div className="mt-6 rounded-2xl border border-gold/20 bg-white p-6 text-sm">
             <p className="font-semibold text-ink">24/7 Emergency Line</p>
-            <p className="mt-2 text-lg font-heading font-bold text-alert">+254 799 491929</p>
+            <a href="tel:+254799491929" className="mt-2 inline-flex min-h-11 items-center text-lg font-heading font-bold text-alert">
+              +254 799 491929
+            </a>
           </div>
           <div className="mt-6 rounded-2xl border border-slate/10 bg-white p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Connect With Us</p>

@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-export const useScrollAnimation = (options = { threshold: 0.2 }) => {
+export const useScrollAnimation = ({
+  threshold = 0.2,
+  rootMargin = "-12% 0px -12% 0px",
+  once = false
+} = {}) => {
   const ref = useRef(null);
   const supportsObserver = typeof window !== "undefined" && typeof IntersectionObserver !== "undefined";
   const [inView, setInView] = useState(() => {
@@ -15,18 +19,19 @@ export const useScrollAnimation = (options = { threshold: 0.2 }) => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setInView(true);
-        observer.disconnect();
+        if (once) observer.disconnect();
+      } else if (!once) {
+        setInView(false);
       }
-    }, options);
+    }, { threshold, rootMargin });
 
     observer.observe(ref.current);
-    // Fallback: avoid permanently hidden content if observer never fires.
     timeoutId = setTimeout(() => setInView(true), 1000);
     return () => {
       observer.disconnect();
       if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [options, supportsObserver]);
+  }, [once, rootMargin, supportsObserver, threshold]);
 
   return { ref, inView };
 };

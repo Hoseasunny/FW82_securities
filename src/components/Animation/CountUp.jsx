@@ -1,28 +1,36 @@
 import { useEffect, useState } from "react";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import { useReducedMotionSafe } from "../../hooks/useReducedMotionSafe";
 
 export const CountUp = ({ value, suffix = "", duration = 1200 }) => {
   const [count, setCount] = useState(0);
+  const { ref, inView } = useScrollAnimation({ once: true });
+  const reducedMotion = useReducedMotionSafe();
 
   useEffect(() => {
-    let start = 0;
-    const step = Math.max(1, Math.floor(value / (duration / 16)));
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= value) {
-        setCount(value);
-        clearInterval(timer);
-      } else {
-        setCount(start);
-      }
-    }, 16);
+    if (!inView) return undefined;
+    if (reducedMotion) return undefined;
 
-    return () => clearInterval(timer);
-  }, [value, duration]);
+    let frame = 0;
+    let startTime;
+    const animate = (time) => {
+      if (startTime === undefined) startTime = time;
+      const progress = Math.min((time - startTime) / duration, 1);
+      setCount(Math.round(value * (1 - (1 - progress) ** 3)));
+      if (progress < 1) frame = window.requestAnimationFrame(animate);
+    };
+
+    frame = window.requestAnimationFrame(animate);
+    return () => window.cancelAnimationFrame(frame);
+  }, [duration, inView, reducedMotion, value]);
+  const displayedCount = reducedMotion && inView ? value : count;
 
   return (
-    <span className="text-3xl font-heading font-bold text-gold md:text-4xl">
-      {count}
+    <span ref={ref} className="text-3xl font-heading font-bold text-gold md:text-4xl">
+      {displayedCount}
       {suffix}
     </span>
   );
 };
+
+export const AnimatedCounter = CountUp;

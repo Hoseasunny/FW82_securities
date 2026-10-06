@@ -7,7 +7,7 @@ export default {
         navy: "#0A1628",
         security: "#263c70",
         "navy-50": "#E8EEF6",
-        gold: "#0369A1",
+        gold: "#B91C1C",
         trust: "#16A34A",
         alert: "#B71C1C",
         ink: "#0F1C33",

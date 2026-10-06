@@ -133,9 +133,20 @@ export const Contact = () => {
               {BRANCH_CONTACTS.map((branch) => (
                 <div key={branch.city} className="rounded-2xl bg-white p-5 shadow-soft">
                   <p className="text-sm font-semibold text-ink">{branch.city}</p>
-                  <p className="text-xs text-slate">{branch.address}</p>
-                  <p className="text-xs text-slate">{branch.phone}</p>
-                  <p className="text-xs text-slate">{branch.email}</p>
+                  <a
+                    className="block min-h-11 content-center text-xs text-slate hover:text-sky-700"
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branch.address)}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {branch.address}
+                  </a>
+                  <a className="block min-h-11 content-center text-xs text-slate hover:text-sky-700" href={`tel:${branch.phone}`}>
+                    {branch.phone}
+                  </a>
+                  <a className="block min-h-11 content-center text-xs text-slate hover:text-sky-700" href={`mailto:${branch.email}`}>
+                    {branch.email}
+                  </a>
                 </div>
               ))}
             </div>
@@ -157,6 +168,13 @@ export const Contact = () => {
                 >
                   <Mail className="h-5 w-5 text-gold" />
                   {COMPANY.emailSecondary}
+                </a>
+                <a
+                  href="mailto:info@fw82securitysolutions.com"
+                  className="flex min-h-11 items-center gap-3 rounded-2xl border border-slate/10 px-4 py-3 text-sm text-slate transition hover:border-gold hover:text-ink"
+                >
+                  <Mail className="h-5 w-5 text-gold" />
+                  info@fw82securitysolutions.com
                 </a>
                 <a
                   href={`tel:${COMPANY.phone}`}

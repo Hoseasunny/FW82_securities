@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import { useReducedMotionSafe } from "../../hooks/useReducedMotionSafe";
 
 export const StaggerGroup = ({
   children,
@@ -8,6 +9,7 @@ export const StaggerGroup = ({
   delay = 0.08
 }) => {
   const { ref, inView } = useScrollAnimation();
+  const reducedMotion = useReducedMotionSafe();
 
   const container = {
     hidden: {},
@@ -20,8 +22,18 @@ export const StaggerGroup = ({
   };
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" } }
+    hidden: reducedMotion
+      ? { opacity: 0 }
+      : { opacity: 0, y: -24, scale: 0.96, filter: "blur(5px)" },
+    show: reducedMotion
+      ? { opacity: 1, transition: { duration: 0.16 } }
+      : {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+          transition: { type: "spring", stiffness: 120, damping: 18 }
+        }
   };
 
   return (
