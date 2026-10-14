@@ -1,15 +1,13 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { useReducedMotionSafe } from "./hooks/useReducedMotionSafe";
 import { Navbar } from "./components/Layout/Navbar";
 import { Footer } from "./components/Layout/Footer";
 import { ScrollToTop } from "./components/Layout/ScrollToTop";
 import { BackToTop } from "./components/UI/BackToTop";
 import { CookieBanner } from "./components/UI/CookieConsent";
-import { ParticleBackground } from "./components/UI/ParticleBackground";
 import { ChatWidget } from "./components/UI/ChatWidget";
-import { Preloader } from "./components/UI/Preloader";
 import { MobileActionBar } from "./components/Layout/MobileActionBar";
 const Home = lazy(() => import("./pages/Home").then((m) => ({ default: m.Home })));
 const About = lazy(() => import("./pages/About").then((m) => ({ default: m.About })));
@@ -73,13 +71,33 @@ const AppRoutes = () => {
 };
 
 export const App = () => {
+  useEffect(() => {
+    const addRipple = (event) => {
+      const target = event.target.closest("button, a.home-button, a.mobile-action-button, .site-footer-quote");
+      if (!target || target.hasAttribute("disabled")) return;
+      const bounds = target.getBoundingClientRect();
+      const diameter = Math.max(bounds.width, bounds.height);
+      const ripple = document.createElement("span");
+      ripple.className = "site-ripple";
+      ripple.style.width = `${diameter}px`;
+      ripple.style.height = `${diameter}px`;
+      ripple.style.left = `${event.clientX - bounds.left - diameter / 2}px`;
+      ripple.style.top = `${event.clientY - bounds.top - diameter / 2}px`;
+      target.classList.add("has-ripple");
+      target.append(ripple);
+      ripple.addEventListener("animationend", () => ripple.remove(), { once: true });
+    };
+
+    document.addEventListener("pointerdown", addRipple);
+    return () => document.removeEventListener("pointerdown", addRipple);
+  }, []);
+
   return (
     <MotionConfig
       reducedMotion="user"
       transition={{ type: "spring", stiffness: 120, damping: 18 }}
     >
       <BrowserRouter>
-        <ParticleBackground />
         <div className="app-content">
           <a
             href="#main-content"
@@ -87,7 +105,6 @@ export const App = () => {
           >
             Skip to content
           </a>
-          <Preloader />
           <ScrollToTop />
           <Navbar />
           <AppRoutes />

@@ -15,7 +15,7 @@ export const Button = ({
   ...props
 }) => {
   const classes = [
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-heading font-semibold uppercase tracking-wide transition duration-300 focus-ring",
+    "inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-heading font-semibold uppercase tracking-wide transition duration-300 focus-ring",
     variants[variant],
     loading ? "btn-loading" : "",
     className || ""

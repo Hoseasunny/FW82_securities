@@ -3,11 +3,11 @@ import { useFormValidation } from "../../hooks/useFormValidation";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { isRequired, isValidEmail } from "../../utils/validators";
 import { sendInquiryForm } from "../../utils/emailjs";
-import { SERVICE_INTERESTS, SOCIALS } from "../../utils/constants";
+import { COMPANY, SERVICE_INTERESTS, SOCIALS } from "../../utils/constants";
 import { Button } from "../UI/Button";
 import { SectionHeader } from "../UI/SectionHeader";
 import { FormTrustBadges } from "../UI/FormTrustBadges";
-import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Linkedin, MessageCircle, Twitter } from "lucide-react";
 import { AlternatingCard } from "../UI/AlternatingCard";
 
 const validators = {
@@ -17,6 +17,7 @@ const validators = {
 };
 
 export const ContactForm = () => {
+  const whatsappNumber = COMPANY.phone.replace(/\D/g, "");
   const socialIcons = {
     LinkedIn: Linkedin,
     Facebook,
@@ -72,6 +73,16 @@ export const ContactForm = () => {
             <p className="font-semibold text-ink">24/7 Emergency Line</p>
             <a href="tel:+254799491929" className="mt-2 inline-flex min-h-11 items-center text-lg font-heading font-bold text-alert">
               +254 799 491929
+            </a>
+            <a
+              href={`https://wa.me/${whatsappNumber}`}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Chat with FW82 Security Solutions on WhatsApp"
+              className="mt-2 inline-flex min-h-12 items-center gap-2 text-sm font-semibold"
+            >
+              <MessageCircle className="h-4 w-4" aria-hidden="true" />
+              Chat on WhatsApp
             </a>
           </div>
           <div className="mt-6 rounded-2xl border border-slate/10 bg-white p-6">

@@ -22,24 +22,29 @@ export const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   return (
     <motion.header
-      className="fixed inset-x-0 top-3 z-50 px-3"
+      className="site-header fixed inset-x-0 top-3 z-50 px-3"
       animate={{ y: hidden ? "-150%" : "0%" }}
       transition={reducedMotion
         ? { duration: 0.16 }
         : { type: "spring", stiffness: 120, damping: 18 }}
     >
-      <div className="glass mx-auto max-w-6xl rounded-2xl lg:rounded-full">
+      <div className="site-nav-shell glass mx-auto max-w-6xl rounded-2xl lg:rounded-full">
         <div className="flex min-h-16 items-center justify-between gap-4 px-4 py-2 sm:px-6">
           <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-3 text-lg font-heading font-bold tracking-tight text-ink sm:text-xl" aria-label="FW82 Security Solutions home">
-            <span className="logo-mark inline-flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-sky-700 to-indigo-600 text-sm text-white shadow-soft">
-              FW<span>82</span>
-            </span>
-            <span className="hidden text-sm font-semibold tracking-normal text-ink sm:inline">Security Solutions</span>
+            <img className="site-logo-art h-12 w-12 object-contain" src="/favicon-96.webp" alt="" width="48" height="48" />
+            <span className="hidden font-serif text-sm font-bold tracking-tight text-ink sm:inline">Security Solutions Ltd</span>
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -48,7 +53,7 @@ export const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `gold-underline text-sm font-semibold uppercase tracking-wide transition hover:text-red-700 ${
+                  `gold-underline flex min-h-12 items-center text-sm font-semibold uppercase tracking-wide transition hover:text-red-700 ${
                     isActive ? "text-red-700" : "text-ink"
                   }`
                 }
@@ -62,14 +67,14 @@ export const Navbar = () => {
               </span>
             )}
             <Button as={Link} to="/contact" onClick={() => setOpen(false)} className="text-sm">
-              Request a Quote
+            Get a quote
             </Button>
           </nav>
 
           <button
-            className="flex min-h-11 min-w-11 items-center justify-center rounded-xl text-ink focus-visible:ring-2 focus-visible:ring-sky-500 lg:hidden"
+            className="flex min-h-12 min-w-12 items-center justify-center rounded-xl text-ink focus-visible:ring-2 focus-visible:ring-sky-500 lg:hidden"
             onClick={() => setOpen((prev) => !prev)}
-            aria-label="Toggle menu"
+            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={open}
             aria-controls="mobile-navigation"
           >
@@ -80,7 +85,7 @@ export const Navbar = () => {
 
       <div
         id="mobile-navigation"
-        className={`glass mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl transition-[max-height,opacity] duration-500 ease-in-out lg:hidden ${
+        className={`site-mobile-nav glass mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl transition-[max-height,opacity] duration-500 ease-in-out lg:hidden ${
           open ? "max-h-[80vh] opacity-100 pointer-events-auto" : "max-h-0 opacity-0 pointer-events-none"
         }`}
       >
@@ -92,7 +97,7 @@ export const Navbar = () => {
                 to={link.path}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `gold-underline min-h-11 flex items-center text-sm font-semibold uppercase tracking-wide transition hover:text-red-700 ${
+                  `gold-underline min-h-12 flex items-center text-sm font-semibold uppercase tracking-wide transition hover:text-red-700 ${
                     isActive ? "text-red-700" : "text-ink"
                   }`
                 }
@@ -101,7 +106,7 @@ export const Navbar = () => {
               </NavLink>
             ))}
             <Button as={Link} to="/contact" onClick={() => setOpen(false)} className="text-sm">
-              Request a Quote
+              Get a quote
             </Button>
           </div>
         </div>

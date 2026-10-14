@@ -4,26 +4,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: "#0A1628",
-        security: "#263c70",
-        "navy-50": "#E8EEF6",
-        gold: "#B91C1C",
+        navy: "#17345A",
+        security: "#254B78",
+        "navy-50": "#E8F0FA",
+        gold: "#D32F2F",
         trust: "#16A34A",
         alert: "#B71C1C",
-        ink: "#0F1C33",
-        slate: "#55688A",
-        cloud: "#F4F7FE",
+        ink: "#10233F",
+        slate: "#526782",
+        cloud: "#F1F5FA",
         sky: "#0EA5E9",
         indigo: "#6366F1",
         cyan: "#06B6D4"
       },
       fontFamily: {
-        heading: ["Poppins", "system-ui", "sans-serif"],
+        heading: ["Inter", "system-ui", "sans-serif"],
         body: ["Inter", "system-ui", "sans-serif"]
       },
       boxShadow: {
-        lift: "0 18px 44px rgba(30, 60, 120, 0.14)",
-        soft: "0 8px 26px rgba(30, 60, 120, 0.10)"
+        lift: "0 18px 44px rgba(16, 35, 63, 0.16)",
+        soft: "0 8px 26px rgba(16, 35, 63, 0.10)"
       },
       backgroundImage: {
         "hero-gradient": "linear-gradient(120deg, rgba(11,11,13,0.9), rgba(11,11,13,0.65))",

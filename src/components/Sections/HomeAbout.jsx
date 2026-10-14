@@ -41,6 +41,41 @@ export const HomeAbout = () => {
                   Learn more about us
                 </InlineLink>
               </div>
+              <div className="home-about-gallery" aria-label="FW82 security personnel and installed security systems">
+                <figure className="home-about-photo home-reveal" style={{ "--reveal-index": 0 }}>
+                  <img
+                    src="/images/projects/project-2.jpg"
+                    alt="FW82 security officers outside a shopping centre"
+                    width="1600"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>Professional guarding</figcaption>
+                </figure>
+                <figure className="home-about-photo home-reveal" style={{ "--reveal-index": 1 }}>
+                  <img
+                    src="/images/projects/project-3.jpg"
+                    alt="FW82 security team assembled inside a facility"
+                    width="2000"
+                    height="1500"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>Prepared teams</figcaption>
+                </figure>
+                <figure className="home-about-photo home-reveal" style={{ "--reveal-index": 2 }}>
+                  <img
+                    src="/images/services/smart-security-integration/installations-1.jpg"
+                    alt="Outdoor CCTV cameras installed at a property"
+                    width="1080"
+                    height="1080"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>Integrated technology</figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </FadeIn>
