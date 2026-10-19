@@ -53,8 +53,8 @@ export const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `gold-underline flex min-h-12 items-center text-sm font-semibold uppercase tracking-wide transition hover:text-red-700 ${
-                    isActive ? "text-red-700" : "text-ink"
+                  `gold-underline flex min-h-12 items-center text-sm font-semibold uppercase tracking-wide transition hover:text-gold ${
+                    isActive ? "text-gold" : "text-ink"
                   }`
                 }
               >
@@ -62,7 +62,7 @@ export const Navbar = () => {
               </NavLink>
             ))}
             {isCareers && (
-              <span className="rounded-full bg-red-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-red-800">
+              <span className="rounded-full bg-gold px-3 py-1 text-xs font-semibold uppercase tracking-wide text-navy">
                 We're Hiring
               </span>
             )}
@@ -97,8 +97,8 @@ export const Navbar = () => {
                 to={link.path}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `gold-underline min-h-12 flex items-center text-sm font-semibold uppercase tracking-wide transition hover:text-red-700 ${
-                    isActive ? "text-red-700" : "text-ink"
+                  `gold-underline min-h-12 flex items-center text-sm font-semibold uppercase tracking-wide transition hover:text-gold ${
+                    isActive ? "text-gold" : "text-ink"
                   }`
                 }
               >

@@ -159,7 +159,6 @@ export const Careers = () => {
                 <AlternatingCard
                   key={opening.title}
                   index={index}
-                  tone="red-black"
                   icon={Icon}
                   className="p-4"
                 >

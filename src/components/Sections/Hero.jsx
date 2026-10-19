@@ -31,7 +31,7 @@ export const Hero = () => {
             initial={{ opacity: 0, scale: 0.8, filter: "blur(8px)" }}
             animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
             transition={{ type: "spring", stiffness: 120, damping: 18 }}
-            className="inline-flex rounded-full border border-red-100 bg-white/75 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-red-800 shadow-soft backdrop-blur-xl"
+            className="inline-flex rounded-full border border-gold/30 bg-white/75 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-navy shadow-soft backdrop-blur-xl"
           >
             Professional security - Kenya
           </motion.p>
@@ -48,7 +48,7 @@ export const Hero = () => {
               </span>
             ))}
           </motion.h1>
-          <div className="mt-5 h-1 w-16 rounded-full bg-gradient-to-r from-navy to-red-700" aria-hidden="true" />
+          <div className="mt-5 h-1 w-16 rounded-full bg-gradient-to-r from-navy to-gold" aria-hidden="true" />
           <motion.p
             initial={{ opacity: 0, y: 12, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}

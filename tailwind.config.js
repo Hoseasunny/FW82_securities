@@ -4,18 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: "#001B54",
-        security: "#001B54",
+        navy: "#0A1628",
+        security: "#0A1628",
         "navy-50": "#F4F6FA",
-        gold: "#FF001F",
+        gold: "#FF7900",
         trust: "#16A34A",
-        alert: "#FF001F",
+        alert: "#FF7900",
         ink: "#050A18",
         slate: "#526178",
         cloud: "#FFFFFF",
-        sky: "#001B54",
-        indigo: "#001B54",
-        cyan: "#FF001F"
+        sky: "#0A1628",
+        indigo: "#0A1628",
+        cyan: "#FF7900"
       },
       fontFamily: {
         heading: ["Inter", "system-ui", "sans-serif"],
@@ -26,8 +26,8 @@ export default {
         soft: "0 8px 26px rgba(16, 35, 63, 0.10)"
       },
       backgroundImage: {
-        "hero-gradient": "linear-gradient(120deg, rgba(5,10,24,0.94), rgba(0,27,84,0.78))",
-        "grid-pattern": "radial-gradient(circle at 1px 1px, rgba(255,0,31,0.16) 1px, transparent 0)"
+        "hero-gradient": "linear-gradient(120deg, rgba(5,10,24,0.94), rgba(10,22,40,0.78))",
+        "grid-pattern": "radial-gradient(circle at 1px 1px, rgba(255,121,0,0.16) 1px, transparent 0)"
       }
     }
   },

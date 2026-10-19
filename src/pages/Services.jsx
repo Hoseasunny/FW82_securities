@@ -57,9 +57,9 @@ export const Services = () => {
               textClassName="text-white/60"
               linkClassName="hover:text-gold"
             />
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-red-400">Security technology and response</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">Security technology and response</p>
             <h1 className="mt-3 text-4xl font-heading font-bold">Security Services</h1>
-            <div className="mt-5 h-0.5 w-16 bg-red-400" aria-hidden="true" />
+            <div className="mt-5 h-0.5 w-16 bg-gold" aria-hidden="true" />
             <p className="mt-4 max-w-2xl text-white/70">
               Tailored security solutions designed for residential, commercial, industrial, and event environments.
             </p>
@@ -167,7 +167,7 @@ export const Services = () => {
                 ["04", "Improve", "Reporting and review keep protection aligned as your needs change."]
               ].map(([number, title, description]) => (
                 <article key={number} className="rounded-2xl border border-white/15 bg-white/5 p-6">
-                  <p className="font-heading text-3xl font-bold text-red-400">{number}</p>
+                  <p className="font-heading text-3xl font-bold text-gold">{number}</p>
                   <h3 className="mt-5 text-xl font-heading font-semibold text-white">{title}</h3>
                   <p className="mt-3 text-sm leading-6 text-white/70">{description}</p>
                 </article>

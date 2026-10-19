@@ -103,7 +103,6 @@ export const HomeAbout = () => {
                 <AlternatingCard
                   key={item}
                   index={index}
-                  tone="red-black"
                   icon={ShieldCheck}
                   iconSize="h-4 w-4"
                   className="px-4 py-3 text-xs font-semibold"

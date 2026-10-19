@@ -97,7 +97,6 @@ export const ContactForm = () => {
                   <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="block">
                     <AlternatingCard
                       index={index}
-                      tone="red-black"
                       icon={Icon}
                       iconSize="h-4 w-4"
                       className="px-4 py-3 text-xs font-semibold uppercase tracking-wide"
