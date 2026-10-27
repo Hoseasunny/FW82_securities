@@ -17,6 +17,7 @@ export const Footer = () => {
             <p>{COMPANY.hq}</p>
             <a className="block" href={`tel:${COMPANY.phone}`}>{COMPANY.phone}</a>
             <a className="block" href={`mailto:${COMPANY.emailPrimary}`}>{COMPANY.emailPrimary}</a>
+            <a className="block" href={`mailto:${COMPANY.emailSecondary}`}>{COMPANY.emailSecondary}</a>
           </div>
           <div className="mt-5 flex flex-wrap gap-4">
             {SOCIALS.map((social) => (
