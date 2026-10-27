@@ -170,11 +170,11 @@ export const Contact = () => {
                   {COMPANY.emailSecondary}
                 </a>
                 <a
-                  href="mailto:info@fw82securitysolutions.com"
+                  href="mailto:info@fw82securitysolution.com"
                   className="flex min-h-11 items-center gap-3 rounded-2xl border border-slate/10 px-4 py-3 text-sm text-slate transition hover:border-gold hover:text-ink"
                 >
                   <Mail className="h-5 w-5 text-gold" />
-                  info@fw82securitysolutions.com
+                  info@fw82securitysolution.com
                 </a>
                 <a
                   href={`tel:${COMPANY.phone}`}

@@ -1,8 +1,8 @@
 export const COMPANY = {
   name: "FW82 Security Solutions Ltd",
   phone: "+254 799 491929",
-  emailPrimary: "Mail-info@fw82securitysolutions.com",
-  emailSecondary: "Mail-info@fw82securitysolutions.com",
+  emailPrimary: "info@fw82securitysolution.com",
+  emailSecondary: "info@fw82securitysolution.com",
   hq: "Nairobi, Kenya",
   branches: ["Nairobi", "Mombasa", "Kisumu", "Eldoret"],
   founded: 2015,
@@ -55,24 +55,24 @@ export const BRANCH_CONTACTS = [
     city: "Nairobi (HQ)",
     address: "Nairobi, Kenya",
     phone: "+254 799 491929",
-    email: "Mail-info@fw82securitysolutions.com"
+    email: "info@fw82securitysolution.com"
   },
   {
     city: "Mombasa",
     address: "Mombasa, Kenya",
     phone: "+254 799 491929",
-    email: "Mail-info@fw82securitysolutions.com"
+    email: "info@fw82securitysolution.com"
   },
   {
     city: "Kisumu",
     address: "Kisumu, Kenya",
     phone: "+254 799 491929",
-    email: "Mail-info@fw82securitysolutions.com"
+    email: "info@fw82securitysolution.com"
   },
   {
     city: "Eldoret",
     address: "Eldoret, Kenya",
     phone: "+254 799 491929",
-    email: "Mail-info@fw82securitysolutions.com"
+    email: "info@fw82securitysolution.com"
   }
 ];
