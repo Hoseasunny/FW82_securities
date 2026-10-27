@@ -2,7 +2,7 @@ export const COMPANY = {
   name: "FW82 Security Solutions Ltd",
   phone: "+254 799 491929",
   emailPrimary: "info@fw82securitysolution.com",
-  emailSecondary: "info@fw82securitysolution.com",
+  emailSecondary: "info@factory2ksecurity.co.ke",
   hq: "Nairobi, Kenya",
   branches: ["Nairobi", "Mombasa", "Kisumu", "Eldoret"],
   founded: 2015,
