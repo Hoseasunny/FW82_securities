@@ -10,6 +10,7 @@ import { InlineLink } from "../components/UI/InlineLink";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 import { ImageReveal } from "../components/Animation/ImageReveal";
 import { ParallaxImage } from "../components/Animation/ParallaxImage";
+import { BrandText } from "../components/UI/CompanyName";
 
 export const ProjectDetail = () => {
   const { slug } = useParams();
@@ -101,8 +102,8 @@ export const ProjectDetail = () => {
               linkClassName="hover:text-gold"
             />
             <p className="mt-4 text-xs uppercase tracking-[0.3em] text-gold">{project.category}</p>
-            <h1 className="mt-3 max-w-4xl text-4xl font-heading font-bold">{project.title}</h1>
-            <p className="mt-4 max-w-3xl text-sm text-white/70">{project.summary}</p>
+            <h1 className="mt-3 max-w-4xl text-4xl font-heading font-bold"><BrandText text={project.title} /></h1>
+            <p className="mt-4 max-w-3xl text-sm text-white/70"><BrandText text={project.summary} /></p>
           </div>
         </section>
 
@@ -133,7 +134,7 @@ export const ProjectDetail = () => {
               <div className="mt-10 space-y-6">
                 {project.content.map((paragraph, index) => (
                   <FadeIn key={`${project.slug}-p-${index}`} delay={0.05 * index}>
-                    <p className="text-sm leading-8 text-slate">{paragraph}</p>
+                    <p className="text-sm leading-8 text-slate"><BrandText text={paragraph} /></p>
                   </FadeIn>
                 ))}
               </div>
@@ -147,7 +148,7 @@ export const ProjectDetail = () => {
                     {project.approach.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <span className="mt-2 h-2 w-2 rounded-full bg-gold" />
-                        <span>{item}</span>
+                        <span><BrandText text={item} /></span>
                       </li>
                     ))}
                   </ul>
@@ -156,7 +157,7 @@ export const ProjectDetail = () => {
               <FadeIn delay={0.2}>
                 <Card className="border border-slate/10 bg-cloud">
                   <p className="text-xs uppercase tracking-[0.3em] text-gold">Outcome</p>
-                  <p className="mt-4 text-sm text-slate">{project.outcome}</p>
+                  <p className="mt-4 text-sm text-slate"><BrandText text={project.outcome} /></p>
                 </Card>
               </FadeIn>
               <FadeIn delay={0.3}>
@@ -213,8 +214,8 @@ export const ProjectDetail = () => {
                   />
                   <div className="p-6">
                     <p className="text-xs uppercase tracking-[0.3em] text-gold">{item.category}</p>
-                    <h3 className="mt-3 text-lg font-heading font-semibold text-ink">{item.title}</h3>
-                    <p className="mt-2 text-sm text-slate">{item.summary}</p>
+                    <h3 className="mt-3 text-lg font-heading font-semibold text-ink"><BrandText text={item.title} /></h3>
+                    <p className="mt-2 text-sm text-slate"><BrandText text={item.summary} /></p>
                     <InlineLink as="span" className="mt-4">
                       Read case study
                     </InlineLink>

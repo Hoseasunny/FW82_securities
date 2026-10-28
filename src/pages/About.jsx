@@ -1,5 +1,6 @@
 ﻿import { SectionHeader } from "../components/UI/SectionHeader";
 import { Seo } from "../components/SEO/Seo";
+import { BrandText, CompanyName } from "../components/UI/CompanyName";
 import { FadeIn } from "../components/Animation/FadeIn";
 import { FaqSection } from "../components/Sections/FaqSection";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
@@ -131,7 +132,7 @@ export const About = () => {
                 textClassName="text-white/60"
                 linkClassName="hover:text-gold"
               />
-              <h1 className="text-4xl font-heading font-bold md:text-5xl">About FW82 Security Solutions Ltd</h1>
+              <h1 className="text-4xl font-heading font-bold md:text-5xl">About <CompanyName /></h1>
               <p className="mt-4 max-w-2xl text-white/80">
                 Trusted Kenyan security experts delivering disciplined guarding, rapid response, and technology-enabled
                 protection for homes, businesses, and institutions.
@@ -165,7 +166,7 @@ export const About = () => {
                     <p className="text-sm font-semibold text-white">Executive Director & Chief Commercial Officer</p>
                     <p className="mt-3 text-sm leading-7 text-slate-300">
                       "A vision without a visionary is dead." This leadership journey from frontline guarding to executive
-                      management reflects the values that shaped FW82 Security Solutions Ltd: resilience, discipline, and consistent service delivery.
+                      management reflects the values that shaped <CompanyName />: resilience, discipline, and consistent service delivery.
                     </p>
                     <div className="mt-5 inline-flex rounded-full bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white">
                       18+ Years Security Leadership
@@ -176,7 +177,7 @@ export const About = () => {
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="mt-6 text-sm leading-7 text-slate">
-                FW82 Security Solutions Ltd provides dependable, technology-enabled security tailored to each client.
+                <CompanyName /> provides dependable, technology-enabled security tailored to each client.
                 We combine trained personnel, clear operations, and modern systems to protect people, property, and
                 reputation across Kenya.
               </p>
@@ -184,7 +185,7 @@ export const About = () => {
                 {journeyMilestones.map((item) => (
                   <div key={item.title} className="rounded-2xl border border-slate/15 bg-cloud p-5 shadow-soft">
                     <h3 className="text-sm font-heading font-bold text-ink">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-slate">{item.detail}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate"><BrandText text={item.detail} /></p>
                   </div>
                 ))}
               </div>
@@ -214,7 +215,7 @@ export const About = () => {
                 <FadeIn key={item.title} delay={0.05 * index}>
                   <AlternatingCard index={index} icon={Icon}>
                     <h3 className="text-lg font-heading font-bold">{item.title}</h3>
-                    <p className="mt-4 text-sm font-medium leading-7 text-current/90">{item.description}</p>
+                    <p className="mt-4 text-sm font-medium leading-7 text-current/90"><BrandText text={item.description} /></p>
                   </AlternatingCard>
                 </FadeIn>
               );
@@ -237,7 +238,7 @@ export const About = () => {
                     style={{ borderRadius: index % 2 === 1 ? "0 30px 0 30px" : "30px 0 30px 0" }}
                   >
                     <h3 className={`text-lg font-heading font-bold ${index % 2 === 1 ? "text-white" : "text-ink"}`}>{value.title}</h3>
-                    <p className={`mt-3 text-sm font-medium leading-7 ${index % 2 === 1 ? "text-white/90" : "text-slate"}`}>{value.description}</p>
+                    <p className={`mt-3 text-sm font-medium leading-7 ${index % 2 === 1 ? "text-white/90" : "text-slate"}`}><BrandText text={value.description} /></p>
                   </div>
                 </FadeIn>
               ))}
@@ -253,7 +254,7 @@ export const About = () => {
                 <FadeIn key={item.title} delay={0.05 * index}>
                   <AlternatingCard index={index} icon={Icon} className="h-full">
                     <h3 className="text-lg font-heading font-bold">{item.title}</h3>
-                    <p className="mt-4 text-sm font-medium leading-7 text-current/90">{item.description}</p>
+                    <p className="mt-4 text-sm font-medium leading-7 text-current/90"><BrandText text={item.description} /></p>
                   </AlternatingCard>
                 </FadeIn>
               );
@@ -266,5 +267,3 @@ export const About = () => {
     </>
   );
 };
-
-

@@ -10,6 +10,7 @@ import { InlineLink } from "../components/UI/InlineLink";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 import { ImageReveal } from "../components/Animation/ImageReveal";
 import { ParallaxImage } from "../components/Animation/ParallaxImage";
+import { BrandText, CompanyName } from "../components/UI/CompanyName";
 
 export const NewsDetail = () => {
   const { slug } = useParams();
@@ -105,7 +106,7 @@ export const NewsDetail = () => {
               linkClassName="hover:text-gold"
             />
             <p className="mt-4 text-xs uppercase tracking-[0.3em] text-gold">{article.category}</p>
-            <h1 className="mt-3 max-w-4xl text-4xl font-heading font-bold">{article.title}</h1>
+            <h1 className="mt-3 max-w-4xl text-4xl font-heading font-bold"><BrandText text={article.title} /></h1>
             <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-white/70">
               <span>{article.date}</span>
               <span className="h-1 w-1 rounded-full bg-white/40" />
@@ -131,7 +132,7 @@ export const NewsDetail = () => {
               <div className="mt-10 space-y-6">
                 {article.content.map((paragraph, index) => (
                   <FadeIn key={`${article.slug}-p-${index}`} delay={0.05 * index}>
-                    <p className="text-sm leading-8 text-slate">{paragraph}</p>
+                    <p className="text-sm leading-8 text-slate"><BrandText text={paragraph} /></p>
                   </FadeIn>
                 ))}
               </div>
@@ -159,7 +160,7 @@ export const NewsDetail = () => {
                     walk you through the operational details.
                   </p>
                   <Button as={Link} to="/contact" variant="primary" className="mt-6 w-full text-xs">
-                    Talk to FW82 Security Solutions Ltd
+                    Talk to <CompanyName />
                   </Button>
                 </Card>
               </FadeIn>
@@ -186,8 +187,8 @@ export const NewsDetail = () => {
                   />
                   <div className="p-6">
                     <p className="text-xs uppercase tracking-[0.3em] text-gold">{item.category}</p>
-                    <h3 className="mt-3 text-lg font-heading font-semibold text-ink">{item.title}</h3>
-                    <p className="mt-2 text-sm text-slate">{item.excerpt}</p>
+                    <h3 className="mt-3 text-lg font-heading font-semibold text-ink"><BrandText text={item.title} /></h3>
+                    <p className="mt-2 text-sm text-slate"><BrandText text={item.excerpt} /></p>
                     <InlineLink as="span" className="mt-4">
                       Read more
                     </InlineLink>

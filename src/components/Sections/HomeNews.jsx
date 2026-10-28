@@ -3,6 +3,7 @@ import { newsItems } from "../../data/news";
 import { SectionHeader } from "../UI/SectionHeader";
 import { FadeIn } from "../Animation/FadeIn";
 import { InlineLink } from "../UI/InlineLink";
+import { BrandText } from "../UI/CompanyName";
 
 export const HomeNews = () => {
   const items = newsItems.slice(0, 3);
@@ -36,9 +37,9 @@ export const HomeNews = () => {
                     <span>{item.date}</span>
                   </div>
                   <h3 className="mt-3 text-lg font-heading font-semibold text-ink">
-                    {item.title}
+                    <BrandText text={item.title} />
                   </h3>
-                  <p className="mt-2 text-sm text-slate">{item.excerpt}</p>
+                  <p className="mt-2 text-sm text-slate"><BrandText text={item.excerpt} /></p>
                   <InlineLink as="span" className="mt-4">
                     Learn More
                   </InlineLink>

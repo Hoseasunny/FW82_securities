@@ -6,6 +6,7 @@ import { Seo } from "../components/SEO/Seo";
 import { InlineLink } from "../components/UI/InlineLink";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 import { StaggerGroup } from "../components/Animation/StaggerGroup";
+import { BrandText } from "../components/UI/CompanyName";
 
 const filters = [
   { label: "All", category: "All" },
@@ -106,8 +107,8 @@ export const Projects = () => {
                   />
                   <div className="p-5">
                     <p className="text-xs uppercase tracking-[0.3em] text-gold">{project.category}</p>
-                    <h3 className="mt-2 text-lg font-heading font-semibold text-ink">{project.title}</h3>
-                    <p className="mt-2 text-sm text-slate">{project.summary}</p>
+                    <h3 className="mt-2 text-lg font-heading font-semibold text-ink"><BrandText text={project.title} /></h3>
+                    <p className="mt-2 text-sm text-slate"><BrandText text={project.summary} /></p>
                     <InlineLink as="span" className="mt-4">
                       View case study
                     </InlineLink>

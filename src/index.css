@@ -37,6 +37,30 @@ body {
   overflow-x: clip;
 }
 
+.company-name {
+  color: inherit;
+  -webkit-text-fill-color: currentColor;
+  white-space: normal;
+}
+
+.section-heading-text .company-name {
+  color: var(--ink);
+}
+
+.company-name__mark {
+  white-space: nowrap;
+}
+
+.company-name__red {
+  color: #d30004;
+  -webkit-text-fill-color: currentColor;
+}
+
+.company-name__black {
+  color: #000;
+  -webkit-text-fill-color: currentColor;
+}
+
 #root { min-height: 100vh; }
 
 .app-content {

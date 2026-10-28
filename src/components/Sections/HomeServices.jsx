@@ -7,6 +7,7 @@ import { Button } from "../UI/Button";
 import { FadeIn } from "../Animation/FadeIn";
 import { InlineLink } from "../UI/InlineLink";
 import { GlassCard } from "../UI/GlassCard";
+import { BrandText } from "../UI/CompanyName";
 
 export const HomeServices = () => {
   const technical = services.find((service) => service.slug === "technical-security");
@@ -89,7 +90,7 @@ export const HomeServices = () => {
                   </div>
                   <div className="flex min-h-16 flex-1 items-center px-6 text-ink">
                     <h3 className="text-lg font-heading font-semibold">
-                      {technical.gallery[activeSlide]?.title}
+                      <BrandText text={technical.gallery[activeSlide]?.title ?? ""} />
                     </h3>
                   </div>
                 </div>
@@ -117,7 +118,7 @@ export const HomeServices = () => {
                       </div>
                       <div className="flex min-h-16 flex-1 items-center px-6 text-ink">
                         <h3 className="text-lg font-heading font-semibold">
-                          {technical.gallery[panelIndex]?.title}
+                          <BrandText text={technical.gallery[panelIndex]?.title ?? ""} />
                         </h3>
                       </div>
                     </div>
@@ -180,8 +181,8 @@ export const HomeServices = () => {
                 />
                 <div className="p-6 text-ink">
                   <span className="text-xs uppercase tracking-[0.3em] text-gold">Service</span>
-                  <h3 className="mt-3 text-xl font-heading font-semibold">{service.title}</h3>
-                  <p className="mt-2 text-sm text-slate">{service.description}</p>
+                  <h3 className="mt-3 text-xl font-heading font-semibold"><BrandText text={service.title} /></h3>
+                  <p className="mt-2 text-sm text-slate"><BrandText text={service.description} /></p>
                   <InlineLink
                     to={`/services/${service.slug}`}
                     className="mt-4 text-ink hover:text-gold"

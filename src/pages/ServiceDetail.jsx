@@ -7,6 +7,7 @@ import { Card } from "../components/UI/Card";
 import { Seo } from "../components/SEO/Seo";
 import { COMPANY } from "../utils/constants";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
+import { BrandText, CompanyName } from "../components/UI/CompanyName";
 
 export const ServiceDetail = () => {
   const { slug } = useParams();
@@ -131,8 +132,8 @@ export const ServiceDetail = () => {
               linkClassName="hover:text-gold"
             />
             <p className="text-xs uppercase tracking-[0.3em] text-gold">Service</p>
-            <h1 className="mt-3 text-4xl font-heading font-bold">{service.title}</h1>
-            <p className="mt-4 max-w-2xl text-white/70">{service.description}</p>
+            <h1 className="mt-3 text-4xl font-heading font-bold"><BrandText text={service.title} /></h1>
+            <p className="mt-4 max-w-2xl text-white/70"><BrandText text={service.description} /></p>
             <Button as={Link} to="/services" variant="secondary" className="mt-6 w-fit text-xs">
               Back to Services
             </Button>
@@ -146,16 +147,16 @@ export const ServiceDetail = () => {
                 <SectionHeader title="Service Overview" subtitle={service.title} />
                 <div className="mt-6 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
                   <div>
-                    <p className="text-sm leading-8 text-slate">{service.longIntro}</p>
+                    <p className="text-sm leading-8 text-slate"><BrandText text={service.longIntro} /></p>
                   </div>
                   {service.whyChoose && (
                     <Card className="border border-slate/10">
-                      <p className="text-xs uppercase tracking-[0.3em] text-gold">Why Choose FW82 Security Solutions Ltd</p>
+                      <p className="text-xs uppercase tracking-[0.3em] text-gold">Why Choose <CompanyName /></p>
                       <ul className="mt-4 space-y-3 text-sm text-slate">
                         {service.whyChoose.map((item) => (
                           <li key={item} className="flex items-start gap-3">
                             <span className="mt-2 h-2 w-2 rounded-full bg-gold" />
-                            <span>{item}</span>
+                            <span><BrandText text={item} /></span>
                           </li>
                         ))}
                       </ul>
@@ -183,13 +184,13 @@ export const ServiceDetail = () => {
                           )}
                           <div className="p-5">
                             <p className="text-xs uppercase tracking-[0.3em] text-gold">{service.title}</p>
-                            <h3 className="mt-2 text-lg font-heading font-semibold text-ink">{section.title}</h3>
-                            <p className="mt-3 text-sm leading-7 text-slate">{section.body}</p>
+                            <h3 className="mt-2 text-lg font-heading font-semibold text-ink"><BrandText text={section.title} /></h3>
+                            <p className="mt-3 text-sm leading-7 text-slate"><BrandText text={section.body} /></p>
                             <ul className="mt-4 space-y-2 text-sm text-slate">
                               {section.bullets.map((item) => (
                                 <li key={item} className="flex items-start gap-3">
                                   <span className="mt-2 h-2 w-2 rounded-full bg-gold" />
-                                  <span>{item}</span>
+                                  <span><BrandText text={item} /></span>
                                 </li>
                               ))}
                             </ul>
@@ -201,7 +202,7 @@ export const ServiceDetail = () => {
                 )}
                 {service.closing && (
                   <div className="mt-10 rounded-3xl bg-cloud p-6 text-sm leading-8 text-slate">
-                    {service.closing}
+                    <BrandText text={service.closing} />
                   </div>
                 )}
                 {isSmartIntegration && (

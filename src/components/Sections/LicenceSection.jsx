@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ExternalLink, FileCheck2, ShieldCheck, X } from "lucide-react";
 import { Button } from "../UI/Button";
+import { CompanyName } from "../UI/CompanyName";
 
 const licenceUrl = "/documents/fw82-psra-licence-2026.pdf";
 const licenceImage = "/images/certificate/fw82-psra-licence-2026.png";
@@ -45,7 +46,7 @@ export const LicenceSection = () => {
               Licensed &amp; certified
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-slate">
-              FW82 Security Solutions Ltd is a licensed private security service provider regulated by the Private Security Regulatory Authority (PSRA).
+              <CompanyName /> is a licensed private security service provider regulated by the Private Security Regulatory Authority (PSRA).
             </p>
             <a
               href="https://www.psra.go.ke/"

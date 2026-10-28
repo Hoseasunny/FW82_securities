@@ -5,6 +5,7 @@ import { SectionHeader } from "../UI/SectionHeader";
 import { SlideIn } from "../Animation/SlideIn";
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { CompanyName } from "../UI/CompanyName";
 
 const whyImages = [
   buildImageSet(
@@ -113,7 +114,7 @@ export const WhyChooseUs = () => {
           direction="right"
           className="-mt-24 ml-0 mr-auto rounded-3xl bg-white p-8 shadow-soft sm:-mt-24 sm:p-10 lg:ml-auto lg:mr-10 lg:max-w-4xl relative z-10"
         >
-          <SectionHeader title="Why Choose FW82 Security Solutions Ltd" subtitle="Our Advantage" />
+          <SectionHeader title={<>Why Choose <CompanyName /></>} subtitle="Our Advantage" />
           <ul className="mt-6 space-y-4">
             {features.map((feature) => (
               <li key={feature} className="flex items-start gap-3 text-sm text-slate">

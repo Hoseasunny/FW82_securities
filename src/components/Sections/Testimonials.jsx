@@ -4,6 +4,7 @@ import { SectionHeader } from "../UI/SectionHeader";
 import { Card } from "../UI/Card";
 import { FadeIn } from "../Animation/FadeIn";
 import { UserCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import { BrandText } from "../UI/CompanyName";
 
 export const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -42,7 +43,7 @@ export const Testimonials = () => {
                     <p className="text-xs text-slate">{item.role}</p>
                   </div>
                 </div>
-                <p className="mt-4 text-sm text-slate">"{item.quote}"</p>
+                <p className="mt-4 text-sm text-slate">"<BrandText text={item.quote} />"</p>
               </Card>
             ))}
           </div>
@@ -61,7 +62,7 @@ export const Testimonials = () => {
                         <p className="text-xs text-slate">{item.role}</p>
                       </div>
                     </div>
-                    <p className="mt-4 text-sm text-slate">"{item.quote}"</p>
+                    <p className="mt-4 text-sm text-slate">"<BrandText text={item.quote} />"</p>
                   </Card>
                 ))}
               </div>

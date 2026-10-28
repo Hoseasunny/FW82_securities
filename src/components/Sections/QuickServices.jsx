@@ -4,6 +4,7 @@ import { FadeIn } from "../Animation/FadeIn";
 import { services } from "../../data/services";
 import { InlineLink } from "../UI/InlineLink";
 import { AlternatingCard } from "../UI/AlternatingCard";
+import { BrandText } from "../UI/CompanyName";
 
 const iconMap = {
   Shield,
@@ -32,9 +33,9 @@ export const QuickServices = () => {
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold">Service</p>
                 <h3 className="mt-4 text-lg font-heading font-bold">
-                  {service.title}
+                  <BrandText text={service.title} />
                 </h3>
-                <p className="mt-2 text-sm font-medium text-current/90">{service.description}</p>
+                <p className="mt-2 text-sm font-medium text-current/90"><BrandText text={service.description} /></p>
                 <InlineLink
                   to={`/services/${service.slug}`}
                   className="mt-4 text-gold hover:text-white"

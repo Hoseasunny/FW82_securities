@@ -3,6 +3,7 @@ import { SectionHeader } from "../UI/SectionHeader";
 import { Button } from "../UI/Button";
 import { Link } from "react-router-dom";
 import { FadeIn } from "../Animation/FadeIn";
+import { BrandText } from "../UI/CompanyName";
 
 export const ProjectsShowcase = () => {
   return (
@@ -27,8 +28,8 @@ export const ProjectsShowcase = () => {
               <div className="absolute inset-0 bg-navy/60 opacity-0 transition duration-500 group-hover:opacity-100" />
               <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                 <span className="text-xs uppercase tracking-[0.3em] text-gold">{project.category}</span>
-                <h3 className="mt-3 text-xl font-heading font-semibold">{project.title}</h3>
-                <p className="mt-2 text-sm text-white/80">{project.summary}</p>
+                <h3 className="mt-3 text-xl font-heading font-semibold"><BrandText text={project.title} /></h3>
+                <p className="mt-2 text-sm text-white/80"><BrandText text={project.summary} /></p>
                 <Button as={Link} to={`/projects/${project.slug}`} variant="secondary" className="mt-4 w-fit text-xs">
                   View Case Study
                 </Button>

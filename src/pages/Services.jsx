@@ -11,6 +11,7 @@ import { AlternatingCard } from "../components/UI/AlternatingCard";
 import { FaqSection } from "../components/Sections/FaqSection";
 import { CTASection } from "../components/Sections/CTASection";
 import { faqItems } from "../data/faqItems";
+import { BrandText } from "../components/UI/CompanyName";
 
 const iconMap = {
   Shield,
@@ -92,9 +93,9 @@ export const Services = () => {
                       <div className="flex items-center gap-3">
                         <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Service</span>
                       </div>
-                      <h3 className="mt-3 text-xl font-heading font-bold">{service.title}</h3>
+                      <h3 className="mt-3 text-xl font-heading font-bold"><BrandText text={service.title} /></h3>
                       <p className="mt-2 text-sm font-medium text-current/90">
-                        {service.shortDescription || service.description}
+                        <BrandText text={service.shortDescription || service.description} />
                       </p>
                       <Button
                         as={Link}
@@ -137,9 +138,9 @@ export const Services = () => {
                     decoding="async"
                   />
                   <div className="p-6">
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">{service.tagline}</p>
-                    <h3 className="mt-2 text-lg font-heading font-bold">{service.title}</h3>
-                    <p className="mt-2 text-sm font-medium text-current/90">{service.description}</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold"><BrandText text={service.tagline} /></p>
+                    <h3 className="mt-2 text-lg font-heading font-bold"><BrandText text={service.title} /></h3>
+                    <p className="mt-2 text-sm font-medium text-current/90"><BrandText text={service.description} /></p>
                     <Button
                       as={Link}
                       to={`/services/specialized/${service.slug}`}

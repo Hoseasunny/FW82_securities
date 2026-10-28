@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { CompanyName } from "../UI/CompanyName";
 import { COMPANY, NAV_LINKS, SOCIALS } from "../../utils/constants";
 
 export const Footer = () => {
@@ -8,7 +9,7 @@ export const Footer = () => {
         <div>
           <Link to="/" className="site-footer-brand" aria-label="FW82 Security Solutions home">
             <img className="site-logo-art" src="/favicon-96.webp" alt="" width="48" height="48" />
-            <span className="font-serif tracking-tight">{COMPANY.name}</span>
+            <span className="font-serif tracking-tight"><CompanyName /></span>
           </Link>
           <p className="mt-4 text-sm">
             Professional protection for businesses, communities, and events across Kenya.
@@ -73,7 +74,7 @@ export const Footer = () => {
       </div>
 
       <div className="site-footer-bottom border-t border-white/10 px-6 py-5 text-center text-xs">
-        © {new Date().getFullYear()} {COMPANY.name}
+        © {new Date().getFullYear()} <CompanyName />
       </div>
     </footer>
   );

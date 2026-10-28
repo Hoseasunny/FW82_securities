@@ -6,6 +6,7 @@ import { Seo } from "../components/SEO/Seo";
 import { InlineLink } from "../components/UI/InlineLink";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 import { StaggerGroup } from "../components/Animation/StaggerGroup";
+import { BrandText } from "../components/UI/CompanyName";
 
 export const News = () => {
   const [query, setQuery] = useState("");
@@ -59,7 +60,7 @@ export const News = () => {
             />
             <h1 className="text-4xl font-heading font-bold">News & Events</h1>
             <p className="mt-4 max-w-2xl text-white/70">
-              Updates from FW82 Security Solutions Ltd and the security landscape across Kenya.
+              <BrandText text="Updates from FW82 Security Solutions Ltd and the security landscape across Kenya." />
             </p>
           </div>
         </section>
@@ -90,9 +91,9 @@ export const News = () => {
                 <div className="flex flex-col justify-center rounded-3xl border border-slate/10 p-6">
                   <span className="text-xs uppercase tracking-[0.3em] text-gold">Featured</span>
                   <h2 className="mt-3 text-2xl font-heading font-semibold text-ink">
-                    {featured.title}
+                    <BrandText text={featured.title} />
                   </h2>
-                  <p className="mt-3 text-sm text-slate">{featured.excerpt}</p>
+                  <p className="mt-3 text-sm text-slate"><BrandText text={featured.excerpt} /></p>
                   <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate">
                     <span>{featured.date}</span>
                     <span className="rounded-full bg-cloud px-3 py-1 text-gold">
@@ -128,8 +129,8 @@ export const News = () => {
                       </span>
                       <span className="text-slate">{item.date}</span>
                     </div>
-                    <h3 className="mt-3 text-lg font-heading font-semibold text-ink">{item.title}</h3>
-                    <p className="mt-2 text-sm text-slate">{item.excerpt}</p>
+                    <h3 className="mt-3 text-lg font-heading font-semibold text-ink"><BrandText text={item.title} /></h3>
+                    <p className="mt-2 text-sm text-slate"><BrandText text={item.excerpt} /></p>
                     <InlineLink as="span" className="mt-4">
                       Learn More
                     </InlineLink>

@@ -10,6 +10,7 @@ import { FormTrustBadges } from "../components/UI/FormTrustBadges";
 import { Facebook, Mail, Phone, MessageCircle } from "lucide-react";
 import { Seo } from "../components/SEO/Seo";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
+import { CompanyName } from "../components/UI/CompanyName";
 
 const validators = {
   name: (value) => (isRequired(value) ? "" : "Name is required"),
@@ -110,7 +111,7 @@ export const Contact = () => {
               textClassName="text-white/60"
               linkClassName="hover:text-gold"
             />
-            <h1 className="text-4xl font-heading font-bold">Contact FW82 Security Solutions Ltd</h1>
+            <h1 className="text-4xl font-heading font-bold">Contact <CompanyName /></h1>
             <p className="mt-4 max-w-2xl text-white/70">
               Reach our team in Nairobi or any branch across Kenya. Emergency line is available 24/7.
             </p>

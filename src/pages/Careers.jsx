@@ -10,6 +10,7 @@ import { Seo } from "../components/SEO/Seo";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
 import { Shield, Monitor, Radio, UserCheck } from "lucide-react";
 import { AlternatingCard } from "../components/UI/AlternatingCard";
+import { CompanyName } from "../components/UI/CompanyName";
 
 const validators = {
   fullName: (value) => (isRequired(value) ? "" : "Full name is required"),
@@ -142,7 +143,7 @@ export const Careers = () => {
               textClassName="text-white/60"
               linkClassName="hover:text-gold"
             />
-            <h1 className="text-4xl font-heading font-bold">Careers at FW82 Security Solutions Ltd</h1>
+            <h1 className="text-4xl font-heading font-bold">Careers at <CompanyName /></h1>
             <p className="mt-4 max-w-2xl text-white/70">
               Join our team of security professionals serving Nairobi, Mombasa, Kisumu, and Eldoret.
             </p>

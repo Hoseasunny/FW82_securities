@@ -7,6 +7,7 @@ import { Card } from "../components/UI/Card";
 import { Seo } from "../components/SEO/Seo";
 import { FadeIn } from "../components/Animation/FadeIn";
 import { Breadcrumbs } from "../components/UI/Breadcrumbs";
+import { BrandText, CompanyName } from "../components/UI/CompanyName";
 
 export const SpecializedServiceDetail = () => {
   const { slug } = useParams();
@@ -100,9 +101,9 @@ export const SpecializedServiceDetail = () => {
               textClassName="text-white/60"
               linkClassName="hover:text-gold"
             />
-            <p className="text-xs uppercase tracking-[0.3em] text-gold">{service.tagline}</p>
-            <h1 className="mt-3 text-4xl font-heading font-bold">{service.title}</h1>
-            <p className="mt-4 max-w-2xl text-white/70">{service.description}</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-gold"><BrandText text={service.tagline} /></p>
+            <h1 className="mt-3 text-4xl font-heading font-bold"><BrandText text={service.title} /></h1>
+            <p className="mt-4 max-w-2xl text-white/70"><BrandText text={service.description} /></p>
           </div>
         </section>
 
@@ -121,7 +122,7 @@ export const SpecializedServiceDetail = () => {
               <div className="mt-8 space-y-6">
                 {service.intro.map((paragraph, index) => (
                   <FadeIn key={`${service.slug}-intro-${index}`} delay={0.05 * index}>
-                    <p className="text-sm leading-8 text-slate">{paragraph}</p>
+                    <p className="text-sm leading-8 text-slate"><BrandText text={paragraph} /></p>
                   </FadeIn>
                 ))}
               </div>
@@ -135,7 +136,7 @@ export const SpecializedServiceDetail = () => {
                     {service.features.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <span className="mt-2 h-2 w-2 rounded-full bg-gold" />
-                        <span>{item}</span>
+                        <span><BrandText text={item} /></span>
                       </li>
                     ))}
                   </ul>
@@ -143,8 +144,8 @@ export const SpecializedServiceDetail = () => {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <Card className="border border-slate/10 bg-cloud">
-                  <p className="text-xs uppercase tracking-[0.3em] text-gold">Why FW82 Security Solutions Ltd</p>
-                  <p className="mt-4 text-sm text-slate">{service.value}</p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-gold">Why <CompanyName /></p>
+                  <p className="mt-4 text-sm text-slate"><BrandText text={service.value} /></p>
                 </Card>
               </FadeIn>
               <FadeIn delay={0.3}>

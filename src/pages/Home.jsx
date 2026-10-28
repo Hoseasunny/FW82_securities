@@ -13,6 +13,7 @@ import { services } from "../data/services";
 import { projects } from "../data/projects";
 import { newsItems } from "../data/news";
 import { COMPANY, SOCIALS } from "../utils/constants";
+import { BrandText } from "../components/UI/CompanyName";
 import "./home.css";
 
 const serviceIcons = { Shield: ShieldCheck, Cpu: Camera, Users, Smartphone: Siren };
@@ -345,8 +346,8 @@ export const Home = () => {
                     />
                   </span>
                   <span className="home-card-icon">{createElement(service.Icon, { "aria-hidden": true })}</span>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+                  <h3><BrandText text={service.title} /></h3>
+                  <p><BrandText text={service.description} /></p>
                   <span className="home-card-link">Discover service <ArrowRight aria-hidden="true" /></span>
                 </Link>
               ))}
@@ -538,8 +539,8 @@ export const Home = () => {
                     <span className="home-discovery-label">{project.category}</span>
                   </div>
                   <div className="home-discovery-copy">
-                    <h3>{project.title}</h3>
-                    <p>{project.summary}</p>
+                    <h3><BrandText text={project.title} /></h3>
+                    <p><BrandText text={project.summary} /></p>
                     <span className="home-card-link">View project <ArrowRight aria-hidden="true" /></span>
                   </div>
                 </Link>
@@ -583,8 +584,8 @@ export const Home = () => {
                     <span className="home-discovery-label">{item.category} · {item.date}</span>
                   </div>
                   <div className="home-discovery-copy">
-                    <h3>{item.title}</h3>
-                    <p>{item.excerpt}</p>
+                    <h3><BrandText text={item.title} /></h3>
+                    <p><BrandText text={item.excerpt} /></p>
                     <span className="home-card-link">Read update <ArrowRight aria-hidden="true" /></span>
                   </div>
                 </Link>
